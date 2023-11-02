@@ -18,11 +18,11 @@ mkdir -p bin
 mkdir -p ps/empire
 
 # Sysinternals Suite
-echo "Sysinternals Suite"
-mkdir -p ./bin/SysinternalsSuite
-wget --quiet https://download.sysinternals.com/files/SysinternalsSuite.zip -O SysinternalsSuite.zip 
-unzip -o SysinternalsSuite.zip  -d ./bin/SysinternalsSuite
-rm SysinternalsSuite.zip 
+#echo "Sysinternals Suite"
+#mkdir -p ./bin/SysinternalsSuite
+#wget --quiet https://download.sysinternals.com/files/SysinternalsSuite.zip -O SysinternalsSuite.zip 
+#unzip -o SysinternalsSuite.zip  -d ./bin/SysinternalsSuite
+#rm SysinternalsSuite.zip 
 
 
 echo 'empire ps modules'
@@ -106,6 +106,10 @@ for ext in ${exts[@]} ; do
     wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Inveigh/master/Inveigh.$ext -O ps/Inveigh/Inveigh.$ext  # 2> /dev/null
 done
 wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Inveigh/master/Inveigh-Relay.ps1 -O ps/Inveigh/Inveigh-Relay.ps1  # 2> /dev/null
+
+echo 'Pretender'
+__get_github_release RedTeamPentesting/pretender "Windows"
+mv pretender* bin
 
 # responder
 # Sharpview
