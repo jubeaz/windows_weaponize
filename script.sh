@@ -66,9 +66,11 @@ echo "Kerbrute"
 __get_github_release ropnop/kerbrute "windows"
 mv kerbrute* bin
 
-## LaZagne
-#echo "LaZagne"
-#__get_github_release AlessandroZ/LaZagne 'exe'
+# LaZagne
+echo "LaZagne"
+__get_github_release AlessandroZ/LaZagne 'exe'
+mv LaZagne* bin
+
 
 # mimikatz
 echo "mimikatz"
@@ -168,3 +170,21 @@ wget --quiet https://raw.githubusercontent.com/inguardians/Invoke-Clipboard/mast
 
 echo 'Invoke-StickyReader.ps1'
 wget --quiet https://raw.githubusercontent.com/whitej3rry/StickyReader/master/Invoke-StickyReader.ps1 -O ps/Invoke-StickyReader.ps1
+
+
+echo 'LAPSToolkit.ps1'
+wget --quiet https://raw.githubusercontent.com/leoloobeek/LAPSToolkit/master/LAPSToolkit.ps1 -O ps/LAPSToolkit.ps1
+
+
+
+echo 'Invoke-TheHash'
+
+wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBClient.ps1 -O ps/Invoke-SMBClient.ps1
+wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBEnum.ps1 -O ps/Invoke-SMBEnum.ps1
+wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBExec.ps1 -O ps/Invoke-SMBExec.ps1
+wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.ps1 -O ps/Invoke-TheHash.ps1
+wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psd1 -O ps/Invoke-TheHash.psd1
+wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psm1 -O ps/Invoke-TheHahs.psm1
+wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-WMIExec.ps1 -O ps/Invoke-WMIExec.ps1
+
+
