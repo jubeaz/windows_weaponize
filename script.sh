@@ -184,7 +184,16 @@ wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/ma
 wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBExec.ps1 -O ps/Invoke-SMBExec.ps1
 wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.ps1 -O ps/Invoke-TheHash.ps1
 wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psd1 -O ps/Invoke-TheHash.psd1
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psm1 -O ps/Invoke-TheHahs.psm1
+wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psm1 -O ps/Invoke-TheHash.psm1
 wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-WMIExec.ps1 -O ps/Invoke-WMIExec.ps1
 
+echo 'AD ACL Scanner'
+wget --quiet https://raw.githubusercontent.com/canix1/ADACLScanner/master/ADACLScan.ps1 -O ps/ADACLScan.ps1 
+
+
+echo 'Microsoft.ActiveDirectory.Management.dll'
+wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll -O bin/Microsoft.ActiveDirectory.Management.dll
+
+echo 'Import-ActiveDirectory.ps1'
+wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Import-ActiveDirectory.ps1 -o ps/Import-ActiveDirectory.ps1
 

@@ -149,7 +149,7 @@ Start adPEAS, enumerate the domain 'contoso.com' and use the module 'Bloodhound'
 
     <# +++++ Starting adPEAS +++++ #>
     $ErrorActionPreference = "Continue"
-    $adPEASVersion = '0.8.14'
+    $adPEASVersion = '0.8.21'
 
     # Check if outputfile is writable and set color
     if ($PSBoundParameters['Outputfile']) {
@@ -352,8 +352,10 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
         8 = "TBD"
     }
 
-    # Defining when a krbtgt password is an old one
-    $krbtgtPwdLastSet = (Get-Date).AddYears(-5)
+    # Defining when a krbtgt password is an old one, age +5 years
+    $krbtgtPwdLastSetOld = (Get-Date).AddYears(-5)
+    # Defining when a krbtgt password is an new one, age -1 year
+    $krbtgtPwdLastSetNew = (Get-Date).AddYears(-1)
 
     <# +++++ Checking Domain +++++ #>
     Invoke-Logger -Class Info -Value "Checking General Domain Information"
@@ -416,7 +418,9 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
                 Invoke-Logger -Class Finding -Value "Minimum Password Length:`t`tDisabled"
             } elseif ($([int32](($adPEAS_DomainPolicy.SystemAccess).MinimumPasswordLength)) -le 7) {
                 Invoke-Logger -Class Hint -Value "Minimum Password Length:`t`t$(($adPEAS_DomainPolicy.SystemAccess).MinimumPasswordLength) character"
-            } else {
+            } elseif ($([int32](($adPEAS_DomainPolicy.SystemAccess).MinimumPasswordLength)) -ge 12) {
+                Invoke-Logger -Class Secure -Value "Minimum Password Length:`t`t$(($adPEAS_DomainPolicy.SystemAccess).MinimumPasswordLength) character"
+            }else {
                 Invoke-Logger -Value "Minimum Password Length:`t`t$(($adPEAS_DomainPolicy.SystemAccess).MinimumPasswordLength) character"
             }
             if ( -not $(($adPEAS_DomainPolicy.SystemAccess).PasswordComplexity) -or $(($adPEAS_DomainPolicy.SystemAccess).PasswordComplexity) -eq '0') {
@@ -427,16 +431,22 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
             if ( -not $(($adPEAS_DomainPolicy.SystemAccess).LockoutBadCount) -or $(($adPEAS_DomainPolicy.SystemAccess).LockoutBadCount) -eq '0') {
                 Invoke-Logger -Class Finding -Value "Lockout Account:`t`t`tDisabled"
             } else {
-                Invoke-Logger -Value "Lockout Account:`t`t`tAfter $(($adPEAS_DomainPolicy.SystemAccess).LockoutBadCount) wrong passwords"
-                if ($(($adPEAS_DomainPolicy.SystemAccess).LockoutDuration) -and $(($adPEAS_DomainPolicy.SystemAccess).LockoutDuration) -ne '') {
+                if ($([int32](($adPEAS_DomainPolicy.SystemAccess).LockoutBadCount)) -le 3) {
+                    Invoke-Logger -Class Secure -Value "Lockout Account:`t`t`tAfter $(($adPEAS_DomainPolicy.SystemAccess).LockoutBadCount) wrong passwords"
+                } else {
+                    Invoke-Logger -Value "Lockout Account:`t`t`tAfter $(($adPEAS_DomainPolicy.SystemAccess).LockoutBadCount) wrong passwords"
+                }
+                if ($(($adPEAS_DomainPolicy.SystemAccess).LockoutDuration) -and $(($adPEAS_DomainPolicy.SystemAccess).LockoutDuration) -eq '-1') {
+                    Invoke-Logger -Class Secure -Value "Lockout Duration:`t`t`tForever"
+                } elseif ($(($adPEAS_DomainPolicy.SystemAccess).LockoutDuration) -and $(($adPEAS_DomainPolicy.SystemAccess).LockoutDuration) -ne '') {
                     Invoke-Logger -Value "Lockout Duration:`t`t`tLockout for $(($adPEAS_DomainPolicy.SystemAccess).LockoutDuration) minutes"
                 } else {
                     Invoke-Logger -Class Finding -Value "Lockout Duration:`t`t`tDisabled"
                 }
                 if ($(($adPEAS_DomainPolicy.SystemAccess).ResetLockoutCount) -and $(($adPEAS_DomainPolicy.SystemAccess).ResetLockoutCount) -ne '') {
-                    Invoke-Logger -Class Hint -Value "Lockout Reset:`t`t`tLockout reset after $(($adPEAS_DomainPolicy.SystemAccess).ResetLockoutCount) minutes"
+                    Invoke-Logger -Class Hint -Value "Lockout Counter Reset:`t`tAccount lockout counter reset after $(($adPEAS_DomainPolicy.SystemAccess).ResetLockoutCount) minutes"
                 } else {
-                    Invoke-Logger -Value "Lockout Reset:`t`t`t`tDisabled"
+                    Invoke-Logger -Value "Lockout Counter Reset:`t`t`tDisabled"
                 }
             }
             if ( $(($adPEAS_DomainPolicy.SystemAccess).ClearTextPassword) -eq '1') {
@@ -472,7 +482,9 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
             }
             try {
                 $adPEAS_krbtgt = Get-DomainUser @SearcherArguments -Identity krbtgt
-                if ($adPEAS_krbtgt -and $($adPEAS_krbtgt.pwdlastset) -le $krbtgtPwdLastSet) {
+                if ($adPEAS_krbtgt -and $($adPEAS_krbtgt.pwdlastset) -ge $krbtgtPwdLastSetNew) {
+                    Invoke-Logger -Class Secure -Value "Krbtgt Password Last Set:`t`t$($adPEAS_krbtgt.pwdlastset)"
+                } elseif ($adPEAS_krbtgt -and $($adPEAS_krbtgt.pwdlastset) -le $krbtgtPwdLastSetOld) {
                     Invoke-Logger -Class Hint -Value "Krbtgt Password Last Set:`t`t$($adPEAS_krbtgt.pwdlastset)"
                 } else {
                     Invoke-Logger -Value "Krbtgt Password Last Set:`t`t$($adPEAS_krbtgt.pwdlastset)"
@@ -635,8 +647,37 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
     <# +++++ Checking Permissions +++++ #>
     Invoke-Logger -Class Info -Value "Checking Juicy Permissions"
 
+    try {
+        $adPEAS_Domain = Get-Domain @SearcherArguments
+    } catch {
+        Write-Warning "[Get-adPEASRights] Error retrieving general domain information: $_"
+    }
+
+    Invoke-Logger -Class Info -Value "Checking NetLogon Access Rights"
+    try {
+        if ($PSBoundParameters['Server']) { $adPEAS_NetLogonTarget = $Server } else { $adPEAS_NetLogonTarget = $adPEAS_Domain }
+
+        $adPEAS_NetLogonRights = Get-PathAcl -Path "\\$adPEAS_NetLogonTarget\NetLogon\" -Recurse
+        if ($adPEAS_NetLogonRights -and $adPEAS_NetLogonRights -ne '') {
+            foreach ($object_NetLogonRights in $adPEAS_NetLogonRights){
+                # filter out some default identities with write rights like
+                # '^S-1-3-0' # Creater/Owner '^S-1-5-18' # System, '^S-1-5-21-\d+-\d+\-\d+\-512' # DOMAIN_ADMINS, '^S-1-5-21-\d+-\d+\-\d+\-519' # ENTERPRISE_ADMINS, '^S-1-5-32-544' # BUILTIN_ADMINISTRATORS
+                if ($object_NetLogonRights.FileSystemRights -like '*Write*'-and $object_NetLogonRights.IdentitySID -notmatch '\b(^S-1-3-0|^S-1-5-18|^S-1-5-32-544|^S-1-5-21-\d+-\d+\-\d+\-5[1,2][2,9,0])\b') {
+                    $object_NetLogonRights | Add-Member NoteProperty 'sAMAccountName' $($object_NetLogonRights.IdentitySID | ConvertFrom-SID @SearcherArguments)
+                    Invoke-Logger -Class Hint -Value "Identity $($object_NetLogonRights.sAMAccountName) has write access to file $($object_NetLogonRights.Path)"
+                }
+            }
+        }
+    }
+    catch {
+        Write-Warning "[Get-adPEASRights] Error retrieving NetLogon access rights information: $_"
+    }
+
     Invoke-Logger -Class Info -Value "Checking Add-Computer Permissions"
     try {
+        # Getting machine account quota
+        $adPEAS_RootDomainObject = Get-DomainObject @SearcherArguments -Identity (Get-DomainDN @SearcherArguments)
+
         # Getting 'add computer to domain' permissions
         $adPEAS_DomainRights = Get-DomainPolicyData @SearcherArguments -Policy 'DomainController'
         if ($adPEAS_DomainRights -and $(($adPEAS_DomainRights.PrivilegeRights).SeMachineAccountPrivilege) -ne '') {
@@ -644,6 +685,9 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
             if ($(($adPEAS_DomainRights.PrivilegeRights).SeMachineAccountPrivilege) -and $(($adPEAS_DomainRights.PrivilegeRights).SeMachineAccountPrivilege) -ne '') {
                 foreach ($object_rights in $(($adPEAS_DomainRights.PrivilegeRights).SeMachineAccountPrivilege)) {
                     if ($($object_rights.substring(1)) -eq "S-1-5-11") {
+                        if ($adPEAS_RootDomainObject -and $($adPEAS_RootDomainObject."ms-ds-machineaccountquota") -ne '') {
+                            Invoke-Logger -Class Finding -Value "The Machine Account Quota is currently set to $($adPEAS_RootDomainObject."ms-ds-machineaccountquota")"
+                        }
                         Invoke-Logger -Class Finding -Value "Every member of group '$($object_rights.substring(1) | ConvertFrom-SID @SearcherArguments)' can add a computer to domain '$($adPEAS_Domain.Name)'`n"
                     }
                     $user_object = $object_rights.substring(1) | Get-DomainObject @SearcherArguments #-SecurityMasks Owner
@@ -651,7 +695,7 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
                     if ([int32]$($user_object.objectSid).split("-")[-1] -ge 1000) {
                         #$object_rights_identity = $($user_object.objectSid) | Get-DomainObject @SearcherArguments #-SecurityMasks Owner
                         if ($($user_object.sAMAccountName) -and $($user_object.useraccountcontrol) -like '*ACCOUNTDISABLE*') {
-                            Write-Verbose "[Get-adPEASRights] Identity '$($user_object.distinguishedName)' has DCSync rights but account is disabled"
+                            Write-Verbose "[Get-adPEASRights] Identity '$($user_object.distinguishedName)' can add computer to the domain but is disabled"
                         } else {
                             Invoke-Logger -Class Hint -Value "The identity '$($user_object.sAMAccountName)' is a non-default account and can add computer to the domain"
                             $user_object | Invoke-Logger
@@ -791,11 +835,15 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
         $adPEAS_OU = Get-DomainOU @SearcherArguments
             foreach ($Object_GPO in $adPEAS_GPO) {
             if ($Object_GPO.GroupMembers -ne '' -and $Object_GPO.GroupName -ne '') {
-                Invoke-Logger -Class Hint -Value "Found GPO '$($Object_GPO.GPODisplayName)' which adds member[s] to local group'$($Object_GPO.GroupName)'"
+                Invoke-Logger -Class Hint -Value "Found GPO '$($Object_GPO.GPODisplayName)' which adds member[s] to local group '$($Object_GPO.GroupName)'"
                 Invoke-Logger -Value "GPO Name:`t`t`t`t$($Object_GPO.GPODisplayName)"
                 Invoke-Logger -Value "Local GroupName:`t`t`t$($Object_GPO.GroupName)"
                 Invoke-Logger -Value "Local GroupSID:`t`t`t`t$($Object_GPO.GroupSID)"
-                Invoke-Logger -Value "GroupMembers:`t`t`t`t$(($Object_GPO.GroupMembers | ConvertFrom-SID @SearcherArguments) -join "`n`t`t`t`t`t")"
+                if ($($Object_GPO.GroupMembers) -match '^S-1-.*') {
+                    Invoke-Logger -Value "GroupMembers:`t`t`t`t$(($Object_GPO.GroupMembers | ConvertFrom-SID @SearcherArguments) -join "`n`t`t`t`t`t")"
+                } else {
+                    Invoke-Logger -Value "GroupMembers:`t`t`t`t$($Object_GPO.GroupMembers)"
+                }
                 foreach ($Object_OU in $adPEAS_OU) {
                     if ($($Object_OU.gplink) -like "*$($Object_GPO.GPOName)*"){
                         Invoke-Logger -Value "Configured for OU:`t`t`t$($Object_OU.distinguishedname)"
@@ -904,7 +952,7 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
         }
     }
     catch {
-        Write-Warning "[Get-adPEASCA] Error retrieving ADCS information: $_"
+        Write-Verbose "[Get-adPEASCA] Error retrieving ADCS information: $_"
     }
 
     <# +++++ Searching for Vulnerable Certificate Templates +++++ #>
@@ -1113,13 +1161,13 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
                 if ($($Object_Kerberoast.hash)) {
                     $Object_Kerberoast | Get-DomainObject @SearcherArguments -SecurityMasks Owner | Invoke-Logger
                     if ($($Object_Kerberoast.hash) -like '$krb5tgs$23$*') {
-                        Invoke-Logger -Value 'Hashcat usage: hashcat -m 13100'
+                        Invoke-Logger -Class Hint -Value 'Kerberos TGS with RC4, hashcat usage: hashcat -m 13100'
                     } elseif ($($Object_Kerberoast.hash) -like '$krb5tgs$17$*') {
-                        Invoke-Logger -Value 'Hashcat usage: hashcat -m 19600'
+                        Invoke-Logger -Class Secure -Value 'Kerberos TGS with AES128, expect low cracking speed, Hashcat usage: hashcat -m 19600'
                     } elseif ($($Object_Kerberoast.hash) -like '$krb5tgs$18$*') {
-                        Invoke-Logger -Value 'Hashcat usage: hashcat -m 19700'
+                        Invoke-Logger -Class Secure -Value 'Kerberos TGS with AES256, expect low cracking speed, hashcat usage: hashcat -m 19700'
                     }
-                    Invoke-Logger -Class Finding -Value "$($Object_Kerberoast.hash)" -Raw
+                    Invoke-Logger -Class Finding -Value "$($Object_Kerberoast.hash)`n" -Raw
                 } else {
                     Invoke-Logger -Value " "
                 }
@@ -1256,6 +1304,7 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
                 Write-Verbose "[Get-adPEASCreds] Not found any crypted passwords in SYSVOL policy directories"
             }
             elseif ($($Object_GPP.Password) -and $($Object_GPP.Password) -ne '') {
+                if ($($Object_GPP.Domain) -and $($Object_GPP.Domain) -ne '') {$Object_GPP.username = $($Object_GPP.Domain) + "\" + $($Object_GPP.username)}
                 Invoke-Logger -Class Hint -Value "Found credentials in SYSVOL group policy file '$($Object_GPP.File)':"
                 Invoke-Logger -Class Finding -Value "Password '$($Object_GPP.Password)' for user '$($Object_GPP.username)' has been found"
                 Invoke-Logger -Value " "
@@ -1894,6 +1943,7 @@ Start Enumerating using the domain 'contoso.com' and use the domain controller '
     
                             if ($($adPeas_ExchVer.ExchangeBuild) -and $($adPeas_ExchVer.ExchangeBuild) -ne '') {
                                 $object_ExSrv | Add-Member Noteproperty 'ExchangeBuildNumber' $adPeas_ExchVer.ExchangeBuild
+                                $object_ExSrv | Add-Member Noteproperty 'ExchangeVersion' $adPeas_ExchVer.ExchangeVersion
                             }
                         }
                         catch {
@@ -2088,6 +2138,7 @@ Gets an user, computer or generic Active Directory object and prints valuable in
 
 .PARAMETER Class
 Enter the level of Log you want to output. Different LogClass level result in different cosole output colors.
+Possible values are "Info", "Finding", "Hint", "Note", "Secure", "Standard"
 
 .PARAMETER Value
 Information which shall be displayed in console or file.
@@ -2119,7 +2170,7 @@ Prints the text "ASREPRoast Hash" in color Red (Class Finding).
         $Object,
 
         [Parameter(Mandatory = $false)]
-        [ValidateSet("Info", "Finding", "Hint", "Note", "Reserved", "Standard")]
+        [ValidateSet("Info", "Finding", "Hint", "Note", "Secure", "Standard")]
         [String[]]
         $Class = "Standard",
 
@@ -2145,7 +2196,7 @@ Prints the text "ASREPRoast Hash" in color Red (Class Finding).
             $Value,
 
             [Parameter(Mandatory = $false)]
-            [ValidateSet("Info", "Finding", "Hint", "Note", "Reserved", "Standard")]
+            [ValidateSet("Info", "Finding", "Hint", "Note", "Secure", "Standard")]
             [String[]]
             $Class = "Standard",
 
@@ -2180,7 +2231,7 @@ Prints the text "ASREPRoast Hash" in color Red (Class Finding).
             "Finding" = "[!] Found a vulnerability which may can be exploited in some way"
             "Hint" = "[+] Found some interesting information for further investigation"
             "Note" = "[*] Some kind of note"
-            "Reserved" = "[#] Reserved"
+            "Secure" = "[#] Some kind of secure configuration"
         }
 
         if ($Script:adPEAS_OutputColor -eq $True) {
@@ -2188,7 +2239,7 @@ Prints the text "ASREPRoast Hash" in color Red (Class Finding).
             $Legend_Table["Finding"] = $ANSI_Table["Red"]+$Legend_Table["Finding"]+$ANSI_Table["Reset"]
             $Legend_Table["Hint"] = $ANSI_Table["Yellow"]+$Legend_Table["Hint"]+$ANSI_Table["Reset"]
             $Legend_Table["Note"] = $ANSI_Table["Green"]+$Legend_Table["Note"]+$ANSI_Table["Reset"]
-            $Legend_Table["Reserved"] = $ANSI_Table["RedYellow"]+$Legend_Table["Reserved"]+$ANSI_Table["Reset"]
+            $Legend_Table["Secure"] = $ANSI_Table["RedYellow"]+$Legend_Table["Secure"]+$ANSI_Table["Reset"]
             $legend_logo_start = $ANSI_Table["Blue"]
             $legend_logo_stop = $ANSI_Table["Reset"]
         }
@@ -2213,7 +2264,7 @@ $legend_logo_stop
         $($Legend_Table["Finding"])
         $($Legend_Table["Hint"])
         $($Legend_Table["Note"])
-        $($Legend_Table["Reserved"])
+        $($Legend_Table["Secure"])
 
 "@
         }
@@ -2231,7 +2282,7 @@ $legend_logo_stop
         } elseif ($Class -eq "Note") {
             if (-not $Raw) {$Value = "[*] $Value"}
             if ($Script:adPEAS_OutputColor) {$Value = $ANSI_Table["Green"]+$Value+$ANSI_Table["Reset"]}
-        } elseif ($Class -eq "Reserved") {
+        } elseif ($Class -eq "Secure") {
             if (-not $Raw) {$Value ="[#] $Value"}
             if ($Script:adPEAS_OutputColor) {$Value = $ANSI_Table["RedYellow"]+$Value+$ANSI_Table["Reset"]}
         } else {
@@ -2299,13 +2350,28 @@ $legend_logo_stop
                 Invoke-ScreenPrinter -Value $Value
             }
         }
-        if ($($Object.ExchangeBuildNumber) -and $($Object.membExchangeBuildNumbererOf) -ne '') {
+        if ($($Object.ExchangeVersion) -and $($Object.ExchangeVersion) -ne '') {
+            $Value = "ExchangeVersion:`t`t`t$($object.ExchangeVersion)"
+            # search for older Exchange versions than Exchange 2019 and 2016, based on the build number 15.2.x and 15.1.x 
+            if ($($object.ExchangeBuildNumber) -notmatch "^15.1.*|^15.2.*" ) {
+                Invoke-ScreenPrinter -Value $Value -Class Finding
+            } else {
+                Invoke-ScreenPrinter -Value $Value
+            }
+        }
+        if ($($Object.ExchangeBuildNumber) -and $($Object.ExchangeBuildNumber) -ne '') {
             $Value = "ExchangeBuildNumber:`t`t`t$($object.ExchangeBuildNumber)"
             Invoke-ScreenPrinter -Value $Value
         }
         if ($($Object.memberOf) -and $($Object.memberOf) -ne '') {
-            $Value = "memberOf:`t`t`t`t$($($object.memberOf) -join "`n`t`t`t`t`t")"
-            Invoke-ScreenPrinter -Value $Value
+            if ($($Object.memberOf) -match '^CN=Protected Users,CN=.*') {
+                $Value = "memberOf:`t`t`t`t$($($object.memberOf) -join "`n`t`t`t`t`t")"
+                Invoke-ScreenPrinter -Value $Value
+                Invoke-ScreenPrinter -Value "memberOf 'Protected Users':`t`tThis identiy is member of the 'Protected Users' group" -Class Secure
+            } else {
+                $Value = "memberOf:`t`t`t`t$($($object.memberOf) -join "`n`t`t`t`t`t")"
+                Invoke-ScreenPrinter -Value $Value                
+            }
         }
         if ($($Object.description) -and $($Object.description) -ne '') {
             $Value = "description:`t`t`t$($object.description)"
@@ -2366,7 +2432,7 @@ $legend_logo_stop
             if ($($Object.accountexpires) -ge (Get-Date)) {
                 $Value = "accountexpires:`t`t`tThis identity expires on $($Object.accountexpires)"
                 Invoke-ScreenPrinter -Value $Value -Class Hint
-            } else {
+            } elseif ($($Object.accountexpires).toFileTime() -ne 0) {
                 $Value = "accountexpires:`t`t`tThis identity has been expired since $($Object.accountexpires)"
                 Invoke-ScreenPrinter -Value $Value -Class Note
             }
@@ -2386,7 +2452,7 @@ $legend_logo_stop
         }
         if ($($Object.lastLogonTimestamp) -and $($Object.lastLogonTimestamp) -ne '') {
             if ($($Object.userAccountControl) -like "*WORKSTATION_TRUST_ACCOUNT*" -and $($Object.lastLogonTimestamp) -le $DateLastLogon) {
-                $Value = "lastLogonTimestamp:`t`t`t$($object.lastLogonTimestamp) (Computer is likely not online anymore!)"
+                $Value = "lastLogonTimestamp:`t`t`t$($object.lastLogonTimestamp) (Identity is likely not online anymore!)"
                 Invoke-ScreenPrinter -Class Note -Value $Value
             } else {
                 $Value = "lastLogonTimestamp:`t`t`t$($object.lastLogonTimestamp)"
@@ -2395,10 +2461,12 @@ $legend_logo_stop
         }
         if ($($Object.userAccountControl) -and $($Object.userAccountControl) -ne '') {
             $Value = "userAccountControl:`t`t`t$($object.userAccountControl)"
-            if ($($Object.userAccountControl) -like "*PASSWD_NOTREQD*" -or $($Object.userAccountControl) -like "*DONT_REQ_PREAUTH*" -or $($Object.userAccountControl) -like "*TRUSTED_FOR_DELEGATION*") {
+            if ($($Object.userAccountControl) -match '\b(DONT_REQ_PREAUTH|ENCRYPTED_TEXT_PWD_ALLOWED)\b') {
+                Invoke-ScreenPrinter -Value $Value -Class Finding
+            } elseif ($($Object.userAccountControl) -match '\b(ACCOUNTDISABLE|SMARTCARD_REQUIRED|NOT_DELEGATED)\b') {
+                Invoke-ScreenPrinter -Value $Value -Class Secure
+            } elseif ($($Object.userAccountControl) -match '\b(PASSWD_NOTREQD|TRUSTED_FOR_DELEGATION)\b') {
                 Invoke-ScreenPrinter -Value $Value -Class Hint
-            } elseif ($($Object.userAccountControl) -like "*ACCOUNTDISABLE*") {
-                Invoke-ScreenPrinter -Value $Value -Class Note
             } else {
                 Invoke-ScreenPrinter -Value $Value
             }
@@ -2440,6 +2508,7 @@ $legend_logo_stop
 
 function Get-GPPInnerField {
 # helper function to parse fields from xml files for Get-GPPPassword
+# Author: Chris Campbell (@obscuresec), adjusted by Alexander Sturz (@_61106960_)
     [CmdletBinding()]
         Param (
             [Parameter(Position = 0, ValueFromPipeline = $True, ValueFromPipelineByPropertyName = $True)]
@@ -2462,60 +2531,73 @@ function Get-GPPInnerField {
                         if ($Cpassword -and ($Cpassword -ne '')) {
                             Write-Verbose "[Get-GPPInnerField] Crypted password in $($File)"
                             $DecryptedPassword = Get-GPPDecryptedCpassword $Cpassword
-                            $Password = $DecryptedPassword
-                            Write-Verbose "[Get-GPPInnerField] Decrypted password '$($Password)'"
+                            $UserPassword = $DecryptedPassword
+                            Write-Verbose "[Get-GPPInnerField] Decrypted password '$($UserPassword)'"
                         }
-
-                        if ($_.newName) {
-                            $NewName = $_.newName
-                        }
-
                         if ($_.userName) {
                             $UserName = $_.userName
                         }
                         elseif ($_.accountName) {
                             $UserName = $_.accountName
                         }
+                        if ($_.newName) {
+                            $UserName = $_.newName
+                        }
                         elseif ($_.runAs) {
                             $UserName = $_.runAs
                         }
-
                         try {
                             $Changed = $_.ParentNode.changed
                         }
                         catch {
                             Write-Verbose "[Get-GPPInnerField] Unable to retrieve ParentNode.changed for $($File)"
                         }
-
-                        try {
-                            $NodeName = $_.ParentNode.ParentNode.LocalName
-                        }
-                        catch {
-                            Write-Verbose "[Get-GPPInnerField] Unable to retrieve ParentNode.ParentNode.LocalName for $($File)"
-                        }
-
-                        if (!($Password)) {$Password = '[BLANK]'}
-                        if (!($UserName)) {$UserName = '[BLANK]'}
-                        if (!($Changed)) {$Changed = '[BLANK]'}
-                        if (!($NewName)) {$NewName = '[BLANK]'}
-
-                        $GPPPassword = New-Object PSObject
-                        $GPPPassword | Add-Member Noteproperty 'UserName' $UserName
-                        #$GPPPassword | Add-Member Noteproperty 'NewName' $NewName
-                        $GPPPassword | Add-Member Noteproperty 'Password' $Password
-                        #$GPPPassword | Add-Member Noteproperty 'Changed' $Changed
-                        $GPPPassword | Add-Member Noteproperty 'File' $File
-                        #$GPPPassword | Add-Member Noteproperty 'NodeName' $NodeName
-                        #$GPPPassword | Add-Member Noteproperty 'Cpassword' $Cpassword
-                        $GPPPassword
                     }
                 }
             }
+
+            # check for the AutoAdminLogon
+            elseif ($filename -match 'Registry.xml' -and $xml.InnerXml -match 'AutoAdminLogon') {
+                try {
+
+                    $Xml.GetElementsByTagName('Properties') | ForEach-Object {
+
+                        if ($_.name -match 'DefaultUserName') {
+                            $UserName = $_.value
+                        }
+                        if ($_.name -match 'DefaultPassword') {
+                            $UserPassword = $_.value
+                        }
+                        if ($_.name -match 'DefaultDomainName') {
+                            $UserDomain = $_.value
+                        }
+                        try {
+                            $Changed = $_.ParentNode.changed
+                        }
+                        catch {
+                            Write-Verbose "[Get-GPPInnerField] Unable to retrieve ParentNode.changed for $($File)"
+                        }
+                    }
+                }
+                catch {
+                    Write-Verbose "[Get-GPPInnerField] Unable to retrieve AutoAdminLogon data of $($File)"
+                }
+            }
+
+            $GPPPassword = New-Object PSObject
+            if ($UserName) {$GPPPassword | Add-Member Noteproperty 'UserName' $UserName}
+            if ($UserPassword) {$GPPPassword | Add-Member Noteproperty 'Password' $UserPassword}
+            if ($UserDomain) {$GPPPassword | Add-Member Noteproperty 'Domain' $UserDomain}
+            if ($Changed) {$GPPPassword | Add-Member Noteproperty 'Changed' $Changed}
+            if ($file) {$GPPPassword | Add-Member Noteproperty 'File' $File}
+
+            $GPPPassword
+
         }
         catch {
             Write-Warning "[Get-GPPInnerField] Error parsing file $($File) : $_"
         }
-        }
+    }
 }
 
 function Get-GPPDecryptedCpassword {
@@ -3205,6 +3287,23 @@ Invoke-CheckExchange -Identity ex.contoso.com
 
         if ( (($PSVersionTable).PSVersion).Major -gt '2') { # Check if Powershell version is greater 2
 
+        # Defining different Exchange major versions
+        $ExchangeVersions = @{
+            "15.2" = "Exchange 2019"
+            "15.1" = "Exchange 2016"
+            "15.0" = "Exchange 2013"
+            "14.3" = "Exchange 2010 SP3"
+            "14.2" = "Exchange 2010 SP2"
+            "14.1" = "Exchange 2010 SP1"
+            "14.0" = "Exchange 2010"
+            "8.3" = "Exchange 2007 SP3"
+            "8.2" = "Exchange 2007 SP2"
+            "8.1" = "Exchange 2007 SP1"
+            "8.0" = "Exchange 2007"
+            "6.5" = "Exchange 2003"
+            "6.0" = "Exchange 2000"
+        }
+
 # deactivation of certificate checks and allow all ssl/tls versions
 add-type @"
     using System.Net;
@@ -3248,6 +3347,7 @@ add-type @"
                             $Object = New-Object PSObject
                             $Object | Add-Member Noteproperty 'dNSHostName' $ExSrv
                             $Object | Add-Member Noteproperty 'IPv4Address' $ExSrvIP
+                            $Object | Add-Member Noteproperty 'ExchangeVersion' $ExchangeVersions[$(($ExSrvBuild.split(".")[0,1]) -join ".")]
                             $Object | Add-Member Noteproperty 'ExchangeBuild' $ExSrvBuild
                             $Object
                         }
@@ -7822,24 +7922,30 @@ function Get-PathAcl {
 
 Enumerates the ACL for a given file path.
 
-Author: Will Schroeder (@harmj0y)  
+Author: Will Schroeder (@harmj0y), adjusted by Alexander Sturz (@_61106960_)
 License: BSD 3-Clause  
 Required Dependencies: Add-RemoteConnection, Remove-RemoteConnection, ConvertFrom-SID  
 
 .DESCRIPTION
 
-Enumerates the ACL for a specified file/folder path, and translates
-the access rules for each entry into readable formats. If -Credential is passed,
+Enumerates the ACL for a specified file/folder path, and translates  the access rules for each entry into readable formats. If -Credential is passed,
 Add-RemoteConnection/Remove-RemoteConnection is used to temporarily map the remote share.
 
 .PARAMETER Path
 
 Specifies the local or remote path to enumerate the ACLs for.
 
+.PARAMETER Recurse
+
+If specified, recursivly enumerates all files and folders below Path.
+
+.PARAMETER ResolveSID
+
+If specified, resolves the SID to its readable identity name.
+
 .PARAMETER Credential
 
-A [Management.Automation.PSCredential] object of alternate credentials
-for connection to the target path.
+A [Management.Automation.PSCredential] object of alternate credentials for connection to the target path.
 
 .EXAMPLE
 
@@ -7882,6 +7988,14 @@ https://support.microsoft.com/en-us/kb/305144
         [Alias('FullName')]
         [String[]]
         $Path,
+
+        [Parameter(Mandatory = $false)]
+        [Switch]
+        $Recurse,
+
+        [Parameter(Mandatory = $false)]
+        [Switch]
+        $ResolveSID,
 
         [Management.Automation.PSCredential]
         [Management.Automation.CredentialAttribute()]
@@ -7934,11 +8048,11 @@ https://support.microsoft.com/en-us/kb/305144
 
             # get simple permission
             $Permissions += $SimplePermissions.Keys | ForEach-Object {
-                              if (($FSR -band $_) -eq $_) {
-                                $SimplePermissions[$_]
-                                $FSR = $FSR -band (-not $_)
-                              }
-                            }
+                if (($FSR -band $_) -eq $_) {
+                    $SimplePermissions[$_]
+                    $FSR = $FSR -band (-bnot $_)
+                }
+            }
 
             # get remaining extended permissions
             $Permissions += $AccessMask.Keys | Where-Object { $FSR -band $_ } | ForEach-Object { $AccessMask[$_] }
@@ -7963,20 +8077,27 @@ https://support.microsoft.com/en-us/kb/305144
                     }
                 }
 
-                $ACL = Get-Acl -Path $TargetPath
+                $ACLS = @()
+                if ($Recurse) {
+                    $ACLS += Get-ChildItem -Path $TargetPath -Recurse -Force | ForEach-Object {Get-Acl -Path $_.FullName}
+                } else {
+                    $ACLS += Get-Acl -Path $TargetPath
+                }
 
-                $ACL.GetAccessRules($True, $True, [System.Security.Principal.SecurityIdentifier]) | ForEach-Object {
-                    $SID = $_.IdentityReference.Value
-                    $Name = ConvertFrom-SID -ObjectSID $SID @ConvertArguments
+                foreach ($ACL in $ACLS) {
+                    $ACL.GetAccessRules($True, $True, [System.Security.Principal.SecurityIdentifier]) | ForEach-Object {
+                        $SID = $_.IdentityReference.Value
 
-                    $Out = New-Object PSObject
-                    $Out | Add-Member Noteproperty 'Path' $TargetPath
-                    $Out | Add-Member Noteproperty 'FileSystemRights' (Convert-FileRight -FSR $_.FileSystemRights.value__)
-                    $Out | Add-Member Noteproperty 'IdentityReference' $Name
-                    $Out | Add-Member Noteproperty 'IdentitySID' $SID
-                    $Out | Add-Member Noteproperty 'AccessControlType' $_.AccessControlType
-                    $Out.PSObject.TypeNames.Insert(0, 'PowerView.FileACL')
-                    $Out
+                        $Out = New-Object PSObject
+                        $Out | Add-Member Noteproperty 'Path' $(($ACL.PSPath -split "::")[1])
+                        $Out | Add-Member Noteproperty 'FileSystemRights' (Convert-FileRight -FSR $_.FileSystemRights.value__)
+                        $Out | Add-Member NoteProperty 'IsInherited' $_.IsInherited
+                        If ($ResolveSID) {$Out | Add-Member Noteproperty 'IdentityReference' $(ConvertFrom-SID -ObjectSID $SID @ConvertArguments)}
+                        $Out | Add-Member Noteproperty 'IdentitySID' $SID
+                        $Out | Add-Member Noteproperty 'AccessControlType' $_.AccessControlType
+                        $Out.PSObject.TypeNames.Insert(0, 'PowerView.FileACL')
+                        $Out
+                    }
                 }
             }
             catch {
