@@ -43,6 +43,19 @@ mv chisel* bin
 echo "socat"
 wget --quiet http://blog.gentilkiwi.com/downloads/socat-1.7.2.1.zip -O bin/socat-1.7.2.1.zip
 
+
+
+# printspoofer
+echo "PrintSpoofer"
+__get_github_release itm4n/PrintSpoofer "exe"
+mv Print* bin
+
+
+# roguepotato
+echo "RoguePotato"
+__get_github_release antonioCoco/RoguePotato "Rogue"
+mv Rogue* bin
+
 # RogueWinRM
 echo "RogueWinRM"
 __get_github_release antonioCoco/RogueWinRM "zip"
