@@ -210,3 +210,5 @@ wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Micro
 echo 'Import-ActiveDirectory.ps1'
 wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Import-ActiveDirectory.ps1 -o ps/Import-ActiveDirectory.ps1
 
+#echo 'PSUpload.ps1'
+#wget --quiet https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1 -o ps/PSUpload.ps1

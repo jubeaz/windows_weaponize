@@ -65,9 +65,9 @@
 !_TAG_ROLE_DESCRIPTION!Sh!heredoc	endmarker	/end marker/
 !_TAG_ROLE_DESCRIPTION!Sh!script	loaded	/loaded/
 ACLHTMLFileName	ps/ADACLScan.ps1	/^[string]$global:ACLHTMLFileName = "ACLHTML-$SessionID"$/;"	v	language:PowerShell
-ADACLScan.ps1	ps/ADACLScan.ps1	1;"	F	language:PowerShell	epoch:1701443881
+ADACLScan.ps1	ps/ADACLScan.ps1	1;"	F	language:PowerShell	epoch:1701444783
 ADACLScanVersion	ps/ADACLScan.ps1	/^[string]$ADACLScanVersion = "-------`nAD ACL Scanner 7.9 , Author: Robin Granberg, @ipcdollar1, /;"	v	language:PowerShell
-ADRecon.ps1	ps/ADRecon.ps1	1;"	F	language:PowerShell	epoch:1701443874
+ADRecon.ps1	ps/ADRecon.ps1	1;"	F	language:PowerShell	epoch:1701444776
 ADSpath	ps/LAPSToolkit.ps1	/^                    $ADSpath = $ADSpath.Substring(7)$/;"	v	language:PowerShell
 ADWSSource	ps/ADRecon.ps1	/^$ADWSSource = @"$/;"	v	language:PowerShell
 ARP	bin/winPEAS.bat	/^:ARP$/;"	l	language:DosBatch
@@ -138,8 +138,8 @@ Bitmap-Read	ps/empire/privesc/Invoke-MS16135.ps1	/^		function Bitmap-Read {$/;"	
 Bitmap-Write	ps/empire/privesc/Invoke-MS16135.ps1	/^		function Bitmap-Write {$/;"	f	language:PowerShell	function:Invoke-MS16135::Bitmap-Elevate
 Blackballs	ps/PrivescCheck.ps1	/^$Blackballs = "H4sIAAAAAAAEAO09+2\/bONK\/L3D\/A+EzEPtq+\/LebhbFd27itEbzMGJn2\/vaIFBtOtHWkXyS3CTf/;"	v	language:PowerShell
 Blog Posts	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Blog Posts$/;"	t	language:Markdown	subsection:Nishang""Bugs, Feedback and Feature Requests
-BloodHound.ps1	ps/empire/situational_awareness/network/BloodHound.ps1	1;"	F	language:PowerShell	epoch:1701443850
-BloodHound3.ps1	ps/empire/situational_awareness/network/BloodHound3.ps1	1;"	F	language:PowerShell	epoch:1701443850
+BloodHound.ps1	ps/empire/situational_awareness/network/BloodHound.ps1	1;"	F	language:PowerShell	epoch:1701444751
+BloodHound3.ps1	ps/empire/situational_awareness/network/BloodHound3.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Bugs, Feedback and Feature Requests	ps/samratashok-nishang-cfe2a5f/README.md	/^### Bugs, Feedback and Feature Requests$/;"	S	language:Markdown	chapter:Nishang
 BuildSchemaDic	ps/ADACLScan.ps1	/^Function BuildSchemaDic$/;"	f	language:PowerShell
 Bypass	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Bypass$/;"	t	language:Markdown	subsection:Nishang""Nishang is a framework and collection of scripts and payloads which enables usage of PowerShell for offensive security, penetration testing and red teaming. Nishang is useful during all phases of penetration testing.
@@ -148,8 +148,8 @@ C2Server	ps/empire/exfil/PSRansom.ps1	/^$C2Server = $args[3]$/;"	v	language:Powe
 C2Status	ps/empire/exfil/PSRansom.ps1	/^$C2Status = $null$/;"	v	language:PowerShell
 CIPHER	ps/Invoke-Clipboard.ps1	/^$CIPHER = "adaDASDaksjldasnjkds;ldkflsdmkafmwfm" # Encryption in the commands so if they are cau/;"	v	language:PowerShell
 CSharpSource	ps/empire/privesc/PrivescCheck.ps1	/^$CSharpSource = @'$/;"	v	language:PowerShell
-CVE-2021-3560.py	ps/empire/python/privesc/CVE-2021-3560.py	1;"	F	language:Python	epoch:1701443850
-CVE-2021-4034.py	ps/empire/python/privesc/CVE-2021-4034.py	1;"	F	language:Python	epoch:1701443850
+CVE-2021-3560.py	ps/empire/python/privesc/CVE-2021-3560.py	1;"	F	language:Python	epoch:1701444751
+CVE-2021-4034.py	ps/empire/python/privesc/CVE-2021-4034.py	1;"	F	language:Python	epoch:1701444751
 CacheRightsGuids	ps/ADACLScan.ps1	/^Function CacheRightsGuids$/;"	f	language:PowerShell
 CachedCreds	bin/winPEAS.bat	/^:CachedCreds$/;"	l	language:DosBatch
 CachedHotFixList	ps/empire/privesc/PrivescCheck.ps1	/^$global:CachedHotFixList = New-Object -TypeName System.Collections.ArrayList$/;"	v	language:PowerShell
@@ -188,7 +188,7 @@ ComputerRecordProcessor	ps/ADRecon.ps1	/^        class ComputerRecordProcessor :
 ComputerRecordProcessor	ps/ADRecon.ps1	/^        class ComputerRecordProcessor : IRecordProcessor$/;"	c	language:PowerShell	class:LDAPClass
 ComputerSPNRecordProcessor	ps/ADRecon.ps1	/^        class ComputerSPNRecordProcessor : IRecordProcessor$/;"	c	language:PowerShell
 ComputerSPNRecordProcessor	ps/ADRecon.ps1	/^        class ComputerSPNRecordProcessor : IRecordProcessor$/;"	c	language:PowerShell	class:LDAPClass
-Conj²ure-LSASS.ps1	ps/Conj²ure-LSASS.ps1	1;"	F	language:PowerShell	epoch:1701443877
+Conj²ure-LSASS.ps1	ps/Conj²ure-LSASS.ps1	1;"	F	language:PowerShell	epoch:1701444779
 Contributing	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Contributing$/;"	t	language:Markdown	subsection:Nishang""Bugs, Feedback and Feature Requests
 ControlLoop	ps/empire/collection/Invoke-Inveigh.ps1	/^function ControlLoop()$/;"	f	language:PowerShell	function:Invoke-Inveigh
 ControlRelayLoop	ps/empire/lateral_movement/Invoke-InveighRelay.ps1	/^function ControlRelayLoop()$/;"	f	language:PowerShell	function:Invoke-InveighRelay
@@ -357,7 +357,7 @@ DomainFLHashAD	ps/ADACLScan.ps1	/^$global:DomainFLHashAD = @{$/;"	v	language:Pow
 DomainName	ps/samratashok-nishang-cfe2a5f/Gather/Keylogger.ps1	/^        $DomainName = "null",$/;"	v	language:PowerShell
 DomainObject	ps/LAPSToolkit.ps1	/^        $DomainObject = New-Object DirectoryServices.DirectoryEntry($SearchString, $Credential.U/;"	v	language:PowerShell
 DomainObject	ps/SinglePowerSpray.ps1	/^$DomainObject = [System.DirectoryServices.ActiveDirectory.Domain]::GetDomain($DomainContext)$/;"	v	language:PowerShell
-DomainPasswordSpray.ps1	ps/empire/credentials/DomainPasswordSpray.ps1	1;"	F	language:PowerShell	epoch:1701443850
+DomainPasswordSpray.ps1	ps/empire/credentials/DomainPasswordSpray.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Domain_check	ps/SinglePowerSpray.ps1	/^        $Domain_check = New-Object System.DirectoryServices.DirectoryEntry($CurrentDomain,$User,/;"	v	language:PowerShell
 DormantTimeSpan	ps/ADRecon.ps1	/^    [int] $DormantTimeSpan = 90,$/;"	v	language:PowerShell
 Download	ps/samratashok-nishang-cfe2a5f/Utility/Download.ps1	/^function Download$/;"	f	language:PowerShell
@@ -389,7 +389,7 @@ Enable-SeDebugPrivilege	ps/empire/management/Invoke-Vnc.ps1	/^	Function Enable-S
 Enable-SeDebugPrivilege	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikatz.ps1	/^	Function Enable-SeDebugPrivilege$/;"	f	language:PowerShell	function:Invoke-Mimikatz
 Enable-SeDebugPrivilege	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-MimikatzWDigestDowngrade.ps1	/^	Function Enable-SeDebugPrivilege$/;"	f	language:PowerShell	function:Invoke-MimikatzWDigestDowngrade
 Enable-TSDuplicateToken	ps/empire/persistence/Invoke-RIDHijacking.ps1	/^function Enable-TSDuplicateToken {$/;"	f	language:PowerShell
-EnableAllTokenPrivs.ps1	ps/EnableAllTokenPrivs.ps1	1;"	F	language:PowerShell	epoch:1701443873
+EnableAllTokenPrivs.ps1	ps/EnableAllTokenPrivs.ps1	1;"	F	language:PowerShell	epoch:1701444775
 Encrypt-String	ps/Invoke-Clipboard.ps1	/^function Encrypt-String($key, $unencryptedString) {$/;"	f	language:PowerShell
 Enum-Creds	ps/empire/credentials/dumpCredStore.ps1	/^function Enum-Creds$/;"	f	language:PowerShell
 EnumProcesses	ps/empire/privesc/Invoke-BypassUACTokenManipulation.ps1	/^function EnumProcesses(){$/;"	f	language:PowerShell
@@ -416,12 +416,12 @@ Execution	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Execution$/;"	t	langua
 ExetoText	ps/samratashok-nishang-cfe2a5f/Utility/ExetoText.ps1	/^function ExetoText$/;"	f	language:PowerShell
 ExetoText.ps1	ps/samratashok-nishang-cfe2a5f/Utility/ExetoText.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Exfil	ps/empire/exfil/PSRansom.ps1	/^$Exfil = $args[6]$/;"	v	language:PowerShell
-Exploit-EternalBlue.ps1	ps/empire/exploitation/Exploit-EternalBlue.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Exploit-EternalBlue.ps1	ps/empire/exploitation/Exploit-EternalBlue.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Exploit-JBoss	ps/empire/exploitation/Exploit-JBoss.ps1	/^function Exploit-JBoss$/;"	f	language:PowerShell
-Exploit-JBoss.ps1	ps/empire/exploitation/Exploit-JBoss.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Exploit-JBoss.ps1	ps/empire/exploitation/Exploit-JBoss.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Exploit-JMXConsole	ps/empire/exploitation/Exploit-JBoss.ps1	/^function Exploit-JMXConsole$/;"	f	language:PowerShell
 Exploit-Jenkins	ps/empire/exploitation/Exploit-Jenkins.ps1	/^ function Exploit-Jenkins() {$/;"	f	language:PowerShell
-Exploit-Jenkins.ps1	ps/empire/exploitation/Exploit-Jenkins.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Exploit-Jenkins.ps1	ps/empire/exploitation/Exploit-Jenkins.ps1	1;"	F	language:PowerShell	epoch:1701444751
 ExploitTable	ps/empire/privesc/Sherlock.ps1	/^$Global:ExploitTable = $null$/;"	v	language:PowerShell
 Export-Icon	ps/empire/collection/Invoke-CredentialPhisher.ps1	/^    function Export-Icon ([string]$file, [int]$index, [int]$iconSize = 64){$/;"	f	language:PowerShell	function:Invoke-CredentialPhisher
 Export-PowerViewCSV	ps/LAPSToolkit.ps1	/^filter Export-PowerViewCSV {$/;"	i	language:PowerShell
@@ -432,7 +432,7 @@ ExtractHash	ps/samratashok-nishang-cfe2a5f/Utility/Start-CaptureServer.ps1	/^fun
 FTPPort	ps/empire/privesc/Invoke-PrintDemon.ps1	/^$regcommand = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('sc.exe start F/;"	v	language:PowerShell
 FTPServer	ps/empire/privesc/Invoke-PrintDemon.ps1	/^$regcommand = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('sc.exe start F/;"	v	language:PowerShell
 FUNCTIONNAME	ps/empire/persistence/Persistence.psm1	/^function FUNCTIONNAME{$/;"	f	language:PowerShell	function:Add-Persistence
-Fetch-And-Brute-Local-Accounts.ps1	ps/empire/recon/Fetch-And-Brute-Local-Accounts.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Fetch-And-Brute-Local-Accounts.ps1	ps/empire/recon/Fetch-And-Brute-Local-Accounts.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Fetch-Brute	ps/empire/recon/Fetch-And-Brute-Local-Accounts.ps1	/^function Fetch-Brute$/;"	f	language:PowerShell
 FileSystemRights	ps/empire/privesc/PrivescCheck.ps1	/^                        $FileSystemRights = $_.FileSystemRights.value__$/;"	v	language:PowerShell
 FilterTrustee	ps/ADACLScan.ps1	/^    $FilterTrustee="",$/;"	v	language:PowerShell
@@ -445,7 +445,7 @@ Find-CVE20177199	ps/empire/privesc/Sherlock.ps1	/^function Find-CVE20177199 {$/;
 Find-DomainObjectPropertyOutlier	ps/adPEAS.ps1	/^function Find-DomainObjectPropertyOutlier {$/;"	f	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Find-DomainObjectPropertyOutlier	ps/empire/situational_awareness/network/powerview.ps1	/^function Find-DomainObjectPropertyOutlier {$/;"	f	language:PowerShell
 Find-Fruit	ps/empire/recon/Find-Fruit.ps1	/^function Find-Fruit $/;"	f	language:PowerShell
-Find-Fruit.ps1	ps/empire/recon/Find-Fruit.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Find-Fruit.ps1	ps/empire/recon/Find-Fruit.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Find-KeePassconfig	ps/empire/collection/vaults/KeePassConfig.ps1	/^function Find-KeePassconfig {$/;"	f	language:PowerShell
 Find-LAPSDelegatedGroups	ps/LAPSToolkit.ps1	/^function Find-LAPSDelegatedGroups {$/;"	f	language:PowerShell
 Find-MS10015	ps/empire/privesc/Sherlock.ps1	/^function Find-MS10015 {$/;"	f	language:PowerShell
@@ -462,7 +462,7 @@ Find-PSScriptsInPSAppLog	ps/empire/situational_awareness/host/Get-ComputerDetail
 Find-ProtectionSoftware	ps/empire/privesc/PrivescCheck.ps1	/^    function Find-ProtectionSoftware {$/;"	f	language:PowerShell	function:Invoke-EndpointProtectionCheck
 Find-RDPClientConnections	ps/empire/situational_awareness/host/Get-ComputerDetails.ps1	/^Function Find-RDPClientConnections$/;"	f	language:PowerShell
 Find-TrustedDocuments	ps/empire/situational_awareness/host/Find-TrustedDocuments.ps1	/^function Find-TrustedDocuments$/;"	f	language:PowerShell
-Find-TrustedDocuments.ps1	ps/empire/situational_awareness/host/Find-TrustedDocuments.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Find-TrustedDocuments.ps1	ps/empire/situational_awareness/host/Find-TrustedDocuments.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Finding	ps/adPEAS.ps1	/^                    Invoke-Logger -Class Finding -Value "Lockout Duration:`t`t`tDisabled"$/;"	c	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Finding	ps/adPEAS.ps1	/^                Invoke-Logger -Class Finding -Value "Lockout Account:`t`t`tDisabled"$/;"	c	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint
 Finding	ps/adPEAS.ps1	/^                Invoke-Logger -Class Finding -Value "Maximum Password Age:`t`tDisabled"$/;"	c	language:PowerShell	class:Get-adPEASDomain::Info::Info
@@ -497,16 +497,16 @@ Get-BeaconAPI	ps/empire/code_execution/Invoke-Bof.ps1	/^    Function Get-BeaconA
 Get-BeaconTypes	ps/empire/code_execution/Invoke-Bof.ps1	/^    Function Get-BeaconTypes$/;"	f	language:PowerShell	function:Invoke-Bof
 Get-BootKey	ps/empire/credentials/Invoke-PowerDump.ps1	/^        function Get-BootKey$/;"	f	language:PowerShell	function:Invoke-PowerDump
 Get-BootKey	ps/samratashok-nishang-cfe2a5f/Gather/Get-PassHashes.ps1	/^function Get-BootKey$/;"	f	language:PowerShell	function:Get-PassHashes
-Get-BrowserData.ps1	ps/empire/collection/Get-BrowserData.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-BrowserData.ps1	ps/empire/collection/Get-BrowserData.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-BrowserInformation	ps/empire/collection/Get-BrowserData.ps1	/^function Get-BrowserInformation {$/;"	f	language:PowerShell
 Get-ChromeBookmarks	ps/empire/collection/Get-BrowserData.ps1	/^    function Get-ChromeBookmarks {$/;"	f	language:PowerShell	function:Get-BrowserInformation
 Get-ChromeDump	ps/empire/collection/Get-ChromeDump.ps1	/^Function Get-ChromeDump{$/;"	f	language:PowerShell
-Get-ChromeDump.ps1	ps/empire/collection/Get-ChromeDump.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-ChromeDump.ps1	ps/empire/collection/Get-ChromeDump.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-ChromeHistory	ps/empire/collection/Get-BrowserData.ps1	/^    function Get-ChromeHistory {$/;"	f	language:PowerShell	function:Get-BrowserInformation
 Get-ClipboardContents	ps/empire/collection/Get-ClipboardContents.ps1	/^function Get-ClipboardContents {$/;"	f	language:PowerShell
-Get-ClipboardContents.ps1	ps/empire/collection/Get-ClipboardContents.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-ClipboardContents.ps1	ps/empire/collection/Get-ClipboardContents.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-ComputerDetails	ps/empire/situational_awareness/host/Get-ComputerDetails.ps1	/^function Get-ComputerDetails$/;"	f	language:PowerShell
-Get-ComputerDetails.ps1	ps/empire/situational_awareness/host/Get-ComputerDetails.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-ComputerDetails.ps1	ps/empire/situational_awareness/host/Get-ComputerDetails.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-ComputerNameFromInstance	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Get-ComputerNameFromInstance$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob::Get-SQLStoredProcedure
 Get-ComputerNameFromInstance	ps/empire/collection/Get-SQLColumnSampleData.ps1	/^Function Get-ComputerNameFromInstance {$/;"	f	language:PowerShell
 Get-ComputerNameFromInstance	ps/empire/collection/Get-SQLQuery.ps1	/^Function Get-ComputerNameFromInstance {$/;"	f	language:PowerShell
@@ -579,10 +579,10 @@ Get-ForestGlobalCatalog	ps/empire/situational_awareness/network/powerview.ps1	/^
 Get-ForestSchemaClass	ps/adPEAS.ps1	/^function Get-ForestSchemaClass {$/;"	f	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Get-ForestSchemaClass	ps/empire/situational_awareness/network/powerview.ps1	/^function Get-ForestSchemaClass {$/;"	f	language:PowerShell
 Get-FoxDump	ps/empire/collection/Get-FoxDump.ps1	/^Function Get-FoxDump $/;"	f	language:PowerShell
-Get-FoxDump.ps1	ps/empire/collection/Get-FoxDump.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-FoxDump.ps1	ps/empire/collection/Get-FoxDump.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-GPPInnerFields	ps/empire/privesc/Get-GPPPassword.ps1	/^    function Get-GPPInnerFields {$/;"	f	language:PowerShell	function:Get-GPPPassword
 Get-GPPPassword	ps/empire/privesc/Get-GPPPassword.ps1	/^function Get-GPPPassword $/;"	f	language:PowerShell
-Get-GPPPassword.ps1	ps/empire/privesc/Get-GPPPassword.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-GPPPassword.ps1	ps/empire/privesc/Get-GPPPassword.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-GUIDMap	ps/LAPSToolkit.ps1	/^filter Get-GUIDMap {$/;"	i	language:PowerShell
 Get-GlobalAddressList	ps/empire/management/MailRaider.ps1	/^function Get-GlobalAddressList {$/;"	f	language:PowerShell
 Get-GroupFlags	ps/empire/privesc/PrivescCheck.ps1	/^    function Get-GroupFlags {$/;"	f	language:PowerShell	function:Invoke-LocalAdminGroupCheck
@@ -602,7 +602,7 @@ Get-ImageNtHeaders	ps/empire/management/Invoke-Vnc.ps1	/^	Function Get-ImageNtHe
 Get-ImageNtHeaders	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikatz.ps1	/^	Function Get-ImageNtHeaders$/;"	f	language:PowerShell	function:Invoke-Mimikatz
 Get-ImageNtHeaders	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-MimikatzWDigestDowngrade.ps1	/^	Function Get-ImageNtHeaders$/;"	f	language:PowerShell	function:Invoke-MimikatzWDigestDowngrade
 Get-IndexedItem	ps/empire/collection/Get-IndexedItem.ps1	/^function Get-IndexedItem {$/;"	f	language:PowerShell
-Get-IndexedItem.ps1	ps/empire/collection/Get-IndexedItem.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-IndexedItem.ps1	ps/empire/collection/Get-IndexedItem.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-Information	ps/samratashok-nishang-cfe2a5f/Gather/Get-Information.ps1	/^function Get-Information $/;"	f	language:PowerShell
 Get-Information	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^function Get-Information $/;"	f	language:PowerShell
 Get-Information.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Get-Information.ps1	1;"	F	language:PowerShell	epoch:1510487125
@@ -618,12 +618,12 @@ Get-KeePassDatabaseKey	ps/empire/collection/vaults/KeeThief.ps1	/^function Get-K
 Get-KeePassINIFields	ps/empire/collection/vaults/KeePassConfig.ps1	/^        function Local:Get-KeePassINIFields {$/;"	f	language:PowerShell	function:Find-KeePassconfig
 Get-KeePassXMLFields	ps/empire/collection/vaults/KeePassConfig.ps1	/^        function Local:Get-KeePassXMLFields {$/;"	f	language:PowerShell	function:Find-KeePassconfig
 Get-KerberosServiceTicket	ps/empire/situational_awareness/network/Get-KerberosServiceTicket.ps1	/^Function Get-KerberosServiceTicket {$/;"	f	language:PowerShell
-Get-KerberosServiceTicket.ps1	ps/empire/situational_awareness/network/Get-KerberosServiceTicket.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-KerberosServiceTicket.ps1	ps/empire/situational_awareness/network/Get-KerberosServiceTicket.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-Keystrokes	ps/empire/collection/Get-Keystrokes.ps1	/^function Get-Keystrokes {$/;"	f	language:PowerShell
-Get-Keystrokes.ps1	ps/empire/collection/Get-Keystrokes.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-Keystrokes.ps1	ps/empire/collection/Get-Keystrokes.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-LAPSComputers	ps/LAPSToolkit.ps1	/^function Get-LAPSComputers {$/;"	f	language:PowerShell
 Get-LAPSPasswords	ps/empire/credentials/Get-LAPSPasswords.ps1	/^function Get-LAPSPasswords$/;"	f	language:PowerShell
-Get-LAPSPasswords.ps1	ps/empire/credentials/Get-LAPSPasswords.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-LAPSPasswords.ps1	ps/empire/credentials/Get-LAPSPasswords.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-LSASecret.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Get-LSASecret.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Get-LoadedModules	ps/empire/privesc/Invoke-MS16135.ps1	/^	function Get-LoadedModules {$/;"	f	language:PowerShell	function:Invoke-MS16135
 Get-LsaRunAsPPLStatus	ps/empire/privesc/PrivescCheck.ps1	/^function Get-LsaRunAsPPLStatus {$/;"	f	language:PowerShell
@@ -787,17 +787,17 @@ Get-RemoteProcAddress	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikatz.ps1	
 Get-RemoteProcAddress	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-MimikatzWDigestDowngrade.ps1	/^	Function Get-RemoteProcAddress$/;"	f	language:PowerShell	function:Invoke-MimikatzWDigestDowngrade
 Get-Results	ps/empire/privesc/Sherlock.ps1	/^function Get-Results {$/;"	f	language:PowerShell
 Get-RickAstley	ps/empire/trollsploit/Get-RickAstley.ps1	/^function Get-RickAstley {$/;"	f	language:PowerShell
-Get-RickAstley.ps1	ps/empire/trollsploit/Get-RickAstley.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-RickAstley.ps1	ps/empire/trollsploit/Get-RickAstley.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-RpcRange	ps/empire/privesc/PrivescCheck.ps1	/^function Get-RpcRange {$/;"	f	language:PowerShell
 Get-SMTPAddress	ps/empire/management/MailRaider.ps1	/^function Get-SMTPAddress {$/;"	f	language:PowerShell
 Get-SPN	ps/empire/situational_awareness/network/Get-SPN.ps1	/^function Get-SPN$/;"	f	language:PowerShell
-Get-SPN.ps1	ps/empire/situational_awareness/network/Get-SPN.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SPN.ps1	ps/empire/situational_awareness/network/Get-SPN.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SQLAgentJob	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLAgentJob$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLAuditDatabaseSpec	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLAuditDatabaseSpec$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLAuditServerSpec	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLAuditServerSpec$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLColumn	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLColumn$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLColumnSampleData	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Get-SQLColumnSampleData$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
-Get-SQLColumnSampleData.ps1	ps/empire/collection/Get-SQLColumnSampleData.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SQLColumnSampleData.ps1	ps/empire/collection/Get-SQLColumnSampleData.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SQLColumnSampleDataThreaded	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Get-SQLColumnSampleDataThreaded$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLConnectionObject	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Get-SQLConnectionObject$/;"	f	language:PowerShell
 Get-SQLConnectionTest	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLConnectionTest$/;"	f	language:PowerShell
@@ -824,21 +824,21 @@ Get-SQLDomainTrust	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLDomainTrust$/
 Get-SQLDomainUser	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLDomainUser$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLInstanceDomain	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLInstanceDomain$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob::Get-SQLStoredProcedure::Get-ComputerNameFromInstance
 Get-SQLInstanceDomain	ps/empire/situational_awareness/network/Get-SQLInstanceDomain.ps1	/^Function  Get-SQLInstanceDomain {$/;"	f	language:PowerShell
-Get-SQLInstanceDomain.ps1	ps/empire/situational_awareness/network/Get-SQLInstanceDomain.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SQLInstanceDomain.ps1	ps/empire/situational_awareness/network/Get-SQLInstanceDomain.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SQLLocalAdminCheck	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLLocalAdminCheck$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLOleDbProvder	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLOleDbProvder$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLPersistTriggerDDL	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Get-SQLPersistTriggerDDL$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob::Get-SQLStoredProcedure::Get-ComputerNameFromInstance::Get-SQLInstanceDomain
 Get-SQLQuery	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Get-SQLQuery$/;"	f	language:PowerShell
-Get-SQLQuery.ps1	ps/empire/collection/Get-SQLQuery.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SQLQuery.ps1	ps/empire/collection/Get-SQLQuery.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SQLQueryThreaded	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLQueryThreaded$/;"	f	language:PowerShell
 Get-SQLServerConfiguration	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerConfiguration$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLServerCredential	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerCredential$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLServerInfo	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerInfo$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
-Get-SQLServerInfo.ps1	ps/empire/situational_awareness/network/Get-SQLServerInfo.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SQLServerInfo.ps1	ps/empire/situational_awareness/network/Get-SQLServerInfo.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SQLServerInfoThreaded	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerInfoThreaded$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLServerLink	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerLink$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLServerLogin	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerLogin$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
-Get-SQLServerLoginDefaultPw.ps1	ps/empire/recon/Get-SQLServerLoginDefaultPw.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SQLServerLoginDefaultPw.ps1	ps/empire/recon/Get-SQLServerLoginDefaultPw.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SQLServerPriv	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerPriv$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLServerRole	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerRole$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Get-SQLServerRoleMember	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Get-SQLServerRoleMember$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
@@ -855,30 +855,30 @@ Get-SccmCacheFolder	ps/empire/privesc/PrivescCheck.ps1	/^function Get-SccmCacheF
 Get-ScheduledTaskList	ps/empire/privesc/PrivescCheck.ps1	/^function Get-ScheduledTaskList {$/;"	f	language:PowerShell
 Get-ScheduledTasks	ps/empire/privesc/PrivescCheck.ps1	/^    function Get-ScheduledTasks {$/;"	f	language:PowerShell	function:Get-ScheduledTaskList
 Get-Screenshot	ps/empire/collection/Get-Screenshot.ps1	/^function Get-Screenshot $/;"	f	language:PowerShell
-Get-Screenshot.ps1	ps/empire/collection/Get-Screenshot.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-Screenshot.ps1	ps/empire/collection/Get-Screenshot.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SecureBootStatus	ps/empire/privesc/PrivescCheck.ps1	/^function Get-SecureBootStatus {$/;"	f	language:PowerShell
 Get-SecurityPackages	ps/empire/persistence/Get-SecurityPackages.ps1	/^function Get-SecurityPackages$/;"	f	language:PowerShell
 Get-SecurityPackages	ps/empire/persistence/Persistence.psm1	/^function Get-SecurityPackages$/;"	f	language:PowerShell
-Get-SecurityPackages.ps1	ps/empire/persistence/Get-SecurityPackages.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SecurityPackages.ps1	ps/empire/persistence/Get-SecurityPackages.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-ServiceReadControlHandle	ps/empire/privesc/PrivescCheck.ps1	/^        filter Local:Get-ServiceReadControlHandle {$/;"	i	language:PowerShell	function:Add-ServiceDacl
 Get-SharpChromium	ps/empire/collection/Get-SharpChromium.ps1	/^Function Get-SharpChromium{$/;"	f	language:PowerShell
-Get-SharpChromium.ps1	ps/empire/collection/Get-SharpChromium.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SharpChromium.ps1	ps/empire/collection/Get-SharpChromium.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-ShellCode	ps/samratashok-nishang-cfe2a5f/Execution/Execute-DNSTXT-Code.ps1	/^    function Get-ShellCode$/;"	f	language:PowerShell	function:Execute-DNSTXT-Code
 Get-SiteListPassword	ps/empire/privesc/Get-SiteListPassword.ps1	/^function Get-SiteListPassword {$/;"	f	language:PowerShell
-Get-SiteListPassword.ps1	ps/empire/privesc/Get-SiteListPassword.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SiteListPassword.ps1	ps/empire/privesc/Get-SiteListPassword.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SitelistFields	ps/empire/privesc/Get-SiteListPassword.ps1	/^    function Get-SitelistFields {$/;"	f	language:PowerShell	function:Get-SiteListPassword
 Get-SpooferResponseMessage	ps/Inveigh/Inveigh.ps1	/^    function Get-SpooferResponseMessage$/;"	f	language:PowerShell	function:Invoke-Inveigh
 Get-SpoolStatus	ps/Get-SpoolStatus.ps1	/^Function Get-SpoolStatus {$/;"	f	language:PowerShell
-Get-SpoolStatus.ps1	ps/Get-SpoolStatus.ps1	1;"	F	language:PowerShell	epoch:1701443875
+Get-SpoolStatus.ps1	ps/Get-SpoolStatus.ps1	1;"	F	language:PowerShell	epoch:1701444777
 Get-Stats	ps/empire/privesc/PrivescCheck.ps1	/^    function Get-Stats {$/;"	f	language:PowerShell	function:Get-RpcRange
 Get-StatusPending	ps/Invoke-SMBEnum.ps1	/^function Get-StatusPending$/;"	f	language:PowerShell	function:Invoke-SMBEnum
 Get-StatusPending	ps/Invoke-SMBExec.ps1	/^function Get-StatusPending$/;"	f	language:PowerShell	function:Invoke-SMBExec
 Get-SubFolders	ps/empire/management/MailRaider.ps1	/^function Get-SubFolders {$/;"	f	language:PowerShell
 Get-SymbolFromAddress	ps/empire/management/Invoke-Phant0m.ps1	/^            function local:Get-SymbolFromAddress {$/;"	f	language:PowerShell	function:Invoke-Phant0m::Trace-Thread
 Get-System	ps/empire/privesc/Get-System.ps1	/^function Get-System {$/;"	f	language:PowerShell
-Get-System.ps1	ps/empire/privesc/Get-System.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-System.ps1	ps/empire/privesc/Get-System.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SystemDNSServer	ps/empire/situational_awareness/host/Get-SystemDNSServer.ps1	/^function Get-SystemDNSServer$/;"	f	language:PowerShell
-Get-SystemDNSServer.ps1	ps/empire/situational_awareness/host/Get-SystemDNSServer.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-SystemDNSServer.ps1	ps/empire/situational_awareness/host/Get-SystemDNSServer.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-SystemInfo	ps/empire/management/Invoke-Phant0m.ps1	/^            function local:Get-SystemInfo {$/;"	f	language:PowerShell	function:Invoke-Phant0m::Trace-Thread
 Get-SystemNamedPipe	ps/empire/privesc/Get-System.ps1	/^    function Local:Get-SystemNamedPipe {$/;"	f	language:PowerShell	function:Get-System
 Get-SystemToken	ps/empire/privesc/Get-System.ps1	/^    Function Local:Get-SystemToken {$/;"	f	language:PowerShell	function:Get-System
@@ -899,7 +899,7 @@ Get-UInt16DataLength	ps/Invoke-WMIExec.ps1	/^function Get-UInt16DataLength$/;"	f
 Get-UInt32DataLength	ps/Inveigh/Inveigh-Relay.ps1	/^    function Get-UInt32DataLength$/;"	f	language:PowerShell	function:Invoke-InveighRelay
 Get-UInt32DataLength	ps/Inveigh/Inveigh.ps1	/^    function Get-UInt32DataLength$/;"	f	language:PowerShell	function:Invoke-Inveigh
 Get-USBKeystrokes	ps/empire/collection/Get-USBKeystrokes.ps1	/^function Get-USBKeystrokes $/;"	f	language:PowerShell
-Get-USBKeystrokes.ps1	ps/empire/collection/Get-USBKeystrokes.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-USBKeystrokes.ps1	ps/empire/collection/Get-USBKeystrokes.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-UnattendSensitiveData	ps/empire/privesc/PrivescCheck.ps1	/^function Get-UnattendSensitiveData {$/;"	f	language:PowerShell
 Get-Unconstrained	ps/samratashok-nishang-cfe2a5f/ActiveDirectory/Get-Unconstrained.ps1	/^function Get-Unconstrained {$/;"	f	language:PowerShell
 Get-Unconstrained.ps1	ps/samratashok-nishang-cfe2a5f/ActiveDirectory/Get-Unconstrained.ps1	1;"	F	language:PowerShell	epoch:1510487125
@@ -925,7 +925,7 @@ Get-UserName	ps/samratashok-nishang-cfe2a5f/Gather/Get-PassHints.ps1	/^    funct
 Get-UserName	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^    function Get-UserName([byte[]]$V)$/;"	f	language:PowerShell	function:Get-PassHints
 Get-UserName	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^function Get-UserName([byte[]]$V)$/;"	f	language:PowerShell
 Get-VaultCredential	ps/empire/credentials/Get-VaultCredential.ps1	/^function Get-VaultCredential$/;"	f	language:PowerShell
-Get-VaultCredential.ps1	ps/empire/credentials/Get-VaultCredential.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-VaultCredential.ps1	ps/empire/credentials/Get-VaultCredential.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-VaultElementValue	ps/empire/credentials/Get-VaultCredential.ps1	/^    function local:Get-VaultElementValue$/;"	f	language:PowerShell	function:Get-VaultCredential
 Get-VaultItemElementValue	ps/empire/privesc/PrivescCheck.ps1	/^    function Get-VaultItemElementValue {$/;"	f	language:PowerShell	function:Invoke-VaultListCheck
 Get-VaultNameFromGuid	ps/empire/privesc/PrivescCheck.ps1	/^    function Get-VaultNameFromGuid {$/;"	f	language:PowerShell	function:Invoke-VaultListCheck
@@ -970,7 +970,7 @@ Get-Win32Types	ps/empire/management/Invoke-Vnc.ps1	/^	Function Get-Win32Types$/;
 Get-Win32Types	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikatz.ps1	/^	Function Get-Win32Types$/;"	f	language:PowerShell	function:Invoke-Mimikatz
 Get-Win32Types	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-MimikatzWDigestDowngrade.ps1	/^	Function Get-Win32Types$/;"	f	language:PowerShell	function:Invoke-MimikatzWDigestDowngrade
 Get-WinUpdates	ps/empire/collection/Get-WinUpdates.ps1	/^Function Get-WinUpdates$/;"	f	language:PowerShell
-Get-WinUpdates.ps1	ps/empire/collection/Get-WinUpdates.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Get-WinUpdates.ps1	ps/empire/collection/Get-WinUpdates.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Get-Wlan-Keys	ps/samratashok-nishang-cfe2a5f/Gather/Get-WLAN-Keys.ps1	/^function Get-Wlan-Keys $/;"	f	language:PowerShell
 Get-Wlan-Keys	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^function Get-Wlan-Keys $/;"	f	language:PowerShell
 Get-WmiShellOutput	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PowerShellWmi.ps1	/^    function Get-WmiShellOutput$/;"	f	language:PowerShell	function:Invoke-PowerShellWmi
@@ -997,7 +997,7 @@ Gupt-Backdoor	ps/samratashok-nishang-cfe2a5f/Backdoors/Gupt-Backdoor.ps1	/^funct
 Gupt-Backdoor.ps1	ps/samratashok-nishang-cfe2a5f/Backdoors/Gupt-Backdoor.ps1	1;"	F	language:PowerShell	epoch:1510487125
 HTTP-Backdoor	ps/samratashok-nishang-cfe2a5f/Backdoors/HTTP-Backdoor.ps1	/^function HTTP-Backdoor$/;"	f	language:PowerShell
 HTTP-Backdoor.ps1	ps/samratashok-nishang-cfe2a5f/Backdoors/HTTP-Backdoor.ps1	1;"	F	language:PowerShell	epoch:1510487125
-HTTP-Login.ps1	ps/empire/recon/HTTP-Login.ps1	1;"	F	language:PowerShell	epoch:1701443850
+HTTP-Login.ps1	ps/empire/recon/HTTP-Login.ps1	1;"	F	language:PowerShell	epoch:1701444751
 HTTPListener	ps/empire/collection/Invoke-Inveigh.ps1	/^function HTTPListener()$/;"	f	language:PowerShell	function:Invoke-Inveigh
 HTTPListener	ps/empire/lateral_movement/Invoke-InveighRelay.ps1	/^function HTTPListener()$/;"	f	language:PowerShell	function:Invoke-InveighRelay
 HTTPSListener	ps/empire/collection/Invoke-Inveigh.ps1	/^function HTTPSListener()$/;"	f	language:PowerShell	function:Invoke-Inveigh
@@ -1016,16 +1016,15 @@ Hint	ps/adPEAS.ps1	/^            Invoke-Logger -Class Hint -Value "Found configu
 Hint	ps/adPEAS.ps1	/^            Invoke-Logger -Class Hint -Value "Found domain controller of domain '$($adPEAS_Domai/;"	c	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding::Hint::Info
 Hint	ps/adPEAS.ps1	/^            Invoke-Logger -Class Hint -Value "Found general Active Directory domain information /;"	c	language:PowerShell	class:Get-adPEASDomain::Info
 Hint	ps/adPEAS.ps1	/^            Invoke-Logger -Class Hint -Value "Found password policy of domain '$($adPEAS_Domain./;"	c	language:PowerShell	class:Get-adPEASDomain::Info::Info
-HostRecon.ps1	ps/empire/situational_awareness/host/HostRecon.ps1	1;"	F	language:PowerShell	epoch:1701443850
+HostRecon.ps1	ps/empire/situational_awareness/host/HostRecon.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Hysterical	ps/PrivescCheck.ps1	/^$Hysterical = "H4sIAAAAAAAEAO1YW2\/bNhR+D9D\/QAgCKmGTMWxvBgzM8ZzCQ+oYUZoOcINAkWibi0S5FOVEaPzfd0h/;"	v	language:PowerShell
 IdentitySID	ps/empire/privesc/PrivescCheck.ps1	/^                                $IdentitySID = $TranslatedIdentityReferences[$_.IdentityReferenc/;"	v	language:PowerShell
 IdentitySID	ps/empire/privesc/PrivescCheck.ps1	/^                                $IdentitySID = $_.IdentityReference$/;"	v	language:PowerShell
 IdentityUser	ps/empire/privesc/PrivescCheck.ps1	/^                                    $IdentityUser = New-Object System.Security.Principal.NTAccou/;"	v	language:PowerShell
 ImpersonateFromParentPid	ps/psgetsys.ps1	/^function ImpersonateFromParentPid$/;"	f	language:PowerShell
-Import-ActiveDirectory	Import-ActiveDirectory.ps1	/^function Import-ActiveDirectory$/;"	f	language:PowerShell
-Import-ActiveDirectory.ps1	Import-ActiveDirectory.ps1	1;"	F	language:PowerShell	epoch:1700702089
-Import-ActiveDirectory.ps1	ps/Import-ActiveDirectory.ps1	1;"	F	language:PowerShell	epoch:1701443882
+Import-ActiveDirectory.ps1	ps/Import-ActiveDirectory.ps1	1;"	F	language:PowerShell	epoch:1701444783
 Import-ActiveDirectory.ps1.1	Import-ActiveDirectory.ps1.1	1;"	F	language:Man	epoch:1701443883
+Import-ActiveDirectory.ps1.2	Import-ActiveDirectory.ps1.2	1;"	F	language:Man	epoch:1701444784
 Import-DllImports	ps/empire/collection/Invoke-NinjaCopy.ps1	/^	Function Import-DllImports$/;"	f	language:PowerShell	function:Invoke-NinjaCopy
 Import-DllImports	ps/empire/credentials/Invoke-CredentialInjection.ps1	/^	    Function Import-DllImports$/;"	f	language:PowerShell	function:Invoke-CredentialInjection::Invoke-ReflectivePEInjection
 Import-DllImports	ps/empire/credentials/Invoke-Mimikatz.ps1	/^    Function Import-DllImports$/;"	f	language:PowerShell	function:Invoke-Mimikatz
@@ -1061,15 +1060,15 @@ Inject-NetRipper	ps/empire/collection/Invoke-NetRipper.ps1	/^    function Local:
 Inject-RemoteShellcode	ps/empire/code_execution/Invoke-Shellcode.ps1	/^    function Local:Inject-RemoteShellcode ([Int] $ProcessID)$/;"	f	language:PowerShell	function:Invoke-Shellcode
 Install-SSP	ps/empire/persistence/Install-SSP.ps1	/^function Install-SSP$/;"	f	language:PowerShell
 Install-SSP	ps/empire/persistence/Persistence.psm1	/^function Install-SSP$/;"	f	language:PowerShell
-Install-SSP.ps1	ps/empire/persistence/Install-SSP.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Install-SSP.ps1	ps/empire/persistence/Install-SSP.ps1	1;"	F	language:PowerShell	epoch:1701444751
 InstalledSoftware	bin/winPEAS.bat	/^:InstalledSoftware$/;"	l	language:DosBatch
-Inveigh-Relay.ps1	ps/Inveigh/Inveigh-Relay.ps1	1;"	F	language:PowerShell	epoch:1701443870
-Inveigh.ps1	ps/Inveigh/Inveigh.ps1	1;"	F	language:PowerShell	epoch:1701443869
-Inveigh.psm1	ps/Inveigh/Inveigh.psm1	1;"	F	language:PowerShell	epoch:1701443870
+Inveigh-Relay.ps1	ps/Inveigh/Inveigh-Relay.ps1	1;"	F	language:PowerShell	epoch:1701444772
+Inveigh.ps1	ps/Inveigh/Inveigh.ps1	1;"	F	language:PowerShell	epoch:1701444771
+Inveigh.psm1	ps/Inveigh/Inveigh.psm1	1;"	F	language:PowerShell	epoch:1701444772
 Invoke-ADSBackdoor	ps/samratashok-nishang-cfe2a5f/Backdoors/Invoke-ADSBackdoor.ps1	/^function Invoke-ADSBackdoor{$/;"	f	language:PowerShell
 Invoke-ADSBackdoor.ps1	ps/samratashok-nishang-cfe2a5f/Backdoors/Invoke-ADSBackdoor.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-ARPScan	ps/empire/situational_awareness/network/Invoke-ARPScan.ps1	/^function Invoke-ARPScan {$/;"	f	language:PowerShell
-Invoke-ARPScan.ps1	ps/empire/situational_awareness/network/Invoke-ARPScan.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-ARPScan.ps1	ps/empire/situational_awareness/network/Invoke-ARPScan.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-ASREPRoast	ps/adPEAS.ps1	/^function Invoke-ASREPRoast {$/;"	f	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Invoke-AmsiBypass	ps/samratashok-nishang-cfe2a5f/Bypass/Invoke-AmsiBypass.ps1	/^function Invoke-AmsiBypass$/;"	f	language:PowerShell
 Invoke-AmsiBypass.ps1	ps/samratashok-nishang-cfe2a5f/Bypass/Invoke-AmsiBypass.ps1	1;"	F	language:PowerShell	epoch:1510487125
@@ -1077,29 +1076,29 @@ Invoke-ApplicationsOnStartupCheck	ps/empire/privesc/PrivescCheck.ps1	/^function 
 Invoke-ApplicationsOnStartupVulnCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-ApplicationsOnStartupVulnCheck {$/;"	f	language:PowerShell
 Invoke-AsSystem	ps/empire/credentials/Invoke-NTLMExtract.ps1	/^function Invoke-AsSystem {$/;"	f	language:PowerShell	function:Invoke-NTLMExtract
 Invoke-Assembly	ps/empire/code_execution/Invoke-Assembly.ps1	/^Function Invoke-Assembly {$/;"	f	language:PowerShell
-Invoke-Assembly.ps1	ps/empire/code_execution/Invoke-Assembly.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Assembly.ps1	ps/empire/code_execution/Invoke-Assembly.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-BackdoorLNK	ps/empire/persistence/Invoke-BackdoorLNK.ps1	/^function Invoke-BackdoorLNK {$/;"	f	language:PowerShell
-Invoke-BackdoorLNK.ps1	ps/empire/persistence/Invoke-BackdoorLNK.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-BackdoorLNK.ps1	ps/empire/persistence/Invoke-BackdoorLNK.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-BloodHound	ps/SharpHound.ps1	/^function Invoke-BloodHound$/;"	f	language:PowerShell
 Invoke-BloodHound	ps/empire/situational_awareness/network/BloodHound3.ps1	/^function Invoke-BloodHound{$/;"	f	language:PowerShell
 Invoke-Bof	ps/empire/code_execution/Invoke-Bof.ps1	/^function Invoke-Bof {$/;"	f	language:PowerShell
-Invoke-Bof.ps1	ps/empire/code_execution/Invoke-Bof.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Bof.ps1	ps/empire/code_execution/Invoke-Bof.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Boolang	ps/empire/code_execution/Invoke-Boolang.ps1	/^function Invoke-Boolang$/;"	f	language:PowerShell
-Invoke-Boolang.ps1	ps/empire/code_execution/Invoke-Boolang.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Boolang.ps1	ps/empire/code_execution/Invoke-Boolang.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-BruteForce	ps/samratashok-nishang-cfe2a5f/Scan/Invoke-BruteForce.ps1	/^function Invoke-BruteForce$/;"	f	language:PowerShell
 Invoke-BruteForce.ps1	ps/samratashok-nishang-cfe2a5f/Scan/Invoke-BruteForce.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-BypassUAC	ps/empire/privesc/Invoke-BypassUAC.ps1	/^function Invoke-BypassUAC$/;"	f	language:PowerShell
-Invoke-BypassUAC.ps1	ps/empire/privesc/Invoke-BypassUAC.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-BypassUAC.ps1	ps/empire/privesc/Invoke-BypassUAC.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-BypassUACTokenManipulation	ps/empire/privesc/Invoke-BypassUACTokenManipulation.ps1	/^function Invoke-BypassUACTokenManipulation {$/;"	f	language:PowerShell
-Invoke-BypassUACTokenManipulation.ps1	ps/empire/privesc/Invoke-BypassUACTokenManipulation.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-BypassUACTokenManipulation.ps1	ps/empire/privesc/Invoke-BypassUACTokenManipulation.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-CallbackIEX	ps/empire/persistence/PowerBreach.ps1	/^function Invoke-CallbackIEX$/;"	f	language:PowerShell
 Invoke-CallbackLoop	ps/empire/persistence/PowerBreach.ps1	/^function Invoke-CallbackLoop$/;"	f	language:PowerShell
 Invoke-Check	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-Check {$/;"	f	language:PowerShell
 Invoke-CheckADCS	ps/adPEAS.ps1	/^function Invoke-CheckADCS {$/;"	f	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Invoke-CheckExchange	ps/adPEAS.ps1	/^function Invoke-CheckExchange {$/;"	f	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Invoke-ClearScript	ps/empire/code_execution/Invoke-ClearScript.ps1	/^function Invoke-ClearScript$/;"	f	language:PowerShell
-Invoke-ClearScript.ps1	ps/empire/code_execution/Invoke-ClearScript.ps1	1;"	F	language:PowerShell	epoch:1701443850
-Invoke-Clipboard.ps1	ps/Invoke-Clipboard.ps1	1;"	F	language:PowerShell	epoch:1701443878
+Invoke-ClearScript.ps1	ps/empire/code_execution/Invoke-ClearScript.ps1	1;"	F	language:PowerShell	epoch:1701444751
+Invoke-Clipboard.ps1	ps/Invoke-Clipboard.ps1	1;"	F	language:PowerShell	epoch:1701444780
 Invoke-ClipboardC2C	ps/Invoke-Clipboard.ps1	/^function Invoke-ClipboardC2C ([string]$message)$/;"	f	language:PowerShell
 Invoke-ClipboardC2V	ps/Invoke-Clipboard.ps1	/^function Invoke-ClipboardC2V$/;"	f	language:PowerShell
 Invoke-ClipboardLogger	ps/Invoke-Clipboard.ps1	/^function Invoke-ClipboardLogger(){$/;"	f	language:PowerShell
@@ -1113,43 +1112,44 @@ Invoke-CreateRemoteThread	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikatz.
 Invoke-CreateRemoteThread	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-MimikatzWDigestDowngrade.ps1	/^	Function Invoke-CreateRemoteThread$/;"	f	language:PowerShell	function:Invoke-MimikatzWDigestDowngrade
 Invoke-CredentialFilesCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-CredentialFilesCheck {$/;"	f	language:PowerShell
 Invoke-CredentialInjection	ps/empire/credentials/Invoke-CredentialInjection.ps1	/^function Invoke-CredentialInjection$/;"	f	language:PowerShell
-Invoke-CredentialInjection.ps1	ps/empire/credentials/Invoke-CredentialInjection.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-CredentialInjection.ps1	ps/empire/credentials/Invoke-CredentialInjection.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-CredentialPhisher	ps/empire/collection/Invoke-CredentialPhisher.ps1	/^function Invoke-CredentialPhisher {$/;"	f	language:PowerShell
-Invoke-CredentialPhisher.ps1	ps/empire/collection/Invoke-CredentialPhisher.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-CredentialPhisher.ps1	ps/empire/collection/Invoke-CredentialPhisher.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-CredentialsPhish	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-CredentialsPhish.ps1	/^function Invoke-CredentialsPhish$/;"	f	language:PowerShell
 Invoke-CredentialsPhish.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-CredentialsPhish.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-DCOM	ps/empire/lateral_movement/Invoke-DCOM.ps1	/^function Invoke-DCOM {$/;"	f	language:PowerShell
-Invoke-DCOM.ps1	ps/empire/lateral_movement/Invoke-DCOM.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-DCOM.ps1	ps/empire/lateral_movement/Invoke-DCOM.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-DCSync	ps/empire/credentials/Invoke-DCSync.ps1	/^function Invoke-DCSync$/;"	f	language:PowerShell
-Invoke-DCSync.ps1	ps/empire/credentials/Invoke-DCSync.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-DCSync.ps1	ps/empire/credentials/Invoke-DCSync.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-DNSLoop	ps/empire/persistence/PowerBreach.ps1	/^function Invoke-DNSLoop$/;"	f	language:PowerShell
 Invoke-Decode	ps/samratashok-nishang-cfe2a5f/Utility/Invoke-Decode.ps1	/^function Invoke-Decode$/;"	f	language:PowerShell
 Invoke-Decode	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^function Invoke-Decode$/;"	f	language:PowerShell
 Invoke-Decode.ps1	ps/samratashok-nishang-cfe2a5f/Utility/Invoke-Decode.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-DllHijackingCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-DllHijackingCheck {$/;"	f	language:PowerShell
 Invoke-DllInjection	ps/empire/code_execution/Invoke-DllInjection.ps1	/^function Invoke-DllInjection$/;"	f	language:PowerShell
-Invoke-DllInjection.ps1	ps/empire/code_execution/Invoke-DllInjection.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-DllInjection.ps1	ps/empire/code_execution/Invoke-DllInjection.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-DomainPasswordSpray	ps/empire/credentials/DomainPasswordSpray.ps1	/^function Invoke-DomainPasswordSpray{$/;"	f	language:PowerShell
 Invoke-DownloadFile	ps/empire/management/Invoke-DownloadFile.ps1	/^function Invoke-DownloadFile {$/;"	f	language:PowerShell
-Invoke-DownloadFile.ps1	ps/empire/management/Invoke-DownloadFile.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-DownloadFile.ps1	ps/empire/management/Invoke-DownloadFile.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-EgressCheck	ps/empire/exfil/Invoke-EgressCheck.ps1	/^function Invoke-EgressCheck {$/;"	f	language:PowerShell
-Invoke-EgressCheck.ps1	ps/empire/exfil/Invoke-EgressCheck.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-EgressCheck.ps1	ps/empire/exfil/Invoke-EgressCheck.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Encode	ps/samratashok-nishang-cfe2a5f/Utility/Invoke-Encode.ps1	/^function Invoke-Encode$/;"	f	language:PowerShell
 Invoke-Encode.ps1	ps/samratashok-nishang-cfe2a5f/Utility/Invoke-Encode.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-EndpointProtectionCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-EndpointProtectionCheck {$/;"	f	language:PowerShell
 Invoke-EnvBypass	ps/empire/privesc/Invoke-EnvBypass.ps1	/^function Invoke-EnvBypass {$/;"	f	language:PowerShell
-Invoke-EnvBypass.ps1	ps/empire/privesc/Invoke-EnvBypass.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-EnvBypass.ps1	ps/empire/privesc/Invoke-EnvBypass.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-EternalBlue	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^function Invoke-EternalBlue($Target, $InitialGrooms, $MaxAttempts, $Shellcode){$/;"	f	language:PowerShell
 Invoke-EventLoop	ps/empire/persistence/PowerBreach.ps1	/^function Invoke-EventLoop$/;"	f	language:PowerShell
 Invoke-EventVwrBypass	ps/empire/privesc/Invoke-EventVwrBypass.ps1	/^function Invoke-EventVwrBypass {$/;"	f	language:PowerShell
-Invoke-EventVwrBypass.ps1	ps/empire/privesc/Invoke-EventVwrBypass.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-EventVwrBypass.ps1	ps/empire/privesc/Invoke-EventVwrBypass.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-ExecuteMSBuild	ps/empire/lateral_movement/Invoke-ExecuteMSBuild.ps1	/^function Invoke-ExecuteMSBuild$/;"	f	language:PowerShell
-Invoke-ExecuteMSBuild.ps1	ps/empire/lateral_movement/Invoke-ExecuteMSBuild.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-ExecuteMSBuild.ps1	ps/empire/lateral_movement/Invoke-ExecuteMSBuild.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-ExecuteMSBuildHelper	ps/empire/lateral_movement/Invoke-ExecuteMSBuild.ps1	/^    function Invoke-ExecuteMSBuildHelper {$/;"	f	language:PowerShell	function:Invoke-ExecuteMSBuild
 Invoke-ExfilDataToGitHub	ps/empire/exfil/Invoke-ExfilDataToGitHub.ps1	/^function Invoke-ExfilDataToGitHub$/;"	f	language:PowerShell
-Invoke-ExfilDataToGitHub.ps1	ps/empire/exfil/Invoke-ExfilDataToGitHub.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-ExfilDataToGitHub.ps1	ps/empire/exfil/Invoke-ExfilDataToGitHub.ps1	1;"	F	language:PowerShell	epoch:1701444751
+Invoke-FileUpload	dev/PSUpload.ps1	/^function Invoke-FileUpload {$/;"	f	language:PowerShell
 Invoke-FodHelperBypass	ps/empire/privesc/Invoke-FodHelperBypass.ps1	/^function Invoke-FodHelperBypass {$/;"	f	language:PowerShell
-Invoke-FodHelperBypass.ps1	ps/empire/privesc/Invoke-FodHelperBypass.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-FodHelperBypass.ps1	ps/empire/privesc/Invoke-FodHelperBypass.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-GPPPasswordCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-GPPPasswordCheck {$/;"	f	language:PowerShell
 Invoke-HijackableDllsCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-HijackableDllsCheck {$/;"	f	language:PowerShell
 Invoke-HostRecon	ps/empire/situational_awareness/host/HostRecon.ps1	/^function Invoke-HostRecon{$/;"	f	language:PowerShell
@@ -1160,29 +1160,29 @@ Invoke-InstalledServicesCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invo
 Invoke-Interceptor	ps/samratashok-nishang-cfe2a5f/MITM/Invoke-Interceptor.ps1	/^function Invoke-Interceptor$/;"	f	language:PowerShell
 Invoke-Interceptor.ps1	ps/samratashok-nishang-cfe2a5f/MITM/Invoke-Interceptor.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-InternalMonologue	ps/empire/credentials/Invoke-InternalMonologue.ps1	/^function Invoke-InternalMonologue$/;"	f	language:PowerShell
-Invoke-InternalMonologue.ps1	ps/empire/credentials/Invoke-InternalMonologue.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-InternalMonologue.ps1	ps/empire/credentials/Invoke-InternalMonologue.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Inveigh	ps/Inveigh/Inveigh.ps1	/^function Invoke-Inveigh$/;"	f	language:PowerShell
 Invoke-Inveigh	ps/empire/collection/Invoke-Inveigh.ps1	/^function Invoke-Inveigh$/;"	f	language:PowerShell
-Invoke-Inveigh.ps1	ps/empire/collection/Invoke-Inveigh.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Inveigh.ps1	ps/empire/collection/Invoke-Inveigh.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-InveighRelay	ps/Inveigh/Inveigh-Relay.ps1	/^function Invoke-InveighRelay$/;"	f	language:PowerShell
 Invoke-InveighRelay	ps/empire/lateral_movement/Invoke-InveighRelay.ps1	/^function Invoke-InveighRelay$/;"	f	language:PowerShell
-Invoke-InveighRelay.ps1	ps/empire/lateral_movement/Invoke-InveighRelay.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-InveighRelay.ps1	ps/empire/lateral_movement/Invoke-InveighRelay.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-IronPython	ps/empire/code_execution/Invoke-IronPython.ps1	/^function Invoke-IronPython$/;"	f	language:PowerShell
-Invoke-IronPython.ps1	ps/empire/code_execution/Invoke-IronPython.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-IronPython.ps1	ps/empire/code_execution/Invoke-IronPython.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-IronPython3	ps/empire/code_execution/Invoke-IronPython3.ps1	/^function Invoke-IronPython3$/;"	f	language:PowerShell
-Invoke-IronPython3.ps1	ps/empire/code_execution/Invoke-IronPython3.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-IronPython3.ps1	ps/empire/code_execution/Invoke-IronPython3.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-JSRatRegsvr	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-JSRatRegsvr.ps1	/^function Invoke-JSRatRegsvr$/;"	f	language:PowerShell
 Invoke-JSRatRegsvr.ps1	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-JSRatRegsvr.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-JSRatRundll	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-JSRatRundll.ps1	/^function Invoke-JSRatRundll$/;"	f	language:PowerShell
 Invoke-JSRatRundll.ps1	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-JSRatRundll.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-Kerberoast	ps/adPEAS.ps1	/^function Invoke-Kerberoast {$/;"	f	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Invoke-Kerberoast	ps/empire/situational_awareness/network/powerview.ps1	/^function Invoke-Kerberoast {$/;"	f	language:PowerShell
-Invoke-Kerberoast.ps1	ps/empire/credentials/Invoke-Kerberoast.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Kerberoast.ps1	ps/empire/credentials/Invoke-Kerberoast.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-LocalAdminGroupCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-LocalAdminGroupCheck {$/;"	f	language:PowerShell
 Invoke-MS16-032	ps/empire/privesc/Invoke-MS16032.ps1	/^function Invoke-MS16-032 {$/;"	f	language:PowerShell
-Invoke-MS16032.ps1	ps/empire/privesc/Invoke-MS16032.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-MS16032.ps1	ps/empire/privesc/Invoke-MS16032.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-MS16135	ps/empire/privesc/Invoke-MS16135.ps1	/^function Invoke-MS16135 {$/;"	f	language:PowerShell
-Invoke-MS16135.ps1	ps/empire/privesc/Invoke-MS16135.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-MS16135.ps1	ps/empire/privesc/Invoke-MS16135.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-MachineRoleCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-MachineRoleCheck {$/;"	f	language:PowerShell
 Invoke-MailSearch	ps/empire/management/MailRaider.ps1	/^function Invoke-MailSearch {$/;"	f	language:PowerShell
 Invoke-MemoryFreeLibrary	ps/empire/collection/Invoke-NinjaCopy.ps1	/^	Function Invoke-MemoryFreeLibrary$/;"	f	language:PowerShell	function:Invoke-NinjaCopy
@@ -1204,10 +1204,10 @@ Invoke-MemoryLoadLibrary	ps/empire/management/Invoke-Vnc.ps1	/^	Function Invoke-
 Invoke-MemoryLoadLibrary	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikatz.ps1	/^	Function Invoke-MemoryLoadLibrary$/;"	f	language:PowerShell	function:Invoke-Mimikatz
 Invoke-MemoryLoadLibrary	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-MimikatzWDigestDowngrade.ps1	/^	Function Invoke-MemoryLoadLibrary$/;"	f	language:PowerShell	function:Invoke-MimikatzWDigestDowngrade
 Invoke-MetasploitPayload	ps/empire/code_execution/Invoke-MetasploitPayload.ps1	/^function Invoke-MetasploitPayload $/;"	f	language:PowerShell
-Invoke-MetasploitPayload.ps1	ps/empire/code_execution/Invoke-MetasploitPayload.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-MetasploitPayload.ps1	ps/empire/code_execution/Invoke-MetasploitPayload.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Mimikatz	ps/empire/credentials/Invoke-Mimikatz.ps1	/^function Invoke-Mimikatz$/;"	f	language:PowerShell
 Invoke-Mimikatz	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikatz.ps1	/^function Invoke-Mimikatz$/;"	f	language:PowerShell
-Invoke-Mimikatz.ps1	ps/empire/credentials/Invoke-Mimikatz.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Mimikatz.ps1	ps/empire/credentials/Invoke-Mimikatz.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Mimikatz.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikatz.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-MimikatzWDigestDowngrade	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-MimikatzWDigestDowngrade.ps1	/^function Invoke-MimikatzWDigestDowngrade$/;"	f	language:PowerShell
 Invoke-MimikatzWDigestDowngrade.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-MimikatzWDigestDowngrade.ps1	1;"	F	language:PowerShell	epoch:1510487125
@@ -1215,44 +1215,44 @@ Invoke-Mimikittenz	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikittenz.ps1	
 Invoke-Mimikittenz.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-Mimikittenz.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-ModifiableProgramsCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-ModifiableProgramsCheck {$/;"	f	language:PowerShell
 Invoke-NTLMExtract	ps/empire/credentials/Invoke-NTLMExtract.ps1	/^function Invoke-NTLMExtract {$/;"	f	language:PowerShell
-Invoke-NTLMExtract.ps1	ps/empire/credentials/Invoke-NTLMExtract.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-NTLMExtract.ps1	ps/empire/credentials/Invoke-NTLMExtract.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-NetRipper	ps/empire/collection/Invoke-NetRipper.ps1	/^function Invoke-NetRipper {$/;"	f	language:PowerShell
-Invoke-NetRipper.ps1	ps/empire/collection/Invoke-NetRipper.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-NetRipper.ps1	ps/empire/collection/Invoke-NetRipper.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-NetworkRelay	ps/samratashok-nishang-cfe2a5f/Pivot/Invoke-NetworkRelay.ps1	/^function Invoke-NetworkRelay$/;"	f	language:PowerShell
 Invoke-NetworkRelay.ps1	ps/samratashok-nishang-cfe2a5f/Pivot/Invoke-NetworkRelay.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-Nightmare	ps/PrintNightmare.ps1	/^function Invoke-Nightmare$/;"	f	language:PowerShell
 Invoke-Nightmare	ps/empire/privesc/Invoke-Printnightmare.ps1	/^function Invoke-Nightmare$/;"	f	language:PowerShell
 Invoke-NinjaCopy	ps/empire/collection/Invoke-NinjaCopy.ps1	/^function Invoke-NinjaCopy$/;"	f	language:PowerShell
-Invoke-NinjaCopy.ps1	ps/empire/collection/Invoke-NinjaCopy.ps1	1;"	F	language:PowerShell	epoch:1701443850
-Invoke-Ntsd.ps1	ps/empire/code_execution/Invoke-Ntsd.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-NinjaCopy.ps1	ps/empire/collection/Invoke-NinjaCopy.ps1	1;"	F	language:PowerShell	epoch:1701444751
+Invoke-Ntsd.ps1	ps/empire/code_execution/Invoke-Ntsd.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PSGcat	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PsGcat.ps1	/^function Invoke-PSGcat$/;"	f	language:PowerShell
 Invoke-PSInject	ps/empire/management/Invoke-PSInject.ps1	/^function Invoke-PSInject$/;"	f	language:PowerShell
-Invoke-PSInject.ps1	ps/empire/management/Invoke-PSInject.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-PSInject.ps1	ps/empire/management/Invoke-PSInject.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PacketKnock	ps/empire/persistence/PowerBreach.ps1	/^function Invoke-PacketKnock$/;"	f	language:PowerShell
 Invoke-Paranoia	ps/empire/situational_awareness/host/Invoke-Paranoia.ps1	/^function Invoke-Paranoia {$/;"	f	language:PowerShell
-Invoke-Paranoia.ps1	ps/empire/situational_awareness/host/Invoke-Paranoia.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Paranoia.ps1	ps/empire/situational_awareness/host/Invoke-Paranoia.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PatchDll	ps/empire/collection/Invoke-NetRipper.ps1	/^    function local:Invoke-PatchDll {$/;"	f	language:PowerShell	function:Invoke-NetRipper
 Invoke-PatchDll	ps/empire/management/Invoke-PSInject.ps1	/^    function Invoke-PatchDll {$/;"	f	language:PowerShell	function:Invoke-PSInject
 Invoke-PatchDll	ps/empire/privesc/Invoke-BypassUAC.ps1	/^    function Local:Invoke-PatchDll {$/;"	f	language:PowerShell	function:Invoke-BypassUAC
 Invoke-Phant0m	ps/empire/management/Invoke-Phant0m.ps1	/^function Invoke-Phant0m {$/;"	f	language:PowerShell
-Invoke-Phant0m.ps1	ps/empire/management/Invoke-Phant0m.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Phant0m.ps1	ps/empire/management/Invoke-Phant0m.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PhishingLNK	ps/empire/persistence/Invoke-PhishingLNK.ps1	/^function Invoke-PhishingLNK {$/;"	f	language:PowerShell
-Invoke-PhishingLNK.ps1	ps/empire/persistence/Invoke-PhishingLNK.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-PhishingLNK.ps1	ps/empire/persistence/Invoke-PhishingLNK.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PortBind	ps/empire/persistence/PowerBreach.ps1	/^function Invoke-PortBind$/;"	f	language:PowerShell
 Invoke-PortCheck	ps/adPEAS.ps1	/^function Invoke-PortCheck {$/;"	f	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Invoke-PortFwd	ps/empire/lateral_movement/Invoke-PortFwd.ps1	/^Function Invoke-PortFwd {$/;"	f	language:PowerShell
-Invoke-PortFwd.ps1	ps/empire/lateral_movement/Invoke-PortFwd.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-PortFwd.ps1	ps/empire/lateral_movement/Invoke-PortFwd.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PortScan	ps/samratashok-nishang-cfe2a5f/Scan/Invoke-PortScan.ps1	/^function Invoke-PortScan {$/;"	f	language:PowerShell
 Invoke-PortScan.ps1	ps/samratashok-nishang-cfe2a5f/Scan/Invoke-PortScan.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-Portscan	ps/empire/situational_awareness/network/Invoke-Portscan.ps1	/^function Invoke-Portscan$/;"	f	language:PowerShell
-Invoke-Portscan.ps1	ps/empire/situational_awareness/network/Invoke-Portscan.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Portscan.ps1	ps/empire/situational_awareness/network/Invoke-Portscan.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PoshRatHttp	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PoshRatHttp.ps1	/^function Invoke-PoshRatHttp$/;"	f	language:PowerShell
 Invoke-PoshRatHttp.ps1	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PoshRatHttp.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-PoshRatHttps	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PoshRatHttps.ps1	/^function Invoke-PoshRatHttps$/;"	f	language:PowerShell
 Invoke-PoshRatHttps.ps1	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PoshRatHttps.ps1	1;"	F	language:PowerShell	epoch:1510487125
-Invoke-PostExfil.ps1	ps/empire/exfil/Invoke-PostExfil.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-PostExfil.ps1	ps/empire/exfil/Invoke-PostExfil.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PowerDump	ps/empire/credentials/Invoke-PowerDump.ps1	/^function Invoke-PowerDump$/;"	f	language:PowerShell
-Invoke-PowerDump.ps1	ps/empire/credentials/Invoke-PowerDump.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-PowerDump.ps1	ps/empire/credentials/Invoke-PowerDump.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PowerShellHistoryCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-PowerShellHistoryCheck {$/;"	f	language:PowerShell
 Invoke-PowerShellIcmp	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PowerShellIcmp.ps1	/^function Invoke-PowerShellIcmp$/;"	f	language:PowerShell
 Invoke-PowerShellIcmp.ps1	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PowerShellIcmp.ps1	1;"	F	language:PowerShell	epoch:1510487125
@@ -1268,13 +1268,13 @@ Invoke-PowerShellWmi.ps1	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PowerShell
 Invoke-Prasadhak	ps/samratashok-nishang-cfe2a5f/Prasadhak/Invoke-Prasadhak.ps1	/^function Invoke-Prasadhak$/;"	f	language:PowerShell
 Invoke-Prasadhak.ps1	ps/samratashok-nishang-cfe2a5f/Prasadhak/Invoke-Prasadhak.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-PrintDemon	ps/empire/privesc/Invoke-PrintDemon.ps1	/^function Invoke-PrintDemon {$/;"	f	language:PowerShell
-Invoke-PrintDemon.ps1	ps/empire/privesc/Invoke-PrintDemon.ps1	1;"	F	language:PowerShell	epoch:1701443850
-Invoke-Printnightmare.ps1	ps/empire/privesc/Invoke-Printnightmare.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-PrintDemon.ps1	ps/empire/privesc/Invoke-PrintDemon.ps1	1;"	F	language:PowerShell	epoch:1701444751
+Invoke-Printnightmare.ps1	ps/empire/privesc/Invoke-Printnightmare.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PrivescCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-PrivescCheck {$/;"	f	language:PowerShell
 Invoke-ProgramDataCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-ProgramDataCheck {$/;"	f	language:PowerShell
 Invoke-Prompt	ps/empire/collection/Invoke-CredentialPhisher.ps1	/^    function Invoke-Prompt ([string]$ToastTitle, [string]$ToastMessage, [string]$Application, [s/;"	f	language:PowerShell	function:Invoke-CredentialPhisher
 Invoke-PsExec	ps/empire/lateral_movement/Invoke-PsExec.ps1	/^function Invoke-PsExec {$/;"	f	language:PowerShell
-Invoke-PsExec.ps1	ps/empire/lateral_movement/Invoke-PsExec.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-PsExec.ps1	ps/empire/lateral_movement/Invoke-PsExec.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-PsExecCmd	ps/empire/lateral_movement/Invoke-PsExec.ps1	/^    function Local:Invoke-PsExecCmd$/;"	f	language:PowerShell	function:Invoke-PsExec
 Invoke-PsGcat.ps1	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PsGcat.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-PsGcatAgent	ps/samratashok-nishang-cfe2a5f/Shells/Invoke-PsGcatAgent.ps1	/^function Invoke-PsGcatAgent$/;"	f	language:PowerShell
@@ -1284,34 +1284,34 @@ Invoke-PsUACme	ps/samratashok-nishang-cfe2a5f/Escalation/Invoke-PsUACme.ps1	/^fu
 Invoke-PsUACme	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^function Invoke-PsUACme$/;"	f	language:PowerShell
 Invoke-PsUACme.ps1	ps/samratashok-nishang-cfe2a5f/Escalation/Invoke-PsUACme.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-RIDHijacking	ps/empire/persistence/Invoke-RIDHijacking.ps1	/^function Invoke-RIDHijacking {$/;"	f	language:PowerShell
-Invoke-RIDHijacking.ps1	ps/empire/persistence/Invoke-RIDHijacking.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-RIDHijacking.ps1	ps/empire/persistence/Invoke-RIDHijacking.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-ReflectivePEInjection	ps/empire/credentials/Invoke-CredentialInjection.ps1	/^    function Invoke-ReflectivePEInjection$/;"	f	language:PowerShell	function:Invoke-CredentialInjection
 Invoke-ReflectivePEInjection	ps/empire/management/Invoke-ReflectivePEInjection.ps1	/^function Invoke-ReflectivePEInjection$/;"	f	language:PowerShell
-Invoke-ReflectivePEInjection.ps1	ps/empire/management/Invoke-ReflectivePEInjection.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-ReflectivePEInjection.ps1	ps/empire/management/Invoke-ReflectivePEInjection.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-ReverseDNSLookup	ps/empire/situational_awareness/network/Invoke-ReverseDNSLookup.ps1	/^function Invoke-ReverseDNSLookup$/;"	f	language:PowerShell
-Invoke-ReverseDNSLookup.ps1	ps/empire/situational_awareness/network/Invoke-ReverseDNSLookup.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-ReverseDNSLookup.ps1	ps/empire/situational_awareness/network/Invoke-ReverseDNSLookup.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-ReverseSocksProxy	ps/empire/management/Invoke-SocksProxy.psm1	/^function Invoke-ReverseSocksProxy{$/;"	f	language:PowerShell
 Invoke-Rubeus	ps/empire/credentials/Invoke-Rubeus.ps1	/^function Invoke-Rubeus$/;"	f	language:PowerShell
-Invoke-Rubeus.ps1	ps/empire/credentials/Invoke-Rubeus.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Rubeus.ps1	ps/empire/credentials/Invoke-Rubeus.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Rule	ps/empire/management/MailRaider.ps1	/^function Invoke-Rule {$/;"	f	language:PowerShell
 Invoke-RunAs	ps/empire/management/Invoke-RunAs.ps1	/^function Invoke-RunAs {$/;"	f	language:PowerShell
-Invoke-RunAs.ps1	ps/empire/management/Invoke-RunAs.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-RunAs.ps1	ps/empire/management/Invoke-RunAs.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Runas	ps/Conj²ure-LSASS.ps1	/^function Invoke-Runas {$/;"	f	language:PowerShell
 Invoke-RunningProcessCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-RunningProcessCheck {$/;"	f	language:PowerShell
 Invoke-SDCLTBypass	ps/empire/privesc/Invoke-SDCLTBypass.ps1	/^function Invoke-SDCLTBypass {$/;"	f	language:PowerShell
-Invoke-SDCLTBypass.ps1	ps/empire/privesc/Invoke-SDCLTBypass.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SDCLTBypass.ps1	ps/empire/privesc/Invoke-SDCLTBypass.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SMBAutoBrute	ps/empire/situational_awareness/network/Invoke-SMBAutoBrute.ps1	/^function Invoke-SMBAutoBrute$/;"	f	language:PowerShell
-Invoke-SMBAutoBrute.ps1	ps/empire/situational_awareness/network/Invoke-SMBAutoBrute.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SMBAutoBrute.ps1	ps/empire/situational_awareness/network/Invoke-SMBAutoBrute.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SMBClient	ps/Invoke-SMBClient.ps1	/^function Invoke-SMBClient$/;"	f	language:PowerShell
-Invoke-SMBClient.ps1	ps/Invoke-SMBClient.ps1	1;"	F	language:PowerShell	epoch:1701443879
+Invoke-SMBClient.ps1	ps/Invoke-SMBClient.ps1	1;"	F	language:PowerShell	epoch:1701444781
 Invoke-SMBEnum	ps/Invoke-SMBEnum.ps1	/^function Invoke-SMBEnum$/;"	f	language:PowerShell
-Invoke-SMBEnum.ps1	ps/Invoke-SMBEnum.ps1	1;"	F	language:PowerShell	epoch:1701443880
+Invoke-SMBEnum.ps1	ps/Invoke-SMBEnum.ps1	1;"	F	language:PowerShell	epoch:1701444781
 Invoke-SMBExec	ps/Invoke-SMBExec.ps1	/^function Invoke-SMBExec$/;"	f	language:PowerShell
 Invoke-SMBExec	ps/empire/lateral_movement/Invoke-SMBExec.ps1	/^function Invoke-SMBExec$/;"	f	language:PowerShell
-Invoke-SMBExec.ps1	ps/Invoke-SMBExec.ps1	1;"	F	language:PowerShell	epoch:1701443880
-Invoke-SMBExec.ps1	ps/empire/lateral_movement/Invoke-SMBExec.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SMBExec.ps1	ps/Invoke-SMBExec.ps1	1;"	F	language:PowerShell	epoch:1701444781
+Invoke-SMBExec.ps1	ps/empire/lateral_movement/Invoke-SMBExec.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SMBLogin	ps/empire/situational_awareness/network/Invoke-SMBLogin.ps1	/^function Invoke-SMBLogin {$/;"	f	language:PowerShell
-Invoke-SMBLogin.ps1	ps/empire/situational_awareness/network/Invoke-SMBLogin.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SMBLogin.ps1	ps/empire/situational_awareness/network/Invoke-SMBLogin.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SMBScanner	ps/empire/situational_awareness/network/Invoke-SmbScanner.ps1	/^function Invoke-SMBScanner {$/;"	f	language:PowerShell
 Invoke-SQLAuditDefaultLoginPw	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLAuditDefaultLoginPw$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob::Get-SQLStoredProcedure::Get-ComputerNameFromInstance::Get-SQLInstanceDomain
 Invoke-SQLAuditPrivAutoExecSp	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLAuditPrivAutoExecSp$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob::Get-SQLStoredProcedure::Get-ComputerNameFromInstance::Get-SQLInstanceDomain
@@ -1332,7 +1332,7 @@ Invoke-SQLAuditWeakLoginPw	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Invoke-SQLAud
 Invoke-SQLImpersonateService	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLImpersonateService$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob::Get-SQLStoredProcedure::Get-ComputerNameFromInstance::Get-SQLInstanceDomain
 Invoke-SQLImpersonateServiceCmd	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Invoke-SQLImpersonateServiceCmd$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob::Get-SQLStoredProcedure::Get-ComputerNameFromInstance::Get-SQLInstanceDomain
 Invoke-SQLOSCmd	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLOSCmd$/;"	f	language:PowerShell
-Invoke-SQLOSCmd.ps1	ps/empire/lateral_movement/Invoke-SQLOSCmd.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SQLOSCmd.ps1	ps/empire/lateral_movement/Invoke-SQLOSCmd.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SQLOSCmdAgentJob	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLOSCmdAgentJob$/;"	f	language:PowerShell
 Invoke-SQLOSCmdCLR	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLOSCmdCLR$/;"	f	language:PowerShell
 Invoke-SQLOSCmdOle	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLOSCmdOle$/;"	f	language:PowerShell
@@ -1340,20 +1340,20 @@ Invoke-SQLOSCmdPython	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLOSCmdPy
 Invoke-SQLOSCmdR	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function  Invoke-SQLOSCmdR$/;"	f	language:PowerShell
 Invoke-SQLUncPathInjection	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Invoke-SQLUncPathInjection {$/;"	f	language:PowerShell
 Invoke-SSHCommand	ps/empire/lateral_movement/Invoke-SSHCommand.ps1	/^function Invoke-SSHCommand {$/;"	f	language:PowerShell
-Invoke-SSHCommand.ps1	ps/empire/lateral_movement/Invoke-SSHCommand.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SSHCommand.ps1	ps/empire/lateral_movement/Invoke-SSHCommand.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SSIDExfil	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-SSIDExfil.ps1	/^function Invoke-SSIDExfil$/;"	f	language:PowerShell
 Invoke-SSIDExfil.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-SSIDExfil.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-SSharp	ps/empire/code_execution/Invoke-SSharp.ps1	/^function Invoke-SSharp$/;"	f	language:PowerShell
-Invoke-SSharp.ps1	ps/empire/code_execution/Invoke-SSharp.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SSharp.ps1	ps/empire/code_execution/Invoke-SSharp.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SamBackupFilesCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-SamBackupFilesCheck {$/;"	f	language:PowerShell
 Invoke-SauronEye	ps/empire/collection/Invoke-SauronEye.ps1	/^function Invoke-SauronEye$/;"	f	language:PowerShell
-Invoke-SauronEye.ps1	ps/empire/collection/Invoke-SauronEye.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SauronEye.ps1	ps/empire/collection/Invoke-SauronEye.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SccmCacheFolderVulnCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-SccmCacheFolderVulnCheck {$/;"	f	language:PowerShell
 Invoke-ScheduledTasksImagePermissionsCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-ScheduledTasksImagePermissionsCheck {$/;"	f	language:PowerShell
 Invoke-ScheduledTasksUnquotedPathCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-ScheduledTasksUnquotedPathCheck {$/;"	f	language:PowerShell
 Invoke-SearchGAL	ps/empire/management/MailRaider.ps1	/^function Invoke-SearchGAL {$/;"	f	language:PowerShell
 Invoke-Seatbelt	ps/empire/situational_awareness/host/Invoke-Seatbelt.ps1	/^function Invoke-Seatbelt$/;"	f	language:PowerShell
-Invoke-Seatbelt.ps1	ps/empire/situational_awareness/host/Invoke-Seatbelt.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Seatbelt.ps1	ps/empire/situational_awareness/host/Invoke-Seatbelt.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SendMail	ps/empire/management/MailRaider.ps1	/^function Invoke-SendMail {$/;"	f	language:PowerShell
 Invoke-ServicesImagePermissionsCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-ServicesImagePermissionsCheck {$/;"	f	language:PowerShell
 Invoke-ServicesPermissionsCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-ServicesPermissionsCheck {$/;"	f	language:PowerShell
@@ -1361,46 +1361,46 @@ Invoke-ServicesPermissionsRegistryCheck	ps/empire/privesc/PrivescCheck.ps1	/^fun
 Invoke-ServicesUnquotedPathCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-ServicesUnquotedPathCheck {$/;"	f	language:PowerShell
 Invoke-SessionGopher	ps/empire/credentials/Invoke-SessionGopher.ps1	/^function Invoke-SessionGopher {$/;"	f	language:PowerShell
 Invoke-SessionGopher	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-SessionGopher.ps1	/^function Invoke-SessionGopher $/;"	f	language:PowerShell
-Invoke-SessionGopher.ps1	ps/empire/credentials/Invoke-SessionGopher.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SessionGopher.ps1	ps/empire/credentials/Invoke-SessionGopher.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SessionGopher.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-SessionGopher.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Invoke-SessionUpdate	ps/Inveigh/Inveigh-Relay.ps1	/^    function Invoke-SessionUpdate$/;"	f	language:PowerShell	function:Invoke-InveighRelay
 Invoke-SessionUpdate	ps/Inveigh/Inveigh.ps1	/^    function Invoke-SessionUpdate$/;"	f	language:PowerShell	function:Invoke-Inveigh
 Invoke-SharpChiselClient	ps/empire/management/Invoke-SharpChiselClient.ps1	/^function Invoke-SharpChiselClient$/;"	f	language:PowerShell
-Invoke-SharpChiselClient.ps1	ps/empire/management/Invoke-SharpChiselClient.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SharpChiselClient.ps1	ps/empire/management/Invoke-SharpChiselClient.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SharpLoginPrompt	ps/empire/collection/Invoke-SharpLoginPrompt.ps1	/^function Invoke-SharpLoginPrompt$/;"	f	language:PowerShell
-Invoke-SharpLoginPrompt.ps1	ps/empire/collection/Invoke-SharpLoginPrompt.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SharpLoginPrompt.ps1	ps/empire/collection/Invoke-SharpLoginPrompt.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SharpSecDump	ps/empire/credentials/Invoke-SharpSecDump.ps1	/^function Invoke-SharpSecDump$/;"	f	language:PowerShell
-Invoke-SharpSecDump.ps1	ps/empire/credentials/Invoke-SharpSecDump.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SharpSecDump.ps1	ps/empire/credentials/Invoke-SharpSecDump.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Shellcode	ps/empire/code_execution/Invoke-Shellcode.ps1	/^function Invoke-Shellcode$/;"	f	language:PowerShell
-Invoke-Shellcode.ps1	ps/empire/code_execution/Invoke-Shellcode.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Shellcode.ps1	ps/empire/code_execution/Invoke-Shellcode.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-ShellcodeMSIL	ps/empire/code_execution/Invoke-ShellcodeMSIL.ps1	/^function Invoke-ShellcodeMSIL$/;"	f	language:PowerShell
-Invoke-ShellcodeMSIL.ps1	ps/empire/code_execution/Invoke-ShellcodeMSIL.ps1	1;"	F	language:PowerShell	epoch:1701443850
-Invoke-SmbScanner.ps1	ps/empire/situational_awareness/network/Invoke-SmbScanner.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-ShellcodeMSIL.ps1	ps/empire/code_execution/Invoke-ShellcodeMSIL.ps1	1;"	F	language:PowerShell	epoch:1701444751
+Invoke-SmbScanner.ps1	ps/empire/situational_awareness/network/Invoke-SmbScanner.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SocksProxy	ps/empire/management/Invoke-SocksProxy.psm1	/^function Invoke-SocksProxy{$/;"	f	language:PowerShell
-Invoke-SocksProxy.psm1	ps/empire/management/Invoke-SocksProxy.psm1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SocksProxy.psm1	ps/empire/management/Invoke-SocksProxy.psm1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SpoolSample	ps/empire/exploitation/Invoke-SpoolSample.ps1	/^function Invoke-SpoolSample$/;"	f	language:PowerShell
-Invoke-SpoolSample.ps1	ps/empire/exploitation/Invoke-SpoolSample.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SpoolSample.ps1	ps/empire/exploitation/Invoke-SpoolSample.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SpraySinglePassword	ps/empire/credentials/DomainPasswordSpray.ps1	/^function Invoke-SpraySinglePassword$/;"	f	language:PowerShell
 Invoke-StickyReader	ps/Invoke-StickyReader.ps1	/^function Invoke-StickyReader{$/;"	f	language:PowerShell
-Invoke-StickyReader.ps1	ps/Invoke-StickyReader.ps1	1;"	F	language:PowerShell	epoch:1701443879
+Invoke-StickyReader.ps1	ps/Invoke-StickyReader.ps1	1;"	F	language:PowerShell	epoch:1701444780
 Invoke-SweetPotato	ps/empire/privesc/Invoke-SweetPotato.ps1	/^function Invoke-SweetPotato$/;"	f	language:PowerShell
-Invoke-SweetPotato.ps1	ps/empire/privesc/Invoke-SweetPotato.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-SweetPotato.ps1	ps/empire/privesc/Invoke-SweetPotato.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-SystemDrivesCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-SystemDrivesCheck {$/;"	f	language:PowerShell
 Invoke-SystemInfoCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-SystemInfoCheck {$/;"	f	language:PowerShell
 Invoke-SystemStartupCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-SystemStartupCheck {$/;"	f	language:PowerShell
 Invoke-SystemStartupHistoryCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-SystemStartupHistoryCheck {$/;"	f	language:PowerShell
 Invoke-Tater	ps/empire/privesc/Invoke-Tater.ps1	/^function Invoke-Tater$/;"	f	language:PowerShell
-Invoke-Tater.ps1	ps/empire/privesc/Invoke-Tater.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Tater.ps1	ps/empire/privesc/Invoke-Tater.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-TcpEndpointsCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-TcpEndpointsCheck {$/;"	f	language:PowerShell
 Invoke-TheHash	ps/Invoke-TheHash.ps1	/^function Invoke-TheHash$/;"	f	language:PowerShell
-Invoke-TheHash.ps1	ps/Invoke-TheHash.ps1	1;"	F	language:PowerShell	epoch:1701443880
-Invoke-TheHash.psm1	ps/Invoke-TheHash.psm1	1;"	F	language:PowerShell	epoch:1701443881
+Invoke-TheHash.ps1	ps/Invoke-TheHash.ps1	1;"	F	language:PowerShell	epoch:1701444782
+Invoke-TheHash.psm1	ps/Invoke-TheHash.psm1	1;"	F	language:PowerShell	epoch:1701444782
 Invoke-ThreadedFunction	ps/empire/recon/Find-Fruit.ps1	/^function Invoke-ThreadedFunction$/;"	f	language:PowerShell
 Invoke-ThreadedFunction	ps/empire/recon/HTTP-Login.ps1	/^function Invoke-ThreadedFunction$/;"	f	language:PowerShell
 Invoke-Thunderstruck	ps/empire/fun/Invoke-Thunderstruck.ps1	/^Function Invoke-Thunderstruck$/;"	f	language:PowerShell
-Invoke-Thunderstruck.ps1	ps/empire/fun/Invoke-Thunderstruck.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Thunderstruck.ps1	ps/empire/fun/Invoke-Thunderstruck.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-TokenManipulation	ps/empire/credentials/Invoke-TokenManipulation.ps1	/^function Invoke-TokenManipulation{$/;"	f	language:PowerShell
-Invoke-TokenManipulation.ps1	ps/empire/credentials/Invoke-TokenManipulation.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-TokenManipulation.ps1	ps/empire/credentials/Invoke-TokenManipulation.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-UdpEndpointsCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-UdpEndpointsCheck {$/;"	f	language:PowerShell
 Invoke-UnattendFilesCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-UnattendFilesCheck {$/;"	f	language:PowerShell
 Invoke-UserCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-UserCheck {$/;"	f	language:PowerShell
@@ -1411,31 +1411,31 @@ Invoke-UsersHomeFolderCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke
 Invoke-VaultCredCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-VaultCredCheck {$/;"	f	language:PowerShell
 Invoke-VaultListCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-VaultListCheck {$/;"	f	language:PowerShell
 Invoke-Vnc	ps/empire/management/Invoke-Vnc.ps1	/^function Invoke-Vnc$/;"	f	language:PowerShell
-Invoke-Vnc.ps1	ps/empire/management/Invoke-Vnc.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Vnc.ps1	ps/empire/management/Invoke-Vnc.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-VoiceTroll	ps/empire/fun/Invoke-VoiceTroll.ps1	/^Function Invoke-VoiceTroll$/;"	f	language:PowerShell
-Invoke-VoiceTroll.ps1	ps/empire/fun/Invoke-VoiceTroll.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-VoiceTroll.ps1	ps/empire/fun/Invoke-VoiceTroll.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-WMIExec	ps/Invoke-WMIExec.ps1	/^function Invoke-WMIExec$/;"	f	language:PowerShell
-Invoke-WMIExec.ps1	ps/Invoke-WMIExec.ps1	1;"	F	language:PowerShell	epoch:1701443881
+Invoke-WMIExec.ps1	ps/Invoke-WMIExec.ps1	1;"	F	language:PowerShell	epoch:1701444782
 Invoke-WScriptBypassUAC	ps/empire/privesc/Invoke-WScriptBypassUAC.ps1	/^function Invoke-WScriptBypassUAC$/;"	f	language:PowerShell
-Invoke-WScriptBypassUAC.ps1	ps/empire/privesc/Invoke-WScriptBypassUAC.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-WScriptBypassUAC.ps1	ps/empire/privesc/Invoke-WScriptBypassUAC.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Watson	ps/empire/privesc/Invoke-Watson.ps1	/^function Invoke-Watson$/;"	f	language:PowerShell
-Invoke-Watson.ps1	ps/empire/privesc/Invoke-Watson.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-Watson.ps1	ps/empire/privesc/Invoke-Watson.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-WinEnum	ps/empire/situational_awareness/host/Invoke-WinEnum.ps1	/^function Invoke-WinEnum{$/;"	f	language:PowerShell
-Invoke-WinEnum.ps1	ps/empire/situational_awareness/host/Invoke-WinEnum.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-WinEnum.ps1	ps/empire/situational_awareness/host/Invoke-WinEnum.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-WindowsUpdateCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-WindowsUpdateCheck {$/;"	f	language:PowerShell
 Invoke-WinlogonCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-WinlogonCheck {$/;"	f	language:PowerShell
 Invoke-WireTap	ps/empire/collection/Invoke-WireTap.ps1	/^function Invoke-WireTap$/;"	f	language:PowerShell
-Invoke-WireTap.ps1	ps/empire/collection/Invoke-WireTap.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-WireTap.ps1	ps/empire/collection/Invoke-WireTap.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-WlanProfilesCheck	ps/empire/privesc/PrivescCheck.ps1	/^function Invoke-WlanProfilesCheck {$/;"	f	language:PowerShell
-Invoke-ZeroLogon.ps1	ps/empire/privesc/Invoke-ZeroLogon.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-ZeroLogon.ps1	ps/empire/privesc/Invoke-ZeroLogon.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Invoke-Zerologon	ps/empire/privesc/Invoke-ZeroLogon.ps1	/^function Invoke-Zerologon{$/;"	f	language:PowerShell
 Invoke-adPEAS	ps/adPEAS.ps1	/^Function Invoke-adPEAS {$/;"	f	language:PowerShell
 Invoke-winPEAS	ps/empire/privesc/Invoke-winPEAS.ps1	/^function Invoke-winPEAS$/;"	f	language:PowerShell
-Invoke-winPEAS.ps1	ps/empire/privesc/Invoke-winPEAS.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Invoke-winPEAS.ps1	ps/empire/privesc/Invoke-winPEAS.ps1	1;"	F	language:PowerShell	epoch:1701444751
 JAWS-ENUM	ps/jaws-enum.ps1	/^function JAWS-ENUM {$/;"	f	language:PowerShell
 JavaPS	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^public class JavaPS extends Applet {$/;"	c	language:PowerShell	function:Out-Word
-KeePassConfig.ps1	ps/empire/collection/vaults/KeePassConfig.ps1	1;"	F	language:PowerShell	epoch:1701443850
-KeeThief.ps1	ps/empire/collection/vaults/KeeThief.ps1	1;"	F	language:PowerShell	epoch:1701443850
+KeePassConfig.ps1	ps/empire/collection/vaults/KeePassConfig.ps1	1;"	F	language:PowerShell	epoch:1701444751
+KeeThief.ps1	ps/empire/collection/vaults/KeeThief.ps1	1;"	F	language:PowerShell	epoch:1701444751
 KerbEncFlags	ps/ADRecon.ps1	/^        public enum KerbEncFlags$/;"	g	language:PowerShell	class:LDAPClass
 KerberosTickets	bin/winPEAS.bat	/^:KerberosTickets$/;"	l	language:DosBatch
 Kernel32	ps/empire/privesc/Invoke-BypassUACTokenManipulation.ps1	/^$Kernel32 = $Types['kernel32']$/;"	v	language:PowerShell
@@ -1446,14 +1446,14 @@ KeywordsOfInterest	ps/empire/privesc/PrivescCheck.ps1	/^[string[]] $global:Keywo
 LAPSInstallCheck	bin/winPEAS.bat	/^:LAPSInstallCheck$/;"	l	language:DosBatch
 LAPSRecordProcessor	ps/ADRecon.ps1	/^        class LAPSRecordProcessor : IRecordProcessor$/;"	c	language:PowerShell
 LAPSRecordProcessor	ps/ADRecon.ps1	/^        class LAPSRecordProcessor : IRecordProcessor$/;"	c	language:PowerShell	class:LDAPClass
-LAPSToolkit.ps1	ps/LAPSToolkit.ps1	1;"	F	language:PowerShell	epoch:1701443879
+LAPSToolkit.ps1	ps/LAPSToolkit.ps1	1;"	F	language:PowerShell	epoch:1701444780
 LDAPClass	ps/ADRecon.ps1	/^    public static class LDAPClass$/;"	c	language:PowerShell
 LLMNRSpoofer	ps/empire/collection/Invoke-Inveigh.ps1	/^function LLMNRSpoofer()$/;"	f	language:PowerShell	function:Invoke-Inveigh
 LSACredentialGuard	bin/winPEAS.bat	/^:LSACredentialGuard$/;"	l	language:DosBatch
 LSAProtectionCheck	bin/winPEAS.bat	/^:LSAProtectionCheck$/;"	l	language:DosBatch
 LSA_AccessPolicy	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^    public enum LSA_AccessPolicy : long$/;"	g	language:PowerShell	function:Get-Information
 LegendHTMLFileName	ps/ADACLScan.ps1	/^[string]$global:LegendHTMLFileName = "LegendHTML-$SessionID"$/;"	v	language:PowerShell
-LinPEAS.py	ps/empire/python/situational_awareness/LinPEAS.py	1;"	F	language:Python	epoch:1701443850
+LinPEAS.py	ps/empire/python/situational_awareness/LinPEAS.py	1;"	F	language:Python	epoch:1701444751
 ListHotFixes	bin/winPEAS.bat	/^:ListHotFixes$/;"	l	language:DosBatch
 ListMembers	ps/ADACLScan.ps1	/^Function ListMembers (strGroupADsPath, dicSeenGroupMember, strRDN)$/;"	f	language:PowerShell	function:ConvertSidToName
 Load-Assembly	ps/empire/code_execution/Invoke-Boolang.ps1	/^    function Load-Assembly($EncodedCompressedFile)$/;"	f	language:PowerShell	function:Invoke-Boolang
@@ -1471,7 +1471,7 @@ MTYPE_COPEN	ps/empire/python/management/socks.py	/^MTYPE_COPEN = 0x01  # Open Ch
 MTYPE_DATA	ps/empire/python/management/socks.py	/^MTYPE_DATA = 0x10  # Data messages$/;"	v	language:Python
 MTYPE_NOOP	ps/empire/python/management/socks.py	/^MTYPE_NOOP = 0x00  # No-op. Used for keepalive messages$/;"	v	language:Python
 M_HDR_STRUCT	ps/empire/python/management/socks.py	/^    M_HDR_STRUCT = struct.Struct("!BII")  # Message Type | Channel ID | Payload Size$/;"	v	language:Python	class:Message
-MailRaider.ps1	ps/empire/management/MailRaider.ps1	1;"	F	language:PowerShell	epoch:1701443850
+MailRaider.ps1	ps/empire/management/MailRaider.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Mailing List	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Mailing List$/;"	t	language:Markdown	subsection:Nishang""Bugs, Feedback and Feature Requests
 Main	ps/PowerUpSQL/PowerUpSQL.ps1	/^Function Main()$/;"	f	language:PowerShell	function:Invoke-SQLOSCmdAgentJob
 Main	ps/empire/collection/Invoke-NinjaCopy.ps1	/^	Function Main$/;"	f	language:PowerShell	function:Invoke-NinjaCopy
@@ -1520,7 +1520,7 @@ New-DynamicParameter	ps/empire/situational_awareness/network/powerview.ps1	/^fun
 New-ElevatedPersistenceOption	ps/empire/persistence/Persistence.psm1	/^function New-ElevatedPersistenceOption$/;"	f	language:PowerShell
 New-ExploitTable	ps/empire/privesc/Sherlock.ps1	/^function New-ExploitTable {$/;"	f	language:PowerShell
 New-HoneyHash	ps/empire/management/New-HoneyHash.ps1	/^function New-HoneyHash {$/;"	f	language:PowerShell
-New-HoneyHash.ps1	ps/empire/management/New-HoneyHash.ps1	1;"	F	language:PowerShell	epoch:1701443850
+New-HoneyHash.ps1	ps/empire/management/New-HoneyHash.ps1	1;"	F	language:PowerShell	epoch:1701444751
 New-IPv4Range	ps/empire/situational_awareness/network/Invoke-ARPScan.ps1	/^        function New-IPv4Range$/;"	f	language:PowerShell	function:Invoke-ARPScan
 New-IPv4Range	ps/empire/situational_awareness/network/Invoke-ReverseDNSLookup.ps1	/^        function New-IPv4Range$/;"	f	language:PowerShell	function:Invoke-ReverseDNSLookup
 New-IPv4RangeFromCIDR	ps/empire/situational_awareness/network/Invoke-ARPScan.ps1	/^        function New-IPv4RangeFromCIDR $/;"	f	language:PowerShell	function:Invoke-ARPScan
@@ -1655,7 +1655,7 @@ Out-JS.ps1	ps/samratashok-nishang-cfe2a5f/Client/Out-JS.ps1	1;"	F	language:Power
 Out-Java	ps/samratashok-nishang-cfe2a5f/Client/Out-Java.ps1	/^function Out-Java$/;"	f	language:PowerShell
 Out-Java.ps1	ps/samratashok-nishang-cfe2a5f/Client/Out-Java.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Out-Minidump	ps/empire/collection/Out-Minidump.ps1	/^function Out-Minidump$/;"	f	language:PowerShell
-Out-Minidump.ps1	ps/empire/collection/Out-Minidump.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Out-Minidump.ps1	ps/empire/collection/Out-Minidump.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Out-RundllCommand	ps/samratashok-nishang-cfe2a5f/Execution/Out-RundllCommand.ps1	/^function Out-RundllCommand$/;"	f	language:PowerShell
 Out-RundllCommand.ps1	ps/samratashok-nishang-cfe2a5f/Execution/Out-RundllCommand.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Out-SCF	ps/samratashok-nishang-cfe2a5f/Client/Out-SCF.ps1	/^function Out-SCF$/;"	f	language:PowerShell
@@ -1676,9 +1676,10 @@ OutputType	ps/ADRecon.ps1	/^    [array] $OutputType = 'Default',$/;"	v	language:
 PATHenvHijacking	bin/winPEAS.bat	/^:PATHenvHijacking$/;"	l	language:DosBatch
 PROCESS_INFORMATION	ps/empire/privesc/Invoke-BypassUACTokenManipulation.ps1	/^$PROCESS_INFORMATION = struct $Module PROCESS_INFORMATION @{$/;"	v	language:PowerShell
 PSRKey	ps/empire/exfil/PSRansom.ps1	/^$PSRKey = $args[3]$/;"	v	language:PowerShell
-PSRansom.ps1	ps/empire/exfil/PSRansom.ps1	1;"	F	language:PowerShell	epoch:1701443850
+PSRansom.ps1	ps/empire/exfil/PSRansom.ps1	1;"	F	language:PowerShell	epoch:1701444751
 PSScriptRoot	ps/samratashok-nishang-cfe2a5f/nishang.psm1	/^    $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent$/;"	v	language:PowerShell
 PSSettings	bin/winPEAS.bat	/^:PSSettings$/;"	l	language:DosBatch
+PSUpload.ps1	dev/PSUpload.ps1	1;"	F	language:PowerShell	epoch:1703571263
 PageSize	ps/ADACLScan.ps1	/^$global:PageSize = 1000$/;"	v	language:PowerShell
 PageSize	ps/ADRecon.ps1	/^    [int] $PageSize = 200,$/;"	v	language:PowerShell
 Pantomimes	ps/PrivescCheck.ps1	/^$Pantomimes = "H4sIAAAAAAAEAO0cf2\/ayPL\/SvcdLIunwl3wS6+9vleeKpUQ0vKOJCjQ9J1CXuSYhfhqbM42SdBdvvu/;"	v	language:PowerShell
@@ -1693,24 +1694,24 @@ PassMaxAge	ps/ADRecon.ps1	/^    [int] $PassMaxAge = 30,$/;"	v	language:PowerShel
 Password	ps/SinglePowerSpray.ps1	/^$Password = "<password you want to try>"$/;"	v	language:PowerShell
 PasswordFinder	ps/empire/python/collection/mimipenguin.py	/^class PasswordFinder:$/;"	c	language:Python
 Permissions	ps/empire/privesc/PrivescCheck.ps1	/^                        $Permissions = $AccessMask.Keys | Where-Object { $FileSystemRights -band/;"	v	language:PowerShell
-Persistence.psm1	ps/empire/persistence/Persistence.psm1	1;"	F	language:PowerShell	epoch:1701443850
+Persistence.psm1	ps/empire/persistence/Persistence.psm1	1;"	F	language:PowerShell	epoch:1701444751
 PingCastleScannersSMBScanner	ps/ADRecon.ps1	/^    public class PingCastleScannersSMBScanner$/;"	c	language:PowerShell
 Pivot	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Pivot$/;"	t	language:Markdown	subsection:Nishang""Nishang is a framework and collection of scripts and payloads which enables usage of PowerShell for offensive security, penetration testing and red teaming. Nishang is useful during all phases of penetration testing.
 PortScan-Alive	ps/empire/situational_awareness/network/Invoke-Portscan.ps1	/^                function PortScan-Alive$/;"	f	language:PowerShell	function:Invoke-Portscan
 Portscan-Port	ps/empire/situational_awareness/network/Invoke-Portscan.ps1	/^                function Portscan-Port$/;"	f	language:PowerShell	function:Invoke-Portscan
-PowerBreach.ps1	ps/empire/persistence/PowerBreach.ps1	1;"	F	language:PowerShell	epoch:1701443850
-PowerUp.ps1	ps/empire/privesc/PowerUp.ps1	1;"	F	language:PowerShell	epoch:1701443850
-PowerUpSQL.ps1	ps/PowerUpSQL/PowerUpSQL.ps1	1;"	F	language:PowerShell	epoch:1701443868
-PowerUpSQL.psm1	ps/PowerUpSQL/PowerUpSQL.psm1	1;"	F	language:PowerShell	epoch:1701443868
+PowerBreach.ps1	ps/empire/persistence/PowerBreach.ps1	1;"	F	language:PowerShell	epoch:1701444751
+PowerUp.ps1	ps/empire/privesc/PowerUp.ps1	1;"	F	language:PowerShell	epoch:1701444751
+PowerUpSQL.ps1	ps/PowerUpSQL/PowerUpSQL.ps1	1;"	F	language:PowerShell	epoch:1701444770
+PowerUpSQL.psm1	ps/PowerUpSQL/PowerUpSQL.psm1	1;"	F	language:PowerShell	epoch:1701444770
 Powerpreter	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Powerpreter$/;"	t	language:Markdown	subsection:Nishang""Nishang is a framework and collection of scripts and payloads which enables usage of PowerShell for offensive security, penetration testing and red teaming. Nishang is useful during all phases of penetration testing.
 Powerpreter is a script module which makes it useful in scenarios like drive-by-download, document attachments, webshells etc. where one may like to pull all the functionality in Nishang in a single file or where deployment is not easy to do. Powerpreter has persistence capabilities too. See examples for help in using it.	ps/samratashok-nishang-cfe2a5f/powerpreter/README.md	/^##### Powerpreter is a script module which makes it useful in scenarios like drive-by-download, /;"	T	language:Markdown
 Powerpreter.psm1	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	1;"	F	language:PowerShell	epoch:1510487125
 Prasadhak	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Prasadhak$/;"	t	language:Markdown	subsection:Nishang""Nishang is a framework and collection of scripts and payloads which enables usage of PowerShell for offensive security, penetration testing and red teaming. Nishang is useful during all phases of penetration testing.
-PrintNightmare.ps1	ps/PrintNightmare.ps1	1;"	F	language:PowerShell	epoch:1701443877
+PrintNightmare.ps1	ps/PrintNightmare.ps1	1;"	F	language:PowerShell	epoch:1701444779
 PrinterRecordProcessor	ps/ADRecon.ps1	/^        class PrinterRecordProcessor : IRecordProcessor$/;"	c	language:PowerShell
 PrinterRecordProcessor	ps/ADRecon.ps1	/^        class PrinterRecordProcessor : IRecordProcessor$/;"	c	language:PowerShell	class:LDAPClass
 PrivescCheck.ps1	ps/PrivescCheck.ps1	1;"	F	language:PowerShell	epoch:1698887563
-PrivescCheck.ps1	ps/empire/privesc/PrivescCheck.ps1	1;"	F	language:PowerShell	epoch:1701443850
+PrivescCheck.ps1	ps/empire/privesc/PrivescCheck.ps1	1;"	F	language:PowerShell	epoch:1701444751
 ProcessSuperPuTTYFile	ps/empire/credentials/Invoke-SessionGopher.ps1	/^function ProcessSuperPuTTYFile($SuperPuTTYXML) {$/;"	f	language:PowerShell	function:Invoke-SessionGopher
 ProcessSuperPuTTYFile	ps/samratashok-nishang-cfe2a5f/Gather/Invoke-SessionGopher.ps1	/^function ProcessSuperPuTTYFile($SuperPuTTYXML) {$/;"	f	language:PowerShell	function:Invoke-SessionGopher
 ProcessorThread	ps/ADRecon.ps1	/^        class ProcessorThread$/;"	c	language:PowerShell
@@ -1828,14 +1829,14 @@ Set-DesktopACLs	ps/empire/credentials/Invoke-TokenManipulation.ps1	/^    functio
 Set-DomainComputerPassword	ps/adPEAS.ps1	/^function Set-DomainComputerPassword {$/;"	f	language:PowerShell	class:Get-adPEASDomain::Info::Info::Finding::Hint::Finding
 Set-ExploitTable	ps/empire/privesc/Sherlock.ps1	/^function Set-ExploitTable ($MSBulletin, $VulnStatus) {$/;"	f	language:PowerShell
 Set-MacAttribute	ps/empire/management/Set-MacAttribute.ps1	/^function Set-MacAttribute {$/;"	f	language:PowerShell
-Set-MacAttribute.ps1	ps/empire/management/Set-MacAttribute.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Set-MacAttribute.ps1	ps/empire/management/Set-MacAttribute.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Set-RemotePSRemoting	ps/samratashok-nishang-cfe2a5f/Backdoors/Set-RemotePSRemoting.ps1	/^function Set-RemotePSRemoting$/;"	f	language:PowerShell
 Set-RemotePSRemoting.ps1	ps/samratashok-nishang-cfe2a5f/Backdoors/Set-RemotePSRemoting.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Set-RemoteWMI	ps/samratashok-nishang-cfe2a5f/Backdoors/Set-RemoteWMI.ps1	/^function Set-RemoteWMI$/;"	f	language:PowerShell
 Set-RemoteWMI.ps1	ps/samratashok-nishang-cfe2a5f/Backdoors/Set-RemoteWMI.ps1	1;"	F	language:PowerShell	epoch:1510487125
 Set-Speaker	ps/empire/fun/Invoke-Thunderstruck.ps1	/^    Function Set-Speaker($Volume){$wshShell = new-object -com wscript.shell;1..50 | % {$wshShell/;"	f	language:PowerShell	function:Invoke-Thunderstruck
 Set-WallPaper	ps/empire/fun/Set-Wallpaper.ps1	/^Function Set-WallPaper$/;"	f	language:PowerShell
-Set-Wallpaper.ps1	ps/empire/fun/Set-Wallpaper.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Set-Wallpaper.ps1	ps/empire/fun/Set-Wallpaper.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Set-WindowVisibility	ps/empire/collection/Invoke-CredentialPhisher.ps1	/^    function Set-WindowVisibility ([int32[]]$hWnds, [Phishwin.WindowStates]$windowState) {    $/;"	f	language:PowerShell	function:Invoke-CredentialPhisher
 SetOnce	bin/winPEAS.bat	/^:SetOnce$/;"	l	language:DosBatch
 Setup_CMD	ps/empire/management/powercat.ps1	/^  function Setup_CMD$/;"	f	language:PowerShell	function:powercat
@@ -1843,17 +1844,17 @@ Setup_Console	ps/empire/management/powercat.ps1	/^  function Setup_Console$/;"	f
 Setup_DNS	ps/empire/management/powercat.ps1	/^  function Setup_DNS$/;"	f	language:PowerShell	function:powercat
 Setup_TCP	ps/empire/management/powercat.ps1	/^  function Setup_TCP$/;"	f	language:PowerShell	function:powercat
 Setup_UDP	ps/empire/management/powercat.ps1	/^  function Setup_UDP$/;"	f	language:PowerShell	function:powercat
-SharpHound.ps1	ps/SharpHound.ps1	1;"	F	language:PowerShell	epoch:1701443876
+SharpHound.ps1	ps/SharpHound.ps1	1;"	F	language:PowerShell	epoch:1701444778
 Shells	ps/samratashok-nishang-cfe2a5f/README.md	/^#### Shells$/;"	t	language:Markdown	subsection:Nishang""Nishang is a framework and collection of scripts and payloads which enables usage of PowerShell for offensive security, penetration testing and red teaming. Nishang is useful during all phases of penetration testing.
 Shepherded	ps/PrivescCheck.ps1	/^$Shepherded = "H4sIAAAAAAAEAO1abW\/jNhL+vsD+B8I1UKuNhcPdoTjksECzTtL6msRGlG4+xMFCkWhbF5n0kZSzRjf\//;"	v	language:PowerShell
-Sherlock.ps1	ps/empire/privesc/Sherlock.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Sherlock.ps1	ps/empire/privesc/Sherlock.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Show-Banner	ps/empire/exfil/PSRansom.ps1	/^function Show-Banner {$/;"	f	language:PowerShell
 Show-Help	ps/empire/exfil/PSRansom.ps1	/^function Show-Help {$/;"	f	language:PowerShell
 Show-TargetScreen	ps/samratashok-nishang-cfe2a5f/Gather/Show-TargetScreen.ps1	/^function Show-TargetScreen$/;"	f	language:PowerShell
 Show-TargetScreen.ps1	ps/samratashok-nishang-cfe2a5f/Gather/Show-TargetScreen.ps1	1;"	F	language:PowerShell	epoch:1510487125
 SimpleResultsHandler	ps/ADRecon.ps1	/^        class SimpleResultsHandler : IResultsHandler$/;"	c	language:PowerShell
 SimpleResultsHandler	ps/ADRecon.ps1	/^        class SimpleResultsHandler : IResultsHandler$/;"	c	language:PowerShell	class:LDAPClass
-SinglePowerSpray.ps1	ps/SinglePowerSpray.ps1	1;"	F	language:PowerShell	epoch:1701443869
+SinglePowerSpray.ps1	ps/SinglePowerSpray.ps1	1;"	F	language:PowerShell	epoch:1701444771
 SnifferSpoofer	ps/empire/collection/Invoke-Inveigh.ps1	/^function SnifferSpoofer()$/;"	f	language:PowerShell	function:Invoke-Inveigh
 SocksBase	ps/empire/python/management/socks.py	/^class SocksBase(object):$/;"	c	language:Python
 SocksConnectionMgr	ps/empire/management/Invoke-SocksProxy.psm1	/^[ScriptBlock]$SocksConnectionMgr = {$/;"	v	language:PowerShell
@@ -1868,9 +1869,9 @@ SshdPasswordFinder	ps/empire/python/collection/mimipenguin.py	/^class SshdPasswo
 Stage-gSharedInfoBitmap	ps/empire/privesc/Invoke-MS16135.ps1	/^	function Stage-gSharedInfoBitmap {$/;"	f	language:PowerShell	function:Invoke-MS16135
 Start-CaptureServer	ps/samratashok-nishang-cfe2a5f/Utility/Start-CaptureServer.ps1	/^function Start-CaptureServer$/;"	f	language:PowerShell
 Start-CaptureServer.ps1	ps/samratashok-nishang-cfe2a5f/Utility/Start-CaptureServer.ps1	1;"	F	language:PowerShell	epoch:1510487125
-Start-MonitorTCPConnections.ps1	ps/empire/situational_awareness/host/Start-MonitorTCPConnections.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Start-MonitorTCPConnections.ps1	ps/empire/situational_awareness/host/Start-MonitorTCPConnections.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Start-ProcessAsUser	ps/empire/management/Start-ProcessAsUser.ps1	/^function Start-ProcessAsUser {$/;"	f	language:PowerShell
-Start-ProcessAsUser.ps1	ps/empire/management/Start-ProcessAsUser.ps1	1;"	F	language:PowerShell	epoch:1701443850
+Start-ProcessAsUser.ps1	ps/empire/management/Start-ProcessAsUser.ps1	1;"	F	language:PowerShell	epoch:1701444751
 Start-TCPMonitor	ps/empire/situational_awareness/host/Start-MonitorTCPConnections.ps1	/^function Start-TCPMonitor {$/;"	f	language:PowerShell
 StdRegProv	ps/samratashok-nishang-cfe2a5f/Backdoors/Set-RemoteWMI.ps1	/^        $RegProvider = Get-WmiObject -Namespace root\\default -Class StdRegProv -List -ComputerN/;"	c	language:PowerShell	function:Set-RemoteWMI
 StdRegProv	ps/samratashok-nishang-cfe2a5f/Backdoors/Set-RemoteWMI.ps1	/^        $RegProvider = Get-WmiObject -Namespace root\\default -Class StdRegProv -List$/;"	c	language:PowerShell	class:Set-RemoteWMI::StdRegProv
@@ -2048,7 +2049,7 @@ _temp	ps/empire/situational_awareness/network/powerview.ps1	/^        function _
 _try_potential_passwords	ps/empire/python/collection/mimipenguin.py	/^    def _try_potential_passwords(self):$/;"	m	language:Python	class:ApachePasswordFinder
 _try_potential_passwords	ps/empire/python/collection/mimipenguin.py	/^    def _try_potential_passwords(self):$/;"	m	language:Python	class:PasswordFinder
 acl	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^        $acl = $key.GetAccessControl()$/;"	v	language:PowerShell
-adPEAS.ps1	ps/adPEAS.ps1	1;"	F	language:PowerShell	epoch:1701443875
+adPEAS.ps1	ps/adPEAS.ps1	1;"	F	language:PowerShell	epoch:1701444777
 atyp	ps/empire/management/Invoke-SocksProxy.psm1	/^            $atyp = $buffer[3]$/;"	v	language:PowerShell
 bitshift	ps/empire/credentials/Invoke-NTLMExtract.ps1	/^function bitshift($x, $c) {$/;"	f	language:PowerShell	function:Invoke-NTLMExtract
 buffer	ps/empire/management/Invoke-SocksProxy.psm1	/^    $buffer = New-Object System.Byte[] 32$/;"	v	language:PowerShell
@@ -2089,7 +2090,7 @@ destPort	ps/empire/management/Invoke-SocksProxy.psm1	/^            $destPort = $
 destPort	ps/empire/management/Invoke-SocksProxy.psm1	/^            $destPort = $buffer[4]*256 + $buffer[5]$/;"	v	language:PowerShell
 dev_key	ps/samratashok-nishang-cfe2a5f/Gather/Keylogger.ps1	/^        $dev_key = "null",$/;"	v	language:PowerShell
 domain	ps/empire/exfil/PSRansom.ps1	/^if ($OSVersion -like "*Win*") { $domain = (([Environment]::UserDomainName).ToLower()+"\\") ; $sl/;"	v	language:PowerShell
-dumpCredStore.ps1	ps/empire/credentials/dumpCredStore.ps1	1;"	F	language:PowerShell	epoch:1701443850
+dumpCredStore.ps1	ps/empire/credentials/dumpCredStore.ps1	1;"	F	language:PowerShell	epoch:1701444751
 dump_passwords	ps/empire/python/collection/mimipenguin.py	/^    def dump_passwords(self):$/;"	m	language:Python	class:ApachePasswordFinder
 dump_passwords	ps/empire/python/collection/mimipenguin.py	/^    def dump_passwords(self):$/;"	m	language:Python	class:PasswordFinder
 dump_process	ps/empire/python/collection/mimipenguin.py	/^def dump_process(pid):$/;"	f	language:Python
@@ -2153,10 +2154,10 @@ integer_generator	ps/empire/python/management/socks.py	/^def integer_generator(s
 ipAddress	ps/empire/management/Invoke-SocksProxy.psm1	/^                $ipAddress = New-Object System.Net.IPAddress(,$ipv4)$/;"	v	language:PowerShell
 ipv4	ps/empire/management/Invoke-SocksProxy.psm1	/^                $ipv4 = New-Object System.Byte[] 4$/;"	v	language:PowerShell
 ipv4	ps/empire/management/Invoke-SocksProxy.psm1	/^            $ipv4 = New-Object System.Byte[] 4$/;"	v	language:PowerShell
-jaws-enum.ps1	ps/jaws-enum.ps1	1;"	F	language:PowerShell	epoch:1701443878
+jaws-enum.ps1	ps/jaws-enum.ps1	1;"	F	language:PowerShell	epoch:1701444779
 key	ps/samratashok-nishang-cfe2a5f/powerpreter/Powerpreter.psm1	/^        $key = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey($/;"	v	language:PowerShell
 libc	ps/empire/python/privesc/CVE-2021-4034.py	/^    libc = CDLL(find_library('c'))$/;"	v	language:Python
-linuxprivchecker.py	ps/empire/python/privesc/linuxprivchecker.py	1;"	F	language:Python	epoch:1701443850
+linuxprivchecker.py	ps/empire/python/privesc/linuxprivchecker.py	1;"	F	language:Python	epoch:1701444751
 mDNSSpoofer	ps/empire/collection/Invoke-Inveigh.ps1	/^function mDNSSpoofer()$/;"	f	language:PowerShell	function:Invoke-Inveigh
 main	ps/empire/python/collection/mimipenguin.py	/^def main():$/;"	f	language:Python
 make_kernel_shellcode	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^function make_kernel_shellcode {$/;"	f	language:PowerShell	function:Invoke-EternalBlue
@@ -2168,7 +2169,7 @@ make_smb1_nt_trans_packet	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^funct
 make_smb1_trans2_exploit_packet	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^function make_smb1_trans2_exploit_packet($tree_id, $user_id, $type, $timeout) {$/;"	f	language:PowerShell	function:Invoke-EternalBlue
 make_smb2_payload_body_packet	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^function make_smb2_payload_body_packet($kernel_user_payload) {$/;"	f	language:PowerShell	function:Invoke-EternalBlue
 make_smb2_payload_headers_packet	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^function make_smb2_payload_headers_packet(){$/;"	f	language:PowerShell	function:Invoke-EternalBlue
-mimipenguin.py	ps/empire/python/collection/mimipenguin.py	1;"	F	language:Python	epoch:1701443850
+mimipenguin.py	ps/empire/python/collection/mimipenguin.py	1;"	F	language:Python	epoch:1701444751
 modulename	ps/samratashok-nishang-cfe2a5f/Gather/Keylogger.ps1	/^    $modulename = $script:MyInvocation.MyCommand.Name$/;"	v	language:PowerShell
 monitor_sockets	ps/empire/python/management/socks.py	/^    def monitor_sockets(self):$/;"	m	language:Python	class:SocksBase
 mycode	ps/empire/lateral_movement/Invoke-PortFwd.ps1	/^$mycode = @"$/;"	v	language:PowerShell
@@ -2190,9 +2191,9 @@ post_http	ps/samratashok-nishang-cfe2a5f/Gather/Keylogger.ps1	/^            func
 post_http	ps/samratashok-nishang-cfe2a5f/Prasadhak/Invoke-Prasadhak.ps1	/^    function post_http($url,$parameters) $/;"	f	language:PowerShell	function:Invoke-Prasadhak
 post_http	ps/samratashok-nishang-cfe2a5f/Utility/Do-Exfiltration.ps1	/^    function post_http($url,$parameters) $/;"	f	language:PowerShell	function:Do-Exfiltration
 powercat	ps/empire/management/powercat.ps1	/^function powercat$/;"	f	language:PowerShell
-powercat.ps1	ps/empire/management/powercat.ps1	1;"	F	language:PowerShell	epoch:1701443850
-powermad.ps1	ps/empire/situational_awareness/network/powermad.ps1	1;"	F	language:PowerShell	epoch:1701443850
-powerview.ps1	ps/empire/situational_awareness/network/powerview.ps1	1;"	F	language:PowerShell	epoch:1701443850
+powercat.ps1	ps/empire/management/powercat.ps1	1;"	F	language:PowerShell	epoch:1701444751
+powermad.ps1	ps/empire/situational_awareness/network/powermad.ps1	1;"	F	language:PowerShell	epoch:1701444751
+powerview.ps1	ps/empire/situational_awareness/network/powerview.ps1	1;"	F	language:PowerShell	epoch:1701444751
 print_results	ps/empire/python/privesc/linuxprivchecker.py	/^def print_results(cmddict):$/;"	f	language:Python
 process	ps/empire/python/privesc/CVE-2021-3560.py	/^    process = subprocess.Popen($/;"	v	language:Python
 process	ps/empire/python/situational_awareness/LinPEAS.py	/^process = subprocess.Popen(['\/bin\/sh', temp_name], stdout=subprocess.PIPE, stderr=subprocess.P/;"	v	language:Python
@@ -2205,7 +2206,7 @@ psenum	ps/empire/privesc/Invoke-Printnightmare.ps1	/^function psenum {$/;"	f	lan
 psenum	ps/empire/privesc/PowerUp.ps1	/^function psenum$/;"	f	language:PowerShell
 psenum	ps/empire/situational_awareness/network/BloodHound.ps1	/^function psenum$/;"	f	language:PowerShell
 psenum	ps/empire/situational_awareness/network/powerview.ps1	/^function psenum {$/;"	f	language:PowerShell
-psgetsys.ps1	ps/psgetsys.ps1	1;"	F	language:PowerShell	epoch:1701443877
+psgetsys.ps1	ps/psgetsys.ps1	1;"	F	language:PowerShell	epoch:1701444778
 push_cb	ps/Invoke-Clipboard.ps1	/^function push_cb ([string]$pushtoclip){$/;"	f	language:PowerShell
 rc4	ps/empire/credentials/Invoke-NTLMExtract.ps1	/^function rc4($data, $key) {$/;"	f	language:PowerShell	function:Invoke-NTLMExtract
 reader	ps/empire/privesc/Invoke-PrintDemon.ps1	/^$regcommand = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('sc.exe start F/;"	v	language:PowerShell
@@ -2222,7 +2223,7 @@ run	ps/empire/python/management/socks.py	/^    def run(self):$/;"	m	language:Pyt
 run_check	ps/empire/python/privesc/linuxprivchecker.py	/^def run_check():$/;"	f	language:Python
 running_as_root	ps/empire/python/collection/mimipenguin.py	/^def running_as_root():$/;"	f	language:Python
 script	ps/empire/python/situational_awareness/LinPEAS.py	/^script = textwrap.dedent(r"""$/;"	v	language:Python
-script.sh	script.sh	1;"	F	language:Sh	epoch:1701444733
+script.sh	script.sh	1;"	F	language:Sh	epoch:1703571317
 search_file_passwords	ps/empire/python/privesc/linuxprivchecker.py	/^def search_file_passwords():$/;"	f	language:Python
 search_file_perms	ps/empire/python/privesc/linuxprivchecker.py	/^def search_file_perms():$/;"	f	language:Python
 send_message	ps/empire/python/management/socks.py	/^    def send_message(self, msg, data=b""):$/;"	m	language:Python	class:Tunnel
@@ -2236,7 +2237,7 @@ smb1_large_buffer	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^function smb1
 smb2_grooms	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^     function smb2_grooms($Target, $grooms, $payload_hdr_pkt, $groom_socks){$/;"	f	language:PowerShell	function:Invoke-EternalBlue
 smb_eternalblue	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^function smb_eternalblue($Target, $grooms, $Shellcode) {$/;"	f	language:PowerShell	function:Invoke-EternalBlue
 smb_header	ps/empire/exploitation/Exploit-EternalBlue.ps1	/^function smb_header($smbheader) {$/;"	f	language:PowerShell	function:Invoke-EternalBlue
-socks.py	ps/empire/python/management/socks.py	1;"	F	language:Python	epoch:1701443850
+socks.py	ps/empire/python/management/socks.py	1;"	F	language:Python	epoch:1701444751
 socksVer	ps/empire/management/Invoke-SocksProxy.psm1	/^        $socksVer=$buffer[0]$/;"	v	language:PowerShell
 sourceSpooler	ps/Get-SpoolStatus.ps1	/^$sourceSpooler = @"$/;"	v	language:PowerShell
 split	ps/empire/exfil/Invoke-PostExfil.ps1	/^  function split($inFile,  $outPrefix, [Int32] $bufSize){$/;"	f	language:PowerShell
