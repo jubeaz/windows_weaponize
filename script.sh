@@ -205,7 +205,7 @@ wget --quiet https://raw.githubusercontent.com/canix1/ADACLScanner/master/ADACLS
 
 
 echo 'Microsoft.ActiveDirectory.Management.dll'
-wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll -O bin/Microsoft.ActiveDirectory.Management.dll
+wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll -O dll/Microsoft.ActiveDirectory.Management.dll
 
 echo 'Import-ActiveDirectory.ps1'
 wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Import-ActiveDirectory.ps1 -o ps/Import-ActiveDirectory.ps1
