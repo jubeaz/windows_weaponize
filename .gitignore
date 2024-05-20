@@ -1,0 +1,6 @@
+tmp_build/*
+binaries
+binaries_*
+Makefile-tmp
+docker/*-tmp
+tags
