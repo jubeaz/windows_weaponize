@@ -1,9 +1,9 @@
-﻿#requires -version 2
+#requires -version 2
 <#
         File: PowerUpSQL.ps1
-        Author: Scott Sutherland (@_nullbind), NetSPI - 2020
+        Author: Scott Sutherland (@_nullbind), NetSPI - 2023
         Major Contributors: Antti Rantasaari and Eric Gruber
-        Version: 1.107
+        Version: 1.116
         Description: PowerUpSQL is a PowerShell toolkit for attacking SQL Server.
         License: BSD 3-Clause
         Required Dependencies: PowerShell v.2
@@ -4752,6 +4752,195 @@ Function  Get-SQLTable
     }
 }
 
+# ----------------------------------
+#  Get-SQLTableTemp
+# ----------------------------------
+# Author: Scott Sutherland
+Function  Get-SQLTableTemp
+{
+    <#
+            .SYNOPSIS
+            Returns table information from target SQL Servers.
+            .PARAMETER Username
+            SQL Server or domain account to authenticate with.
+            .PARAMETER Password
+            SQL Server or domain account password to authenticate with.
+            .PARAMETER Credential
+            SQL Server credential.
+            .PARAMETER Instance
+            SQL Server instance to connection to.                        
+            .EXAMPLE
+            PS C:\> Get-SQLTableTemp -Instance SQLServer1\STANDARDDEV2014
+            
+            Table_Name          : #B6E36D7A
+            Column_Name         : SnapshotDataId
+            Column_Type         : uniqueidentifier
+            Table_Type          : TableVariable
+            is_ms_shipped       : False
+            is_published        : False
+            is_schema_published : False
+            create_date         : 5/14/2024 6:09:48 PM
+            modify_date         : 5/14/2024 6:09:48 PM 
+
+            Table_Name          : #LocalTempTbl____________________________________________
+                                  _________________________________________________________
+                                  __00000000002D
+            Column_Name         : Testing123
+            Column_Type         : text
+            Table_Type          : LocalTempTable
+            is_ms_shipped       : False
+            is_published        : False
+            is_schema_published : False
+            create_date         : 5/15/2024 4:37:46 PM
+            modify_date         : 5/15/2024 4:37:46 PM
+
+            Table_Name          : ##GlobalTempTbl
+            Column_Name         : Spy_id
+            Column_Type         : int
+            Table_Type          : GlobalTempTable
+            is_ms_shipped       : False
+            is_published        : False
+            is_schema_published : False
+            create_date         : 5/15/2024 4:38:10 PM
+            modify_date         : 5/15/2024 4:38:10 PM
+
+            Table_Name          : ##GlobalTempTbl
+            Column_Name         : SpyName
+            Column_Type         : text
+            Table_Type          : GlobalTempTable
+            is_ms_shipped       : False
+            is_published        : False
+            is_schema_published : False
+            create_date         : 5/15/2024 4:38:10 PM
+            modify_date         : 5/15/2024 4:38:10 PM
+
+            Table_Name          : ##GlobalTempTbl
+            Column_Name         : RealName
+            Column_Type         : text
+            Table_Type          : GlobalTempTable
+            is_ms_shipped       : False
+            is_published        : False
+            is_schema_published : False
+            create_date         : 5/15/2024 4:38:10 PM
+            modify_date         : 5/15/2024 4:38:10 PM
+            .EXAMPLE
+            PS C:\> Get-SQLInstanceDomain | Get-SQLTableTemp -Verbose 
+    #>
+    [CmdletBinding()]
+    Param(
+        [Parameter(Mandatory = $false,
+                ValueFromPipelineByPropertyName = $true,
+        HelpMessage = 'SQL Server or domain account to authenticate with.')]
+        [string]$Username,
+
+        [Parameter(Mandatory = $false,
+                ValueFromPipelineByPropertyName = $true,
+        HelpMessage = 'SQL Server or domain account password to authenticate with.')]
+        [string]$Password,
+
+        [Parameter(Mandatory = $false,
+        HelpMessage = 'Windows credentials.')]
+        [System.Management.Automation.PSCredential]
+        [System.Management.Automation.Credential()]$Credential = [System.Management.Automation.PSCredential]::Empty,
+
+        [Parameter(Mandatory = $false,
+                ValueFromPipelineByPropertyName = $true,
+        HelpMessage = 'SQL Server instance to connection to.')]
+        [string]$Instance,
+
+        [Parameter(Mandatory = $false,
+        HelpMessage = 'Suppress verbose errors.  Used when function is wrapped.')]
+        [switch]$SuppressVerbose
+    )
+
+    Begin
+    {
+        $TblTables = New-Object -TypeName System.Data.DataTable
+
+        # Setup table filter
+        if($TableName)
+        {
+            $TableFilter = " where table_name like '%$TableName%'"
+        }
+        else
+        {
+            $TableFilter = ''
+        }
+    }
+
+    Process
+    {
+        # Note: Tables queried by this function can be executed by any login.
+
+        # Parse computer name from the instance
+        $ComputerName = Get-ComputerNameFromInstance -Instance $Instance
+
+        # Default connection to local default instance
+        if(-not $Instance)
+        {
+            $Instance = $env:COMPUTERNAME
+        }
+
+        # Test connection to instance
+        $TestConnection = Get-SQLConnectionTest -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose | Where-Object -FilterScript {
+            $_.Status -eq 'Accessible'
+        }
+        if($TestConnection)
+        {
+            if( -not $SuppressVerbose)
+            {
+                Write-Verbose -Message "$Instance : Connection Success."
+                Write-Verbose -Message "$Instance : Grabbing tables from databases below:"
+            }
+        }
+        else
+        {
+            if( -not $SuppressVerbose)
+            {
+                Write-Verbose -Message "$Instance : Connection Failed."
+            }
+            return
+        }
+
+        # Define Query
+        $Query = "SELECT SERVERPROPERTY('MachineName') as Computer_Name,
+                @@SERVERNAME AS Instance,
+                'tempdb' as 'Database_Name',
+                SCHEMA_NAME(t1.schema_id) AS 'Schema_Name',
+                t1.name AS 'Table_Name',
+                CASE
+                    WHEN (SELECT CASE WHEN LEN(t1.name) - LEN(REPLACE(t1.name,'#','')) > 1 THEN 1 ELSE 0 END) = 1 THEN 'GlobalTempTable'
+                    WHEN t1.name LIKE '%[_]%' AND (SELECT CASE WHEN LEN(t1.name) - LEN(REPLACE(t1.name,'#','')) = 1 THEN 1 ELSE 0 END) = 1 THEN 'LocalTempTable'
+                    WHEN t1.name NOT LIKE '%[_]%' AND (SELECT CASE WHEN LEN(t1.name) - LEN(REPLACE(t1.name,'#','')) = 1 THEN 1 ELSE 0 END) = 1 THEN 'TableVariable'
+                    ELSE NULL
+                END AS Table_Type,
+                t2.name AS 'Column_Name',
+                t3.name AS 'Column_Type',
+                t1.is_ms_shipped,
+                t1.is_published,
+                t1.is_schema_published,
+                t1.create_date,
+                t1.modify_date
+            FROM [tempdb].[sys].[objects] AS t1
+            JOIN [tempdb].[sys].[columns] AS t2 ON t1.OBJECT_ID = t2.OBJECT_ID
+            JOIN sys.types AS t3 ON t2.system_type_id = t3.system_type_id
+            WHERE t1.name LIKE '#%';
+            "
+
+        # Execute Query
+        $TblResults = Get-SQLQuery -Instance $Instance -Query $Query -Username $Username -Password $Password -Credential $Credential -SuppressVerbose
+
+        # Append results
+        $TblTables = $TblTables + $TblResults        
+    }
+
+    End
+    {
+        # Return data
+        $TblTables
+    }
+}
+
 
 # ----------------------------------
 #  Get-SQLColumn
@@ -5559,8 +5748,12 @@ Function  Get-SQLDatabaseSchema
         [string]$SchemaName,
 
         [Parameter(Mandatory = $false,
-        HelpMessage = "Don't select tables from default databases.")]
+        HelpMessage = "Don't select schemas from default databases.")]
         [switch]$NoDefaults,
+
+        [Parameter(Mandatory = $false,
+        HelpMessage = "Show database role based schemas. Hidden by default.")]
+        [switch]$ShowRoleSchemas,
 
         [Parameter(Mandatory = $false,
         HelpMessage = 'Suppress verbose errors.  Used when function is wrapped.')]
@@ -5640,13 +5833,20 @@ Function  Get-SQLDatabaseSchema
             # Define Query
             $Query = "  USE $DbName;
                 SELECT  '$ComputerName' as [ComputerName],
-                '$Instance' as [Instance],
-                CATALOG_NAME as [DatabaseName],
-                SCHEMA_NAME as [SchemaName],
-                SCHEMA_OWNER as [SchemaOwner]
-                FROM    [$DbName].[INFORMATION_SCHEMA].[SCHEMATA]
+                    '$Instance' as [Instance],
+                    DB_NAME() AS database_name,
+                    s.schema_id AS schema_id,
+                    s.name AS schema_name,
+                    s.principal_id AS owner_id,
+                    USER_NAME(s.principal_id) AS owner_name
+                FROM 
+                    sys.schemas AS s
+                JOIN 
+                    [$DbName].[INFORMATION_SCHEMA].[SCHEMATA] AS i 
+                ON 
+                    s.name = i.SCHEMA_NAME
                 $SchemaNameFilter
-            ORDER BY SCHEMA_NAME"
+                ORDER BY schema_name;"
 
             # Execute Query
             $TblResults = Get-SQLQuery -Instance $Instance -Query $Query -Username $Username -Password $Password -SuppressVerbose
@@ -5659,7 +5859,11 @@ Function  Get-SQLDatabaseSchema
     End
     {
         # Return data
-        $TblSchemas
+        if($ShowRoleSchemas){
+            $TblResults 
+        }else{
+            $TblResults | Where schema_id -lt 1000
+        }
     }
 }
 
@@ -9448,9 +9652,9 @@ Function  Get-SQLServiceAccount
             DECLARE		@AgentInstance	 	VARCHAR(250)
             DECLARE		@IntegrationVersion	VARCHAR(250)
             DECLARE		@DBEngineLogin		VARCHAR(100)
-            DECLARE		@AgentLogin		VARCHAR(100)
+            DECLARE		@AgentLogin		    VARCHAR(100)
             DECLARE		@BrowserLogin		VARCHAR(100)
-            DECLARE     	@WriterLogin		VARCHAR(100)
+            DECLARE     @WriterLogin		VARCHAR(100)
             DECLARE		@AnalysisLogin		VARCHAR(100)
             DECLARE		@ReportLogin		VARCHAR(100)
             DECLARE		@IntegrationDtsLogin	VARCHAR(100)
@@ -9504,7 +9708,24 @@ Function  Get-SQLServiceAccount
     End
     {
         # Return data
-        $TblServiceAccount
+        # $TblServiceAccount
+
+        # Create new table
+        $TblNewObject = New-Object -TypeName System.Data.DataTable
+        $null = $TblNewObject.Columns.Add("ComputerName") 
+        $null = $TblNewObject.Columns.Add("Instance") 
+        $null = $TblNewObject.Columns.Add("ServiceType") 
+        $null = $TblNewObject.Columns.Add("ServiceAccount")
+        
+        # Add rows
+        $TblNewObject.Rows.Add($TblServiceAccount.ComputerName,$TblServiceAccount.Instance,"AgentService",$TblServiceAccount.AgentLogin)
+        $TblNewObject.Rows.Add($TblServiceAccount.ComputerName,$TblServiceAccount.Instance,"AnalysisService",$TblServiceAccount.AnalysisLogin)
+        $TblNewObject.Rows.Add($TblServiceAccount.ComputerName,$TblServiceAccount.Instance,"BrowserService",$TblServiceAccount.BrowserLogin)
+        $TblNewObject.Rows.Add($TblServiceAccount.ComputerName,$TblServiceAccount.Instance,"SQLService",$TblServiceAccount.DBEngineLogin)
+        $TblNewObject.Rows.Add($TblServiceAccount.ComputerName,$TblServiceAccount.Instance,"IntegrationService",$TblServiceAccount.IntegrationLogin)
+        $TblNewObject.Rows.Add($TblServiceAccount.ComputerName,$TblServiceAccount.Instance,"ReportService",$TblServiceAccount.ReportLogin)
+        $TblNewObject.Rows.Add($TblServiceAccount.ComputerName,$TblServiceAccount.Instance,"WriterService",$TblServiceAccount.WriterLogin)
+        $TblNewObject
     }
 }
 
@@ -15289,7 +15510,11 @@ Function Get-SQLServerLinkCrawl{
 
         [Parameter(Mandatory=$false,
         HelpMessage="Convert collected data to exportable format.")]
-        [switch]$Export
+        [switch]$Export,
+
+        [Parameter(Mandatory=$false,
+        HelpMessage="Convert collected data to exportable format that is easier to work with.")]
+        [switch]$Export2
     )
 
     Begin
@@ -15325,6 +15550,7 @@ Function Get-SQLServerLinkCrawl{
             } 
         }
 
+        # Return exportable format
         if($Export){
             $LinkList = New-Object System.Data.Datatable
             [void]$LinkList.Columns.Add("Instance")
@@ -15340,9 +15566,48 @@ Function Get-SQLServerLinkCrawl{
             }
 
             return $LinkList
-        } else {
-            return $List
+            break
         }
+
+        # Return exportable format 2
+        if($Export2){
+            $LinkList = $output  | 
+            foreach {
+                [string]$StringLinkPath = ""
+                $Path = $_.path 
+                $PathCount = $Path.count - 1       
+                $LinkSrc = $Path[$PathCount - 1]
+                $LinkDes = $Path[$PathCount]
+                $LinkUser = $_.user
+                $LinkDesSysadmin = $_.Sysadmin
+                $Instance = $_.instance 
+                $LinkDesVersion = $_.Version
+                $Path |
+                foreach {
+                    if ( $StringLinkPath -eq ""){
+                        [string]$StringLinkPath = "$_" 
+                    }else{
+                        [string]$StringLinkPath = "$StringLinkPath -> $_"         
+                    }
+                }
+                $Object = New-Object PSObject        
+                $Object | add-member Noteproperty LinkSrc          $LinkSrc
+                $Object | add-member Noteproperty LinkName         $LinkDes
+                $Object | add-member Noteproperty LinkInstance     $Instance     
+                $Object | add-member Noteproperty LinkUser         $LinkUser
+                $Object | add-member Noteproperty LinkSysadmin     $LinkDesSysadmin        
+                $Object | add-member Noteproperty LinkVersion      $LinkDesVersion 
+                $Object | add-member Noteproperty LinkHops         $PathCount 
+                $Object | add-member Noteproperty LinkPath         $StringLinkPath
+                $Object 
+            } 
+           
+            return $LinkList
+            break
+        }
+        
+        # Return powershell object (default)
+        $List
     }
   
     End
@@ -26576,21 +26841,21 @@ Function Invoke-SQLDumpInfo
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
-        # Getting DatabaseUsers
+        # Getting Database Users
         Write-Verbose -Message "$Instance - Getting database users for databases..."
         $Results = Get-SQLDatabaseUser -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose -NoDefaults
         if($xml)
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Database_Users.xml'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Database_users.xml'
             $Results | Export-Clixml $OutPutPath
         }
         else
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Database_Users.csv'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Database_users.csv'
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
-        # Getting DatabasePrivs
+        # Getting Database Privs
         Write-Verbose -Message "$Instance - Getting privileges for databases..."
         $Results = Get-SQLDatabasePriv -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose -NoDefaults
         if($xml)
@@ -26604,7 +26869,7 @@ Function Invoke-SQLDumpInfo
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
-        # Getting DatabaseRoles
+        # Getting Database Roles
         Write-Verbose -Message "$Instance - Getting database roles..."
         $Results = Get-SQLDatabaseRole -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose -NoDefaults
         if($xml)
@@ -26632,7 +26897,7 @@ Function Invoke-SQLDumpInfo
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
-        # Getting DatabaseTables
+        # Getting Database Schemas
         Write-Verbose -Message "$Instance - Getting database schemas..."
         $Results = Get-SQLDatabaseSchema -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose -NoDefaults
         if($xml)
@@ -26646,7 +26911,21 @@ Function Invoke-SQLDumpInfo
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
-        # Getting DatabaseTables
+        # Getting Temp Tables
+        Write-Verbose -Message "$Instance - Getting temp tables..."
+        $Results = Get-SQLTableTemp -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose
+        if($xml)
+        {
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_temp_tables.xml'
+            $Results | Export-Clixml $OutPutPath
+        }
+        else
+        {
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_temp_tables.csv'
+            $Results | Export-Csv -NoTypeInformation $OutPutPath
+        }
+
+        # Getting Database Tables
         Write-Verbose -Message "$Instance - Getting database tables..."
         $Results = Get-SQLTable -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose -NoDefaults
         if($xml)
@@ -26707,12 +26986,12 @@ Function Invoke-SQLDumpInfo
         $Results = Get-SQLServerConfiguration -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose
         if($xml)
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_Configuration.xml'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_configuration.xml'
             $Results | Export-Clixml $OutPutPath
         }
         else
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_Configuration.csv'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_configuration.csv'
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
@@ -26875,12 +27154,12 @@ Function Invoke-SQLDumpInfo
         $Results = Get-SQLStoredProcedureCLR -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose
         if($xml)
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Database_stored_procedur_CLR.xml'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Database_stored_procedure_clr.xml'
             $Results | Export-Clixml $OutPutPath
         }
         else
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Database_CLR_stored_procedure_CLR.csv'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Database_stored_procedure_clr.csv'
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
@@ -26917,12 +27196,12 @@ Function Invoke-SQLDumpInfo
         $Results = Get-SQLServerInfo -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose
         if($xml)
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_triggers_dml.xml'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_version.xml'
             $Results | Export-Clixml $OutPutPath
         }
         else
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_triggers_dml.csv'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_version.csv'
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
@@ -26959,12 +27238,12 @@ Function Invoke-SQLDumpInfo
         $Results = Get-SQLAgentJob -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose
         if($xml)
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_Agent_Job.xml'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_agent_job.xml'
             $Results | Export-Clixml $OutPutPath
         }
         else
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_Agent_Jobs.csv'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_agent_jobs.csv'
             $Results | Export-Csv -NoTypeInformation $OutPutPath
         }
 
@@ -26973,14 +27252,14 @@ Function Invoke-SQLDumpInfo
         $Results = Get-SQLOleDbProvder -Instance $Instance -Username $Username -Password $Password -Credential $Credential -SuppressVerbose
         if($xml)
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_OleDbProvders.xml'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_oledbproviders.xml'
             $Results | Export-Clixml $OutPutPath
         }
         else
         {
-            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_OleDbProvders.csv'
+            $OutPutPath = "$OutFolder\$OutPutInstance"+'_Server_oledbproviders.csv'
             $Results | Export-Csv -NoTypeInformation $OutPutPath
-        }
+        }        
 
         Write-Verbose -Message "$Instance - END"
     }

@@ -3,6 +3,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+
+
 function __get_github_release(){
     repo=$1
     filter=$2
@@ -16,6 +18,7 @@ function __get_github_release(){
 }
 mkdir -p bin
 mkdir -p ps/empire
+
 
 # Sysinternals Suite
 #echo "Sysinternals Suite"
@@ -50,6 +53,10 @@ echo "PrintSpoofer"
 __get_github_release itm4n/PrintSpoofer "exe"
 mv Print* bin
 
+# godpotato
+echo "GodPotato"
+__get_github_release BeichenDream/GodPotato  "God"
+mv God* bin
 
 # roguepotato
 echo "RoguePotato"
@@ -63,7 +70,7 @@ mv RogueWinRM.zip bin
 
 # winPEAS
 echo "winPEAS"
-__get_github_release carlospolop/PEASS-ng "/winPEAS"
+__get_github_release peass-ng/PEASS-ng "/winPEAS"
 mv winPEAS* bin
 
 ## Seatbelt
