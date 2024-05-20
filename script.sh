@@ -23,10 +23,6 @@ mkdir -p ps/empire
 
 # Sysinternals Suite
 echo "Sysinternals Suite"
-#mkdir -p ./bin/SysinternalsSuite
-#eget https://download.sysinternals.com/files/SysinternalsSuite.zip -O SysinternalsSuite.zip
-#unzip -o SysinternalsSuite.zip  -d ./bin/SysinternalsSuite
-#rm SysinternalsSuite.zip 
 eget  https://download.sysinternals.com/files/SysinternalsSuite.zip  --all --upgrade-only --to ./bin/SysinternalsSuite
 
 
@@ -41,47 +37,34 @@ eget  https://github.com/int0x33/nc.exe/raw/master/nc.exe  --download-only --upg
 
 # chisel
 echo "chisel"
-#__get_github_release jpillora/chisel 'windows_(386|amd64)'
-#mv chisel* bin
 eget jpillora/chisel -s windows/amd64 --download-only --upgrade-only --to ./bin
 eget jpillora/chisel -s windows/386 --download-only  --upgrade-only --to ./bin
 
 # socat
 echo "socat"
-#eget http://blog.gentilkiwi.com/downloads/socat-1.7.2.1.zip -O bin/socat-1.7.2.1.zip
 eget http://blog.gentilkiwi.com/downloads/socat-1.7.2.1.zip  --download-only --upgrade-only --to ./bin
 
 # printspoofer
 echo "PrintSpoofer"
-#__get_github_release itm4n/PrintSpoofer "exe"
-#mv Print* bin
 eget itm4n/PrintSpoofer -a 32.exe  --download-only  --upgrade-only --to ./bin
 eget itm4n/PrintSpoofer -a 64.exe  --download-only  --upgrade-only --to ./bin
 
 # godpotato
 echo "GodPotato"
-#__get_github_release BeichenDream/GodPotato  "God"
-#mv God* bin
 eget BeichenDream/GodPotato -a NET4.exe  --download-only  --upgrade-only --to ./bin
 eget BeichenDream/GodPotato -a NET2.exe  --download-only  --upgrade-only --to ./bin
 eget BeichenDream/GodPotato -a NET35.exe  --download-only  --upgrade-only --to ./bin
 
 # roguepotato
 echo "RoguePotato"
-#__get_github_release antonioCoco/RoguePotato "Rogue"
-#mv Rogue* bin
 eget antonioCoco/RoguePotato -a Rogue  --download-only  --upgrade-only --to ./bin
 
 # RogueWinRM
 echo "RogueWinRM"
-#__get_github_release antonioCoco/RogueWinRM "zip"
-#mv RogueWinRM.zip bin
 eget antonioCoco/RogueWinRM -a Rogue  --download-only  --upgrade-only --to ./bin
 
 # winPEAS
 echo "winPEAS"
-#__get_github_release peass-ng/PEASS-ng "/winPEAS"
-#mv winPEAS* bin
 eget peass-ng/PEASS-ng -a winPEAS.bat  --download-only  --upgrade-only --to ./ps
 eget peass-ng/PEASS-ng -a winPEASx64.exe  --download-only  --upgrade-only --to ./bin
 eget peass-ng/PEASS-ng -a winPEASx64_ofs.exe  --download-only  --upgrade-only --to ./bin
@@ -90,26 +73,19 @@ eget peass-ng/PEASS-ng -a winPEASx86_ofs.exe  --download-only  --upgrade-only --
 
 # kerbrute
 echo "Kerbrute"
-#__get_github_release ropnop/kerbrute "windows"
-#mv kerbrute* bin
 eget ropnop/kerbrute -s windows/amd64  --download-only  --upgrade-only --to ./bin
 eget ropnop/kerbrute -s windows/386  --download-only  --upgrade-only --to ./bin
 
 # LaZagne
 echo "LaZagne"
-#__get_github_release AlessandroZ/LaZagne 'exe'
-#mv LaZagne* bin
 eget AlessandroZ/LaZagne -a LaZagne  --download-only  --upgrade-only --to ./bin
 
 # mimikatz
 echo "mimikatz"
-#__get_github_release gentilkiwi/mimikatz zip
-#mv mimikatz* bin
 eget gentilkiwi/mimikatz -a zip  --download-only  --upgrade-only --to ./bin
 
 
 
-#########################################################
 ## PowerUpSQL 
 echo "PowerUpSQL"
 mkdir -p ps/PowerUpSQL
@@ -123,7 +99,6 @@ echo "PowerSpray"
  eget https://raw.githubusercontent.com/n0tspam/SinglePowerSpray/main/SinglePowerSpray.ps1 --download-only --upgrade-only --to ./ps  # 2> /dev/null
 
 echo "Inveigh"
-# Inveigh https://github.com/Kevin-Robertson/Inveigh
 mkdir -p ps/Inveigh
 exts=("psd1" "ps1" "psm1")
 for ext in ${exts[@]} ; do
@@ -131,13 +106,10 @@ for ext in ${exts[@]} ; do
 done
 
 echo 'Pretender'
-##__get_github_release RedTeamPentesting/pretender "Windows"
 eget RedTeamPentesting/pretender -a Windows_x86_64 --download-only --upgrade-only --to ./bin
 
 # PingCastle
 echo 'PingCastle'
-#__get_github_release vletoux/pingcastle "zip"
-#mv PingCastle* bin
 eget vletoux/pingcastle -a zip  --download-only  --upgrade-only --to ./bin
 #
 #
