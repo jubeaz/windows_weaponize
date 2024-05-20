@@ -13,19 +13,21 @@ function __get_github_release(){
     files=$(curl -s https://api.github.com/repos/$repo/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep -E "$filter")
 #    echo $files
     for i in $files ; do
-        wget --quiet  --no-check-certificate $i -O $basedir/$(basename $i)
+        eget  --no-check-certificate $i -O $basedir/$(basename $i)
     done
 }
 mkdir -p bin
+mkdir -p dll
 mkdir -p ps/empire
 
 
 # Sysinternals Suite
-#echo "Sysinternals Suite"
+echo "Sysinternals Suite"
 #mkdir -p ./bin/SysinternalsSuite
-#wget --quiet https://download.sysinternals.com/files/SysinternalsSuite.zip -O SysinternalsSuite.zip 
+#eget https://download.sysinternals.com/files/SysinternalsSuite.zip -O SysinternalsSuite.zip
 #unzip -o SysinternalsSuite.zip  -d ./bin/SysinternalsSuite
 #rm SysinternalsSuite.zip 
+eget  https://download.sysinternals.com/files/SysinternalsSuite.zip  --all --upgrade-only --to ./bin/SysinternalsSuite
 
 
 echo 'empire ps modules'
@@ -33,189 +35,171 @@ cp -r /usr/share/empire/empire/server/data/module_source/* ps/empire/
 
 # nc
 echo "nc"
-wget --quiet https://github.com/int0x33/nc.exe/raw/master/nc64.exe -P nc -O bin/nc64.exe
-wget --quiet https://github.com/int0x33/nc.exe/raw/master/nc.exe -P nc -O bin/nc.exe 
+eget  https://github.com/int0x33/nc.exe/raw/master/nc64.exe  --download-only --upgrade-only --to ./bin
+eget  https://github.com/int0x33/nc.exe/raw/master/nc.exe  --download-only --upgrade-only --to ./bin
+
 
 # chisel
 echo "chisel"
-__get_github_release jpillora/chisel 'windows_(386|amd64)'
-mv chisel* bin
-
+#__get_github_release jpillora/chisel 'windows_(386|amd64)'
+#mv chisel* bin
+eget jpillora/chisel -s windows/amd64 --download-only --upgrade-only --to ./bin
+eget jpillora/chisel -s windows/386 --download-only  --upgrade-only --to ./bin
 
 # socat
 echo "socat"
-wget --quiet http://blog.gentilkiwi.com/downloads/socat-1.7.2.1.zip -O bin/socat-1.7.2.1.zip
-
-
+#eget http://blog.gentilkiwi.com/downloads/socat-1.7.2.1.zip -O bin/socat-1.7.2.1.zip
+eget http://blog.gentilkiwi.com/downloads/socat-1.7.2.1.zip  --download-only --upgrade-only --to ./bin
 
 # printspoofer
 echo "PrintSpoofer"
-__get_github_release itm4n/PrintSpoofer "exe"
-mv Print* bin
+#__get_github_release itm4n/PrintSpoofer "exe"
+#mv Print* bin
+eget itm4n/PrintSpoofer -a 32.exe  --download-only  --upgrade-only --to ./bin
+eget itm4n/PrintSpoofer -a 64.exe  --download-only  --upgrade-only --to ./bin
 
 # godpotato
 echo "GodPotato"
-__get_github_release BeichenDream/GodPotato  "God"
-mv God* bin
+#__get_github_release BeichenDream/GodPotato  "God"
+#mv God* bin
+eget BeichenDream/GodPotato -a NET4.exe  --download-only  --upgrade-only --to ./bin
+eget BeichenDream/GodPotato -a NET2.exe  --download-only  --upgrade-only --to ./bin
+eget BeichenDream/GodPotato -a NET35.exe  --download-only  --upgrade-only --to ./bin
 
 # roguepotato
 echo "RoguePotato"
-__get_github_release antonioCoco/RoguePotato "Rogue"
-mv Rogue* bin
+#__get_github_release antonioCoco/RoguePotato "Rogue"
+#mv Rogue* bin
+eget antonioCoco/RoguePotato -a Rogue  --download-only  --upgrade-only --to ./bin
 
 # RogueWinRM
 echo "RogueWinRM"
-__get_github_release antonioCoco/RogueWinRM "zip"
-mv RogueWinRM.zip bin
+#__get_github_release antonioCoco/RogueWinRM "zip"
+#mv RogueWinRM.zip bin
+eget antonioCoco/RogueWinRM -a Rogue  --download-only  --upgrade-only --to ./bin
 
 # winPEAS
 echo "winPEAS"
-__get_github_release peass-ng/PEASS-ng "/winPEAS"
-mv winPEAS* bin
-
-## Seatbelt
-#echo "Seatbelt"
-#wget --quiet https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/Seatbelt.exe -O Seatbelt.exe
-#
-## Snaffler
-#echo "Snaffler"
-#__get_github_release SnaffCon/Snaffler "exe"
+#__get_github_release peass-ng/PEASS-ng "/winPEAS"
+#mv winPEAS* bin
+eget peass-ng/PEASS-ng -a winPEAS.bat  --download-only  --upgrade-only --to ./ps
+eget peass-ng/PEASS-ng -a winPEASx64.exe  --download-only  --upgrade-only --to ./bin
+eget peass-ng/PEASS-ng -a winPEASx64_ofs.exe  --download-only  --upgrade-only --to ./bin
+eget peass-ng/PEASS-ng -a winPEASx86.exe  --download-only  --upgrade-only --to ./bin
+eget peass-ng/PEASS-ng -a winPEASx86_ofs.exe  --download-only  --upgrade-only --to ./bin
 
 # kerbrute
 echo "Kerbrute"
-__get_github_release ropnop/kerbrute "windows"
-mv kerbrute* bin
+#__get_github_release ropnop/kerbrute "windows"
+#mv kerbrute* bin
+eget ropnop/kerbrute -s windows/amd64  --download-only  --upgrade-only --to ./bin
+eget ropnop/kerbrute -s windows/386  --download-only  --upgrade-only --to ./bin
 
 # LaZagne
 echo "LaZagne"
-__get_github_release AlessandroZ/LaZagne 'exe'
-mv LaZagne* bin
-
+#__get_github_release AlessandroZ/LaZagne 'exe'
+#mv LaZagne* bin
+eget AlessandroZ/LaZagne -a LaZagne  --download-only  --upgrade-only --to ./bin
 
 # mimikatz
 echo "mimikatz"
-__get_github_release gentilkiwi/mimikatz zip
-mv mimikatz* bin
-
-## Rubeus https://github.com/GhostPack/Rubeus
-#echo "Rubeus"
-#wget --quiet https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/Rubeus.exe -O Rubeus.exe 
+#__get_github_release gentilkiwi/mimikatz zip
+#mv mimikatz* bin
+eget gentilkiwi/mimikatz -a zip  --download-only  --upgrade-only --to ./bin
 
 
-## sharpup 
-#echo "SharpUp"
-#wget --quiet https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/SharpUp.exe -O SharpUp.exe
 
-# powerup https://github.com/PowerShellMafia/PowerSploit/tree/dev/Privesc
-
-# PowerUpSQL 
+#########################################################
+## PowerUpSQL 
 echo "PowerUpSQL"
 mkdir -p ps/PowerUpSQL
 exts=("psd1" "ps1" "psm1")
 for ext in ${exts[@]} ; do
-    wget --quiet https://raw.githubusercontent.com/NetSPI/PowerUpSQL/master/PowerUpSQL.$ext -O ps/PowerUpSQL/PowerUpSQL.$ext #2> /dev/null
+    eget https://raw.githubusercontent.com/NetSPI/PowerUpSQL/master/PowerUpSQL.$ext --download-only --upgrade-only --to ./ps #2> /dev/null
 done
 
 # PowerSpray
 echo "PowerSpray"
- wget --quiet https://raw.githubusercontent.com/n0tspam/SinglePowerSpray/main/SinglePowerSpray.ps1 -O ps//SinglePowerSpray.ps1  # 2> /dev/null
+ eget https://raw.githubusercontent.com/n0tspam/SinglePowerSpray/main/SinglePowerSpray.ps1 --download-only --upgrade-only --to ./ps  # 2> /dev/null
 
 echo "Inveigh"
 # Inveigh https://github.com/Kevin-Robertson/Inveigh
 mkdir -p ps/Inveigh
 exts=("psd1" "ps1" "psm1")
 for ext in ${exts[@]} ; do
-    wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Inveigh/master/Inveigh.$ext -O ps/Inveigh/Inveigh.$ext  # 2> /dev/null
+   eget https://raw.githubusercontent.com/Kevin-Robertson/Inveigh/master/Inveigh.$ext --download-only --upgrade-only --to ./ps/Inveigh
 done
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Inveigh/master/Inveigh-Relay.ps1 -O ps/Inveigh/Inveigh-Relay.ps1  # 2> /dev/null
 
 echo 'Pretender'
-__get_github_release RedTeamPentesting/pretender "Windows"
-mv pretender* bin
-
-# responder
-# Sharpview
-#echo "SharpView"
-#wget --quiet  https://github.com/tevora-threat/SharpView/raw/master/Compiled/SharpView.exe -O SharpView.exe
+##__get_github_release RedTeamPentesting/pretender "Windows"
+eget RedTeamPentesting/pretender -a Windows_x86_64 --download-only --upgrade-only --to ./bin
 
 # PingCastle
 echo 'PingCastle'
-__get_github_release vletoux/pingcastle "zip"
-mv PingCastle* bin
-
-
+#__get_github_release vletoux/pingcastle "zip"
+#mv PingCastle* bin
+eget vletoux/pingcastle -a zip  --download-only  --upgrade-only --to ./bin
+#
+#
 echo 'EnableAllTokenPrivs'
-wget --quiet https://raw.githubusercontent.com/fashionproof/EnableAllTokenPrivs/master/EnableAllTokenPrivs.ps1 -O ps/EnableAllTokenPrivs.ps1
-
+eget https://raw.githubusercontent.com/fashionproof/EnableAllTokenPrivs/master/EnableAllTokenPrivs.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'nishang'
-wget --quiet 'https://api.github.com/repos/samratashok/nishang/zipball/v0.7.6' -O ps/nishang.zip
+eget 'https://github.com/samratashok/nishang/archive/refs/tags/v0.7.6.zip'  --download-only --upgrade-only --to ./ps/nishang-v0.7.6.zip
 
 echo 'ADRecon'
-wget --quiet https://raw.githubusercontent.com/sense-of-security/ADRecon/master/ADRecon.ps1 -O ps/ADRecon.ps1
+eget https://raw.githubusercontent.com/sense-of-security/ADRecon/master/ADRecon.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'adPEAS'
-wget --quiet https://raw.githubusercontent.com/61106960/adPEAS/main/adPEAS.ps1 -O ps/adPEAS.ps1
+eget https://raw.githubusercontent.com/61106960/adPEAS/main/adPEAS.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'Get-SpoolStatus'
-wget --quiet https://raw.githubusercontent.com/NotMedic/NetNTLMtoSilverTicket/master/Get-SpoolStatus.ps1 -O ps/Get-SpoolStatus.ps1
+eget https://raw.githubusercontent.com/NotMedic/NetNTLMtoSilverTicket/master/Get-SpoolStatus.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'PetitPotam'
-wget --quiet https://github.com/topotam/PetitPotam/raw/main/PetitPotam.exe -O bin/PetitPotam.exe
-
-#echo 'powersploit'
-#wget --quiet https://github.com/PowerShellMafia/PowerSploit/archive/refs/tags/v3.0.0.zip -O ps/powersploit.zip
+eget https://github.com/topotam/PetitPotam/raw/main/PetitPotam.exe  --download-only --upgrade-only --to ./bin
 
 echo 'SharpHound'
-wget --quiet https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1 -O ps/SharpHound.ps1
-
-#echo 'PrivescCheck.ps1' =======> empire
-#wget --quiet https://raw.githubusercontent.com/itm4n/PrivescCheck/master/PrivescCheck.ps1 -O ps/PrivescCheck.ps1
+eget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'psgetsys.ps1'
-wget --quiet https://raw.githubusercontent.com/decoder-it/psgetsystem/master/psgetsys.ps1 -O ps/psgetsys.ps1
+eget https://raw.githubusercontent.com/decoder-it/psgetsystem/master/psgetsys.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'PrintNightmare.ps1'
-wget --quiet https://raw.githubusercontent.com/calebstewart/CVE-2021-1675/main/CVE-2021-1675.ps1 -O ps/PrintNightmare.ps1
+eget https://raw.githubusercontent.com/calebstewart/CVE-2021-1675/main/CVE-2021-1675.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'Conjure-LSASS.ps1'
-wget --quiet https://raw.githubusercontent.com/FuzzySecurity/PowerShell-Suite/master/Invoke-Runas.ps1 -O ps/Conj²ure-LSASS.ps1
+eget https://raw.githubusercontent.com/FuzzySecurity/PowerShell-Suite/master/Invoke-Runas.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'jaws-enum.ps1'
-wget --quiet https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1 -O ps/jaws-enum.ps1
+eget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'Invoke-Clipboard.ps1'
-wget --quiet https://raw.githubusercontent.com/inguardians/Invoke-Clipboard/master/Invoke-Clipboard.ps1 -O ps/Invoke-Clipboard.ps1
+eget https://raw.githubusercontent.com/inguardians/Invoke-Clipboard/master/Invoke-Clipboard.ps1 --download-only --upgrade-only --to ./ps
 
 
 echo 'Invoke-StickyReader.ps1'
-wget --quiet https://raw.githubusercontent.com/whitej3rry/StickyReader/master/Invoke-StickyReader.ps1 -O ps/Invoke-StickyReader.ps1
+eget https://raw.githubusercontent.com/whitej3rry/StickyReader/master/Invoke-StickyReader.ps1 --download-only --upgrade-only --to ./ps
 
 
 echo 'LAPSToolkit.ps1'
-wget --quiet https://raw.githubusercontent.com/leoloobeek/LAPSToolkit/master/LAPSToolkit.ps1 -O ps/LAPSToolkit.ps1
-
-
+eget https://raw.githubusercontent.com/leoloobeek/LAPSToolkit/master/LAPSToolkit.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'Invoke-TheHash'
-
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBClient.ps1 -O ps/Invoke-SMBClient.ps1
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBEnum.ps1 -O ps/Invoke-SMBEnum.ps1
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBExec.ps1 -O ps/Invoke-SMBExec.ps1
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.ps1 -O ps/Invoke-TheHash.ps1
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psd1 -O ps/Invoke-TheHash.psd1
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psm1 -O ps/Invoke-TheHash.psm1
-wget --quiet https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-WMIExec.ps1 -O ps/Invoke-WMIExec.ps1
+eget https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBClient.ps1 --download-only --upgrade-only --to ./ps
+eget https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBEnum.ps1   --download-only --upgrade-only --to ./ps
+eget https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-SMBExec.ps1   --download-only --upgrade-only --to ./ps
+eget https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.ps1   --download-only --upgrade-only --to ./ps
+eget https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psd1  --download-only --upgrade-only --to ./ps
+eget https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-TheHash.psm1  --download-only --upgrade-only --to ./ps
+eget https://raw.githubusercontent.com/Kevin-Robertson/Invoke-TheHash/master/Invoke-WMIExec.ps1   --download-only --upgrade-only --to ./ps
 
 echo 'AD ACL Scanner'
-wget --quiet https://raw.githubusercontent.com/canix1/ADACLScanner/master/ADACLScan.ps1 -O ps/ADACLScan.ps1 
+eget https://raw.githubusercontent.com/canix1/ADACLScanner/master/ADACLScan.ps1 --download-only --upgrade-only --to ./ps
 
 
 echo 'Microsoft.ActiveDirectory.Management.dll'
-wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll -O dll/Microsoft.ActiveDirectory.Management.dll
+eget https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll --download-only --upgrade-only --to ./dll
 
 echo 'Import-ActiveDirectory.ps1'
-wget --quiet https://raw.githubusercontent.com/samratashok/ADModule/master/Import-ActiveDirectory.ps1 -o ps/Import-ActiveDirectory.ps1
-
-#echo 'PSUpload.ps1'
-#wget --quiet https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1 -o ps/PSUpload.ps1
+eget https://raw.githubusercontent.com/samratashok/ADModule/master/Import-ActiveDirectory.ps1 --download-only --upgrade-only --to ./ps

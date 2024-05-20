@@ -34,8 +34,6 @@ from impacket.examples.ntlmrelayx.attacks.rpcattack import RPCAttack
 
 PROTOCOL_ATTACKS = {"DCSYNC":DCSYNCAttack, "HTTP":HTTPAttack, "HTTPS":adcsattack ,"IMAP":IMAPAttack,"IMAPS":IMAPAttack,"SMB":SMBAttack,"RPC":RPCAttack,"MSSQL":MSSQLAttack,"LDAP":LDAPAttack, "LDAPS":LDAPAttack}
 PROTOCOL_CLIENTS = {"DCSYNC":DCSYNCRelayClient, "HTTP":HTTPRelayClient, "HTTPS":HTTPSRelayClient, "SMTP":SMTPRelayClient, "LDAPS":LDAPSRelayClient, "IMAP":IMAPRelayClient, "IMAPS":IMAPSRelayClient, "SMB":SMBRelayClient,"RPC":RPCRelayClient,"MSSQL":MSSQLRelayClient,"LDAP":LDAPRelayClient}
-
-RELAY_SERVERS = []
 ```
 
 ### loading of protocols
@@ -53,22 +51,19 @@ with:
 ## build impacket
 
 ```
-# choco install python3
-choco install python38
-$env:path+='c:\python38;'
-$env:temp="c:\temp"
-c:\python38\python.exe -m pip install pyinstaller
-c:\python38\python.exe -m pip install --upgrade pyinstaller
+choco install python3
+$env:pythonpath = Split-Path -Parent (Get-Command python).Path
+$python_bin = "$env:pythonpath\python.exe"
+$env:tmp="c:\tmp"
+& $python_bin -m pip install pyinstaller
+& $python_bin -m pip install --upgrade pyinstaller
 git clone https://github.com/fortra/impacket.git -b master 
 Set-Location <impacket-repo-path>
-c:\python38\python.exe -m pip install .
-c:\python38\python.exe setup.py  install
-c:\python38\python.exe -m pip install dsinternals pyreadline uuid
+& $python_bin  -m pip install .
+& $python_bin  setup.py  install
+& $python_bin -m pip install dsinternals pyreadline uuid
 
-Get-ChildItem "<impacket-repo-path>\examples" -Filter *.py |
-Foreach-Object {
-    C:\Python38\python.exe -m PyInstaller --path C:\Python38\Lib\site-packages\impacket,C:\Python38\Lib\site-packages,C:\Python38\Lib --hidden-import=impacket.examples.utils --specpath $env:temp\spec --workpath $env:temp\build --distpath $env:temp\out --clean -F $_.FullName
-}
+Get-ChildItem ".\examples" -Filter *.py | Foreach-Object {& $python_bin -m PyInstaller --path "$env:pythonpath\Lib\site-packages\impacket","$env:pythonpath\Lib\site-packages","$env:pythonpath\Lib" --hidden-import=impacket.examples.utils --specpath $env:tmp\spec --workpath $env:tmp\build --distpath $env:tmp\out --clean -F $_.FullName}
 ```
 
 
