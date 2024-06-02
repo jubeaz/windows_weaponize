@@ -1,6 +1,15 @@
 # windows_weaponize
 
 
+# building python binaries
+```powershell
+python -m pip install pyinstaller
+python -m pip install --upgrade pyinstaller
+```
+# build WinPwnage
+```bash
+pyinstaller --onefile main.py
+```
 
 # build impacket
 
