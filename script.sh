@@ -175,3 +175,6 @@ eget https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.Act
 
 echo 'Import-ActiveDirectory.ps1'
 eget https://raw.githubusercontent.com/samratashok/ADModule/master/Import-ActiveDirectory.ps1 --download-only --upgrade-only --to ./ps
+
+echo 'KRBUACBypass'
+eget peass-ng/PEASS-ng -a  KRBUACBypass.exe   --download-only  --upgrade-only --to ./bin
