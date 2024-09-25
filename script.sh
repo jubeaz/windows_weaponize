@@ -178,3 +178,6 @@ eget https://raw.githubusercontent.com/samratashok/ADModule/master/Import-Active
 
 echo 'KRBUACBypass'
 eget peass-ng/PEASS-ng -a  KRBUACBypass.exe   --download-only  --upgrade-only --to ./bin
+
+echo 'Ligolo-ng'
+eget nicocha30/ligolo-ng -a igolo-ng_agent_0.7.2-alpha_windows_amd64.zip  --download-only  --upgrade-only --to ./bin
