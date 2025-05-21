@@ -10,7 +10,6 @@ else
     echo "Error: GITHUB_TOKEN_PATH is not set or the file does not exist." >&2
     exit 1
 fi
-export GITHUB_TOKEN=$(cat /etc/ansible/files/akamatsu/home/jubeaz/eget_github_token)
 
 function __get_github_release(){
     repo=$1
