@@ -4,6 +4,13 @@ set -o nounset
 set -o pipefail
 
 
+if [[ -n "$GITHUB_TOKEN_PATH" && -f "$GITHUB_TOKEN_PATH" ]]; then
+    export GITHUB_TOKEN=$(cat $GITHUB_TOKEN_PATH)
+else 
+    echo "Error: GITHUB_TOKEN_PATH is not set or the file does not exist." >&2
+    exit 1
+fi
+export GITHUB_TOKEN=$(cat /etc/ansible/files/akamatsu/home/jubeaz/eget_github_token)
 
 function __get_github_release(){
     repo=$1
@@ -23,7 +30,7 @@ mkdir -p ps/empire
 
 # Sysinternals Suite
 echo "Sysinternals Suite"
-eget  https://download.sysinternals.com/files/SysinternalsSuite.zip  --all --upgrade-only --to ./bin/SysinternalsSuite
+eget  https://download.sysinternals.com/files/SysinternalsSuite.zip  --download-only --upgrade-only --to ./bin/SysinternalsSuite
 
 
 echo 'empire ps modules'
@@ -177,7 +184,8 @@ echo 'Import-ActiveDirectory.ps1'
 eget https://raw.githubusercontent.com/samratashok/ADModule/master/Import-ActiveDirectory.ps1 --download-only --upgrade-only --to ./ps
 
 echo 'KRBUACBypass'
-eget peass-ng/PEASS-ng -a  KRBUACBypass.exe   --download-only  --upgrade-only --to ./bin
+eget wh0amitz/KRBUACBypass -a  KRBUACBypass.exe   --download-only  --upgrade-only --to ./bin
 
 echo 'Ligolo-ng'
-eget nicocha30/ligolo-ng -s windows/amd64   --upgrade-only --to ./bin
+eget nicocha30/ligolo-ng -s windows/amd64  -a agent --download-only --to ./bin
+eget nicocha30/ligolo-ng -s windows/amd64  -a proxy --download-only --to ./bin
