@@ -4,6 +4,20 @@ set -o nounset
 set -o pipefail
 
 
+function __get_github_release(){
+    repo=$1
+    filter=$2
+    basedir=${3:-.}
+    mkdir -p $basedir
+    files=$(curl -s https://api.github.com/repos/$repo/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep -E "$filter")
+    echo $files
+    for i in $files ; do
+        eget  --no-check-certificate $i -O $basedir/$(basename $i)
+    done
+}
+
+
+
 if [[ -n "$GITHUB_TOKEN_PATH" && -f "$GITHUB_TOKEN_PATH" ]]; then
     export GITHUB_TOKEN=$(cat $GITHUB_TOKEN_PATH)
 else 
@@ -11,17 +25,7 @@ else
     exit 1
 fi
 
-function __get_github_release(){
-    repo=$1
-    filter=$2
-    basedir=${3:-.}
-    mkdir -p $basedir
-    files=$(curl -s https://api.github.com/repos/$repo/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep -E "$filter")
-#    echo $files
-    for i in $files ; do
-        eget  --no-check-certificate $i -O $basedir/$(basename $i)
-    done
-}
+
 mkdir -p bin
 mkdir -p dll
 mkdir -p ps/empire
@@ -188,3 +192,9 @@ eget wh0amitz/KRBUACBypass -a  KRBUACBypass.exe   --download-only  --upgrade-onl
 echo 'Ligolo-ng'
 eget nicocha30/ligolo-ng -s windows/amd64  -a agent --download-only --to ./bin
 eget nicocha30/ligolo-ng -s windows/amd64  -a proxy --download-only --to ./bin
+
+
+echo 'RunasCs'
+eget antonioCoco/RunasCs -a RunasCs  --upgrade-only --to ./bin
+eget https://raw.githubusercontent.com/antonioCoco/RunasCs/master/Invoke-RunasCs.ps1   --download-only --upgrade-only --to ./ps
+
